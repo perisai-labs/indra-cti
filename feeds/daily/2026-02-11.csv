@@ -1,0 +1,12 @@
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+hash-sha256,a9b670ff357cbb942a795c8524999072cd9466486b9c28b5b0d809b01547293b,AgentTesla-SteganoLoader,malware,high,high,2026-02-11,2026-02-11,T1027.003|T1620|T1140|T1113|T1056.001,agenttesla;steganography;infostealer,MalwareBazaar,AgentTesla with steganography loader - hides payload in bitmap pixel data
+hash-md5,155dfdc4eb24f4e4622168fc015a93db,AgentTesla-SteganoLoader,malware,high,high,2026-02-11,2026-02-11,T1027.003|T1620,agenttesla;steganography,MalwareBazaar,AgentTesla steganography loader MD5
+hash-sha1,9ba90e762751aff73ce894bc278e3053d9a31c0c,AgentTesla-SteganoLoader,malware,high,high,2026-02-11,2026-02-11,T1027.003|T1620,agenttesla;steganography,MalwareBazaar,AgentTesla steganography loader SHA1
+filename,new_order3223.com.exe,AgentTesla-SteganoLoader,malware,high,high,2026-02-11,2026-02-11,T1566.001,agenttesla;steganography;phishing,MalwareBazaar,AgentTesla steganography loader filename
+filename,EQwhl.exe,AgentTesla-SteganoLoader,malware,high,medium,2026-02-11,2026-02-11,T1620,agenttesla;dropped-payload,MalwareBazaar,Dropped payload by AgentTesla steganography loader
+cve,CVE-2026-21510,Microsoft-PatchTuesday-Feb2026,cve,high,high,2026-02-11,2026-02-11,T1553.005|T1566.002,windows;zero-day;motw-bypass;cisa-kev,Microsoft,Windows Shell MotW bypass - actively exploited zero-day
+cve,CVE-2026-21513,Microsoft-PatchTuesday-Feb2026,cve,high,high,2026-02-11,2026-02-11,T1553.005|T1218,mshtml;zero-day;security-bypass,Microsoft,MSHTML security feature bypass - actively exploited
+cve,CVE-2026-21514,Microsoft-PatchTuesday-Feb2026,cve,high,high,2026-02-11,2026-02-11,T1566.001|T1553.005,word;ole;zero-day;security-bypass,Microsoft,Microsoft Word OLE mitigation bypass - actively exploited
+cve,CVE-2026-21519,Microsoft-PatchTuesday-Feb2026,cve,critical,high,2026-02-11,2026-02-11,T1068,dwm;zero-day;privilege-escalation;system,Microsoft,Desktop Window Manager EoP to SYSTEM - actively exploited
+cve,CVE-2026-21525,Microsoft-PatchTuesday-Feb2026,cve,medium,high,2026-02-11,2026-02-11,T1499,windows;zero-day;dos,Microsoft,Remote Access Connection Manager DoS - actively exploited
+cve,CVE-2026-21533,Microsoft-PatchTuesday-Feb2026,cve,high,high,2026-02-11,2026-02-11,T1068,rdp;zero-day;privilege-escalation,Microsoft,Remote Desktop Services EoP - actively exploited

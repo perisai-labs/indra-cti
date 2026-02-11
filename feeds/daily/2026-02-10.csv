@@ -1,0 +1,14 @@
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+hash-sha256,1ab4672076f63692e67555ebea72d9d7593928012ea7277776057e354d70364d,AsyncRAT,malware,high,high,2026-02-10,2026-02-10,T1547.001|T1573.001|T1497.001|T1622|T1102,asyncrat;vietnam;rat;dotnet,MalwareBazaar,AsyncRAT .NET RAT from Vietnam - open-source AsyncRAT-C# project
+hash-md5,6782b6d750b717ea2c048b8ee00ece17,AsyncRAT,malware,high,high,2026-02-10,2026-02-10,T1547.001|T1573.001,asyncrat;vietnam;rat,MalwareBazaar,AsyncRAT Vietnam sample MD5
+filename,v4.msi,Warlock-Storm2603,ransomware,critical,high,2026-02-10,2026-02-11,T1218.007|T1219,warlock;storm-2603;velociraptor;msi,ReliaQuest,Malicious MSI installer deploying Velociraptor for Warlock ransomware
+filename,NSecKrnl.sys,Reynolds-Ransomware,ransomware,high,high,2026-02-10,2026-02-10,T1211|T1562.001,reynolds;byovd;edr-killer,TheHackerNews,Vulnerable BYOVD driver used by Reynolds ransomware to kill EDR
+filename,AsyncRAT.pdb,AsyncRAT,malware,medium,high,2026-02-10,2026-02-10,T1547.001,asyncrat;pdb;debug,MalwareBazaar,PDB path artifact - D:\Cong Viec\malware\AsyncRAT-C-Sharp\
+domain,pastebin.com,AsyncRAT,malware,medium,medium,2026-02-10,2026-02-10,T1102,asyncrat;dynamic-config;c2,MalwareBazaar,Pastebin used for dynamic C2 configuration by AsyncRAT
+domain,gotohttp.com,Reynolds-Ransomware,ransomware,high,high,2026-02-10,2026-02-10,T1219,reynolds;remote-access;persistence,TheHackerNews,GotoHTTP remote access tool used for post-encryption persistence
+cve,CVE-2026-21643,Fortinet-FortiClientEMS,cve,critical,high,2026-02-10,2026-02-10,T1190|T1059,fortinet;sqli;pre-auth;rce,FortiGuard,FortiClientEMS SQL injection - unauthenticated RCE (CVSS 9.1)
+cve,CVE-2026-24858,Fortinet-FortiCloud-SSO,cve,critical,high,2026-02-10,2026-02-10,T1190|T1136.001,fortinet;auth-bypass;actively-exploited,FortiGuard,FortiOS/FortiManager FortiCloud SSO auth bypass - actively exploited
+cve,CVE-2025-68947,Reynolds-Ransomware,cve,medium,high,2026-02-10,2026-02-10,T1211|T1562.001,nsecsoft;byovd;edr-killer,TheHackerNews,NsecSoft NSecKrnl arbitrary process termination - used by Reynolds ransomware
+tool,SimpleHelp,Warlock-Storm2603,ransomware,high,high,2026-02-10,2026-02-11,T1219,warlock;remote-access,ReliaQuest,Remote access tool used by Storm-2603 for persistence
+tool,GotoHTTP,Reynolds-Ransomware,ransomware,high,high,2026-02-10,2026-02-10,T1133|T1219,reynolds;remote-access;post-encryption,TheHackerNews,Remote access tool for post-encryption persistence
+tool,PhoenixMiner,SSHStalker,botnet,medium,high,2026-02-10,2026-02-10,T1496,sshstalker;cryptomining;ethereum,Flare,Ethereum miner deployed by SSHStalker botnet

@@ -1,0 +1,30 @@
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+filename,pic1.png,Shadow-Campaigns-TGR-STA-1030,apt,critical,high,2026-02-09,2026-02-09,T1027|T1204.002,shadow-campaigns;diaoyu;integrity-check,Unit42,Zero-byte file used as Diaoyu loader integrity check
+filepath,swsecret,Shadow-Campaigns-TGR-STA-1030,apt,critical,high,2026-02-09,2026-02-09,T1014|T1564.001,shadow-campaigns;shadowguard;rootkit;ebpf,Unit42,Hidden directory created by ShadowGuard eBPF rootkit
+domain,dog3rj.tech,Shadow-Campaigns-TGR-STA-1030,apt,critical,high,2026-02-09,2026-02-09,T1566.002|T1105,shadow-campaigns;c2;european-targeting,Unit42,C2 domain used in Shadow Campaigns targeting European victims
+domain,mega.nz,Shadow-Campaigns-TGR-STA-1030,apt,critical,medium,2026-02-09,2026-02-09,T1566.002|T1105,shadow-campaigns;payload-hosting,Unit42,Mega.nz used for hosting phishing payloads (legitimate service abused)
+domain,files.catbox.moe,CVE-2025-40551-SolarWinds-WHD,cve,critical,high,2026-02-09,2026-02-09,T1105,solarwinds;payload-delivery;catbox,Huntress,Catbox file hosting used for MSI payload delivery in SolarWinds WHD exploitation
+url,https://mega.nz/file/,Shadow-Campaigns-TGR-STA-1030,apt,critical,medium,2026-02-09,2026-02-09,T1566.002|T1204.002,shadow-campaigns;phishing;payload,Unit42,Mega.nz file download URLs used in phishing campaigns
+cve,CVE-2026-1731,BeyondTrust-RS-PRA,cve,critical,high,2026-02-09,2026-02-09,T1190|T1059,beyondtrust;pre-auth;rce;command-injection,BeyondTrust,BeyondTrust RS/PRA pre-auth OS command injection
+tool,Diaoyu,Shadow-Campaigns-TGR-STA-1030,apt,critical,high,2026-02-09,2026-02-09,T1204.002|T1105,shadow-campaigns;loader;first-stage,Unit42,Custom loader used by TGR-STA-1030 - fetches Cobalt Strike and VShell
+tool,ShadowGuard,Shadow-Campaigns-TGR-STA-1030,apt,critical,high,2026-02-09,2026-02-09,T1014,shadow-campaigns;rootkit;ebpf;linux,Unit42,Custom Linux eBPF rootkit unique to TGR-STA-1030
+tool,VShell,Shadow-Campaigns-TGR-STA-1030,apt,critical,high,2026-02-09,2026-02-09,T1105|T1071,shadow-campaigns;c2-framework,Unit42,C2 framework deployed by Shadow Campaigns alongside Cobalt Strike
+tool,Cobalt Strike,Shadow-Campaigns-TGR-STA-1030,apt,critical,high,2026-02-09,2026-02-09,T1105|T1071,shadow-campaigns;c2,Unit42,Commercial C2 framework used by TGR-STA-1030
+tool,Behinder,Shadow-Campaigns-TGR-STA-1030,apt,high,high,2026-02-09,2026-02-09,T1505.003,shadow-campaigns;webshell,Unit42,Java webshell used by Shadow Campaigns
+tool,Godzilla,Shadow-Campaigns-TGR-STA-1030,apt,high,high,2026-02-09,2026-02-09,T1505.003,shadow-campaigns;webshell,Unit42,Webshell used by Shadow Campaigns
+tool,Neo-reGeorg,Shadow-Campaigns-TGR-STA-1030,apt,high,high,2026-02-09,2026-02-09,T1505.003,shadow-campaigns;webshell;tunneling,Unit42,Web tunneling shell used by Shadow Campaigns
+tool,GOST,Shadow-Campaigns-TGR-STA-1030,apt,high,medium,2026-02-09,2026-02-09,T1572,shadow-campaigns;tunneling,Unit42,GO Simple Tunnel used for network tunneling
+tool,FRPS,Shadow-Campaigns-TGR-STA-1030,apt,high,medium,2026-02-09,2026-02-09,T1572|T1090,shadow-campaigns;reverse-proxy,Unit42,Fast Reverse Proxy Server used for C2 relay
+tool,IOX,Shadow-Campaigns-TGR-STA-1030,apt,high,medium,2026-02-09,2026-02-09,T1572,shadow-campaigns;tunneling,Unit42,Tunneling tool used in Shadow Campaigns
+tool,Cloudflared,CVE-2025-40551-SolarWinds-WHD,cve,high,high,2026-02-09,2026-02-09,T1572|T1219,solarwinds;tunnel;persistence,Huntress,Cloudflare tunnel client used for C2 redundancy in WHD exploitation
+tool,Zoho ManageEngine Assist,CVE-2025-40551-SolarWinds-WHD,cve,high,high,2026-02-09,2026-02-09,T1219,solarwinds;remote-access;persistence,Huntress,Remote support tool abused for hands-on keyboard access
+tool,REPTILE,UNC3886-Singapore-Telco,apt,high,high,2026-02-09,2026-02-09,T1014,unc3886;rootkit;linux,Mandiant,Linux rootkit used by UNC3886
+tool,MEDUSA,UNC3886-Singapore-Telco,apt,high,high,2026-02-09,2026-02-09,T1014,unc3886;rootkit;linux,Mandiant,Linux rootkit used by UNC3886
+tool,MOPSLED,UNC3886-Singapore-Telco,apt,high,medium,2026-02-09,2026-02-09,T1105,unc3886;backdoor,Mandiant,Custom malware family used by UNC3886
+tool,RIFLESPINE,UNC3886-Singapore-Telco,apt,high,medium,2026-02-09,2026-02-09,T1105,unc3886;backdoor,Mandiant,Custom malware family used by UNC3886
+tool,DKnife,DKnife-AitM-Framework,framework,high,high,2026-02-09,2026-02-09,T1557|T1574|T1040,dknife;aitm;china;shadowpad;edge-device,SecureWorks,7-module Linux AitM framework targeting routers and edge devices
+tool,ShadowPad,DKnife-AitM-Framework,apt,high,high,2026-02-09,2026-02-09,T1059.004,dknife;china;backdoor,SecureWorks,Associated backdoor linked to DKnife operators
+tool,DarkNimbus,DKnife-AitM-Framework,apt,high,high,2026-02-09,2026-02-09,T1059.004,dknife;china;backdoor,SecureWorks,Associated backdoor linked to DKnife operators
+scheduled-task,TPMProfiler,CVE-2025-40551-SolarWinds-WHD,cve,critical,high,2026-02-09,2026-02-09,T1053.005|T1572,solarwinds;ssh-backdoor;qemu,Huntress,Scheduled task that opens SSH backdoor via QEMU on compromised WHD hosts
+registry,DisableAntiSpyware,CVE-2025-40551-SolarWinds-WHD,cve,high,high,2026-02-09,2026-02-09,T1562.001,solarwinds;defender-disable;defense-evasion,Huntress,Registry key to disable Windows Defender - used in WHD exploitation chain
+registry,DisableRealtimeMonitoring,CVE-2025-40551-SolarWinds-WHD,cve,high,high,2026-02-09,2026-02-09,T1562.001,solarwinds;defender-disable;defense-evasion,Huntress,Registry key to disable Defender realtime monitoring
