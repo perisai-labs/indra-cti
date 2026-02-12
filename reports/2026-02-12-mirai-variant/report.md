@@ -20,15 +20,15 @@ A new Mirai botnet variant targeting x86-64 Linux systems features HTTP/2 flood 
 
 ## Static Analysis
 
-![File Info](img/2026-02-12-mirai-variant/file-info.png)
-![Sections Entropy](img/2026-02-12-mirai-variant/sections-entropy.png)
-![Strings IOC](img/2026-02-12-mirai-variant/strings-ioc.png)
+![File Info](screenshots/file-info.png)
+![Sections Entropy](screenshots/sections-entropy.png)
+![Strings IOC](screenshots/strings-ioc.png)
 
 ## Disassembly
 
-![Disassembly Entry](img/2026-02-12-mirai-variant/disassembly-entry.png)
-![Functions List](img/2026-02-12-mirai-variant/functions-list.png)
-![XOR Table](img/2026-02-12-mirai-variant/xor-table.png)
+![Disassembly Entry](screenshots/disassembly-entry.png)
+![Functions List](screenshots/functions-list.png)
+![XOR Table](screenshots/xor-table.png)
 
 ## Key Findings
 
@@ -64,7 +64,7 @@ A new Mirai botnet variant targeting x86-64 Linux systems features HTTP/2 flood 
 
 See: [`yara/malware/mirai-httpflood-variant-2026-02.yar`](../yara/malware/mirai-httpflood-variant-2026-02.yar)
 
-![YARA Test](img/2026-02-12-mirai-variant/yara-test.png)
+![YARA Test](screenshots/yara-test.png)
 
 ## Recommendations
 
