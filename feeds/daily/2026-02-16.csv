@@ -1,0 +1,10 @@
+timestamp,indicator,type,category,description,severity,source
+2026-02-16,76be3869428b6347166474e887d25a44d724e3e6219296fa7a955cef8dddc188,sha256,malware,Stealc infostealer FL Studio trojan dropper,high,https://bazaar.abuse.ch
+2026-02-16,4cea7ae85c87ddc7295d39ff9cda31d1,imphash,malware,Stealc infostealer wextract.exe dropper,high,internal
+2026-02-16,FL.Studio.v25.1.6.49971.exe,filename,malware,Stealc infostealer masquerade filename,high,internal
+2026-02-16,wextract.pdb,pdb-path,malware,Stealc self-extractor debug path,medium,internal
+2026-02-16,Msgstr.cab,filename,malware,Stealc embedded cabinet archive,medium,internal
+2026-02-16,Newbie.cab,filename,malware,Stealc embedded cabinet archive,medium,internal
+2026-02-16,Batteries,filename,malware,Stealc main payload shellcode,high,internal
+2026-02-16,Bigger,filename,malware,Stealc payload component,medium,internal
+2026-02-16,Ssl,filename,malware,Stealc payload component,medium,internal

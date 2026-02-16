@@ -69,3 +69,5 @@ chrome-extension-id,djhjckkfgancelbmgcamjimgphaphjdl,AiFrame Chrome Extension Ca
 chrome-extension-id,fdlagfnfaheppaigholhoojabfaapnhb,AiFrame Chrome Extension Campaign,malware,high,high,2026-02-12,2026-02-12,"T1195.002,T1204.001",chrome-extension;ai-lure,LayerX Security,Google Gemini - malicious extension (10K users)
 filename,vhost.exe,Crazy Ransomware,ransomware,high,high,2026-02-11,2026-02-12,"T1219,T1036.005",simplehelp;rmm-abuse,Huntress,SimpleHelp payload disguised as VS host - Crazy ransomware persistence
 file-path,C:\ProgramData\OneDriveSvc\OneDriveSvc.exe,Crazy Ransomware,ransomware,high,high,2026-02-11,2026-02-12,"T1219,T1036.005",simplehelp;rmm-abuse,Huntress,SimpleHelp payload disguised as OneDrive service - Crazy ransomware
+2026-02-16,76be3869428b6347166474e887d25a44d724e3e6219296fa7a955cef8dddc188,sha256,malware,Stealc infostealer FL Studio trojan dropper,high,https://bazaar.abuse.ch
+2026-02-16,4cea7ae85c87ddc7295d39ff9cda31d1,imphash,malware,Stealc infostealer wextract.exe dropper,high,internal
