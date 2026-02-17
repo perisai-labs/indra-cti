@@ -1,0 +1,5 @@
+type,value,family,platform,severity,date
+sha256,8d577a095d2dcc693ea232afc45c6c23dd83755496151ec708acc6216456032b,Unknown/CustomUPX-MiraiCluster,ELF64-x86_64,HIGH,2026-02-17
+sha1,af9c3f197d1d8ea941e2ecb418a4cff5890dc902,Unknown/CustomUPX-MiraiCluster,ELF64-x86_64,HIGH,2026-02-17
+md5,7d037ddc42d493003358e28fa3f9326b,Unknown/CustomUPX-MiraiCluster,ELF64-x86_64,HIGH,2026-02-17
+upx_pattern,50B0872355505821E4100E16@0x150,Unknown/CustomUPX-MiraiCluster,ELF64-x86_64,HIGH,2026-02-17
