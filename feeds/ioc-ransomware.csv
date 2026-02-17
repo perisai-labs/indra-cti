@@ -1,1 +1,9 @@
 ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+filename,v4.msi,Warlock-Storm2603,ransomware,critical,high,2026-02-10,2026-02-11,T1218.007|T1219,warlock;storm-2603;velociraptor;msi,ReliaQuest,Malicious MSI installer deploying Velociraptor for Warlock ransomware
+filename,NSecKrnl.sys,Reynolds-Ransomware,ransomware,high,high,2026-02-10,2026-02-10,T1211|T1562.001,reynolds;byovd;edr-killer,TheHackerNews,Vulnerable BYOVD driver used by Reynolds ransomware to kill EDR
+domain,gotohttp.com,Reynolds-Ransomware,ransomware,high,high,2026-02-10,2026-02-10,T1219,reynolds;remote-access;persistence,TheHackerNews,GotoHTTP remote access tool used for post-encryption persistence
+tool,Velociraptor,Warlock-Storm2603,ransomware,critical,high,2026-01-29,2026-02-11,T1219|T1036,warlock;c2-abuse;dfir-tool-weaponized,ReliaQuest/Huntress,Legitimate DFIR tool weaponized as C2 by Storm-2603 and SolarWinds WHD attackers
+tool,SimpleHelp,Warlock-Storm2603,ransomware,high,high,2026-02-10,2026-02-11,T1219,warlock;remote-access,ReliaQuest,Remote access tool used by Storm-2603 for persistence
+tool,GotoHTTP,Reynolds-Ransomware,ransomware,high,high,2026-02-10,2026-02-10,T1133|T1219,reynolds;remote-access;post-encryption,TheHackerNews,Remote access tool for post-encryption persistence
+filename,vhost.exe,Crazy Ransomware,ransomware,high,high,2026-02-11,2026-02-12,"T1219,T1036.005",simplehelp;rmm-abuse,Huntress,SimpleHelp payload disguised as VS host - Crazy ransomware persistence
+file-path,C:\ProgramData\OneDriveSvc\OneDriveSvc.exe,Crazy Ransomware,ransomware,high,high,2026-02-11,2026-02-12,"T1219,T1036.005",simplehelp;rmm-abuse,Huntress,SimpleHelp payload disguised as OneDrive service - Crazy ransomware

@@ -1,5 +1,9 @@
-type,value,family,platform,severity,date
-sha256,8d577a095d2dcc693ea232afc45c6c23dd83755496151ec708acc6216456032b,Unknown/CustomUPX-MiraiCluster,ELF64-x86_64,HIGH,2026-02-17
-sha1,af9c3f197d1d8ea941e2ecb418a4cff5890dc902,Unknown/CustomUPX-MiraiCluster,ELF64-x86_64,HIGH,2026-02-17
-md5,7d037ddc42d493003358e28fa3f9326b,Unknown/CustomUPX-MiraiCluster,ELF64-x86_64,HIGH,2026-02-17
-upx_pattern,50B0872355505821E4100E16@0x150,Unknown/CustomUPX-MiraiCluster,ELF64-x86_64,HIGH,2026-02-17
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+hash-sha256,8d577a095d2dcc693ea232afc45c6c23dd83755496151ec708acc6216456032b,Unknown-CustomUPX-MiraiCluster,malware,critical,high,2026-02-17,2026-02-17,T1027.002|T1027.013|T1496,mirai;custom-upx;elf64;zero-day;linux-server-bot,MalwareBazaar,Zero-detection ELF64 custom UPX packer - modified l_checksum defeats decompression. Attributed to Mirai infrastructure cluster (Germany).
+hash-sha1,af9c3f197d1d8ea941e2ecb418a4cff5890dc902,Unknown-CustomUPX-MiraiCluster,malware,critical,high,2026-02-17,2026-02-17,T1027.002|T1027.013,mirai;custom-upx;elf64;zero-day,MalwareBazaar,Zero-detection ELF64 custom UPX packer SHA1
+hash-md5,7d037ddc42d493003358e28fa3f9326b,Unknown-CustomUPX-MiraiCluster,malware,critical,high,2026-02-17,2026-02-17,T1027.002|T1027.013,mirai;custom-upx;elf64;zero-day,MalwareBazaar,Zero-detection ELF64 custom UPX packer MD5
+ip,84.21.189.20,ClickFix-DNS-ModeloRAT,malware,high,high,2026-02-17,2026-02-17,T1071.004|T1059.001|T1547.009,clickfix;dns-c2;modelorat;custom-dns;windows,BleepingComputer,Attacker-controlled DNS server used for ClickFix DNS payload delivery - PowerShell payload embedded in DNS NAME field
+domain,healgeni.live,Lumma-Stealer-GoogleGroups,malware,critical,high,2026-02-17,2026-02-17,T1071.001|T1566.003,lumma-stealer;c2;infostealer;google-groups;windows,CTM360,Lumma Stealer C2 domain - 4000+ malicious Google Groups used as distribution vector
+ip,152.42.139.18,Lumma-Stealer-GoogleGroups,malware,critical,high,2026-02-17,2026-02-17,T1071.001,lumma-stealer;c2;infostealer,CTM360,Lumma Stealer C2 IP - BLOCKED
+ip,89.111.170.100,Lumma-Stealer-GoogleGroups,malware,critical,high,2026-02-17,2026-02-17,T1071.001,lumma-stealer;c2;infostealer,CTM360,Lumma Stealer C2 IP - BLOCKED
+cve,CVE-2026-2441,Chrome-UAF-Zero-Day,cve,high,high,2026-02-17,2026-02-17,T1203|T1189,chrome;zero-day;uaf;renderer;no-poc,Google,Chrome 0-day - use-after-free in CSSFontFeatureValuesMap iterator. Fix: Chrome 145.0.7632.75/76 (Win/macOS) 144.0.7559.75 (Linux)
