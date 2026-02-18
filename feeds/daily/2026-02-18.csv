@@ -7,3 +7,7 @@ date,type,indicator,family,campaign,severity,tlp,source
 2026-02-18,domain,iaoqiaonet.com,Formbook,Brazil-PO-Phishing-2026,HIGH,WHITE,Peris.ai Threat Research
 2026-02-18,mutex,6-450OAE02468WZz,Formbook,Brazil-PO-Phishing-2026,HIGH,WHITE,Peris.ai Threat Research
 2026-02-18,mutex,5N0NO7658UY-E89K,Formbook,Brazil-PO-Phishing-2026,HIGH,WHITE,Peris.ai Threat Research
+2026-02-18,cve,CVE-2026-22769,Grimbolt,UNC6201-Dell-RecoverPoint,CRITICAL,WHITE,Peris.ai Threat Research
+2026-02-18,malware-family,Grimbolt,Grimbolt,UNC6201-Dell-RecoverPoint,HIGH,WHITE,Peris.ai Threat Research
+2026-02-18,github-account,SiddhiBagul,SmartLoader,SmartLoader-MCP-Poisoning-2026,HIGH,WHITE,Straiker/Peris.ai Research
+2026-02-18,filename,libandroid_runtime.so,Keenadu,Keenadu-Android-Firmware-Backdoor,HIGH,WHITE,Kaspersky/Peris.ai Research
