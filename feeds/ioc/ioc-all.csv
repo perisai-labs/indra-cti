@@ -1,0 +1,9 @@
+date,type,indicator,family,campaign,severity,tlp,source
+2026-02-18,sha256,892bc644461156b75443af62eb4b44e88b0ad36f9c19dad0bb6064be7a612db7,Formbook,Brazil-PO-Phishing-2026,HIGH,WHITE,Peris.ai Threat Research
+2026-02-18,sha256,e82cd956175c5f40ba26a0f13d06f6ead48b3b9c5623d766ec9dfdd0c26fabfa,Formbook,Brazil-PO-Phishing-2026,HIGH,WHITE,Peris.ai Threat Research
+2026-02-18,filename,rFebOder-PO557_pdf.exe,Formbook,Brazil-PO-Phishing-2026,HIGH,WHITE,Peris.ai Threat Research
+2026-02-18,filename,polygamodioecious,Formbook,Brazil-PO-Phishing-2026,HIGH,WHITE,Peris.ai Threat Research
+2026-02-18,domain,rogsidus.store,Formbook,Brazil-PO-Phishing-2026,HIGH,WHITE,Peris.ai Threat Research
+2026-02-18,domain,iaoqiaonet.com,Formbook,Brazil-PO-Phishing-2026,HIGH,WHITE,Peris.ai Threat Research
+2026-02-18,mutex,6-450OAE02468WZz,Formbook,Brazil-PO-Phishing-2026,HIGH,WHITE,Peris.ai Threat Research
+2026-02-18,mutex,5N0NO7658UY-E89K,Formbook,Brazil-PO-Phishing-2026,HIGH,WHITE,Peris.ai Threat Research
