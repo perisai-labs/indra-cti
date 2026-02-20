@@ -1,9 +1,20 @@
 ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
-filename,v4.msi,Warlock-Storm2603,ransomware,critical,high,2026-02-10,2026-02-11,T1218.007|T1219,warlock;storm-2603;velociraptor;msi,ReliaQuest,Malicious MSI installer deploying Velociraptor for Warlock ransomware
-filename,NSecKrnl.sys,Reynolds-Ransomware,ransomware,high,high,2026-02-10,2026-02-10,T1211|T1562.001,reynolds;byovd;edr-killer,TheHackerNews,Vulnerable BYOVD driver used by Reynolds ransomware to kill EDR
-domain,gotohttp.com,Reynolds-Ransomware,ransomware,high,high,2026-02-10,2026-02-10,T1219,reynolds;remote-access;persistence,TheHackerNews,GotoHTTP remote access tool used for post-encryption persistence
-tool,Velociraptor,Warlock-Storm2603,ransomware,critical,high,2026-01-29,2026-02-11,T1219|T1036,warlock;c2-abuse;dfir-tool-weaponized,ReliaQuest/Huntress,Legitimate DFIR tool weaponized as C2 by Storm-2603 and SolarWinds WHD attackers
-tool,SimpleHelp,Warlock-Storm2603,ransomware,high,high,2026-02-10,2026-02-11,T1219,warlock;remote-access,ReliaQuest,Remote access tool used by Storm-2603 for persistence
-tool,GotoHTTP,Reynolds-Ransomware,ransomware,high,high,2026-02-10,2026-02-10,T1133|T1219,reynolds;remote-access;post-encryption,TheHackerNews,Remote access tool for post-encryption persistence
-filename,vhost.exe,Crazy Ransomware,ransomware,high,high,2026-02-11,2026-02-12,"T1219,T1036.005",simplehelp;rmm-abuse,Huntress,SimpleHelp payload disguised as VS host - Crazy ransomware persistence
-file-path,C:\ProgramData\OneDriveSvc\OneDriveSvc.exe,Crazy Ransomware,ransomware,high,high,2026-02-11,2026-02-12,"T1219,T1036.005",simplehelp;rmm-abuse,Huntress,SimpleHelp payload disguised as OneDrive service - Crazy ransomware
+hash-sha256,1ab4672076f63692e67555ebea72d9d7593928012ea7277776057e354d70364d,AsyncRAT,malware,high,high,2026-02-10,2026-02-10,T1547.001|T1573.001|T1497.001|T1622|T1102,asyncrat;vietnam;rat;dotnet,MalwareBazaar,AsyncRAT .NET RAT from Vietnam - open-source AsyncRAT-C# project
+hash-md5,6782b6d750b717ea2c048b8ee00ece17,AsyncRAT,malware,high,high,2026-02-10,2026-02-10,T1547.001|T1573.001,asyncrat;vietnam;rat,MalwareBazaar,AsyncRAT Vietnam sample MD5
+hash-sha256,a9b670ff357cbb942a795c8524999072cd9466486b9c28b5b0d809b01547293b,AgentTesla-SteganoLoader,malware,high,high,2026-02-11,2026-02-11,T1027.003|T1620|T1140|T1113|T1056.001,agenttesla;steganography;infostealer,MalwareBazaar,AgentTesla with steganography loader - hides payload in bitmap pixel data
+hash-md5,155dfdc4eb24f4e4622168fc015a93db,AgentTesla-SteganoLoader,malware,high,high,2026-02-11,2026-02-11,T1027.003|T1620,agenttesla;steganography,MalwareBazaar,AgentTesla steganography loader MD5
+hash-sha1,9ba90e762751aff73ce894bc278e3053d9a31c0c,AgentTesla-SteganoLoader,malware,high,high,2026-02-11,2026-02-11,T1027.003|T1620,agenttesla;steganography,MalwareBazaar,AgentTesla steganography loader SHA1
+cve,CVE-2026-24423,Warlock-Storm2603,cve,critical,high,2026-02-05,2026-02-11,T1190,smartermail;rce;cisa-kev,CISA/ReliaQuest,SmarterMail ConnectToHub API unauthenticated RCE - CISA KEV
+cve,CVE-2026-23760,Warlock-Storm2603,cve,critical,high,2026-02-05,2026-02-11,T1190,smartermail;auth-bypass;cisa-kev,CISA/ReliaQuest,SmarterMail authentication bypass - admin password reset
+cve,CVE-2025-40551,SolarWinds-WHD-RCE,cve,critical,high,2026-02-03,2026-02-09,T1190,solarwinds;deserialization;rce;cisa-kev,CISA/Huntress,SolarWinds WHD deserialization RCE - actively exploited
+cve,CVE-2025-26399,SolarWinds-WHD-RCE,cve,critical,high,2026-02-03,2026-02-09,T1190,solarwinds;rce;cisa-kev,CISA/Huntress,SolarWinds WHD critical RCE - actively exploited
+cve,CVE-2026-1731,BeyondTrust-RS-PRA,cve,critical,high,2026-02-09,2026-02-09,T1190|T1059,beyondtrust;pre-auth;rce;command-injection,BeyondTrust,BeyondTrust RS/PRA pre-auth OS command injection
+cve,CVE-2026-21510,Microsoft-PatchTuesday-Feb2026,cve,high,high,2026-02-11,2026-02-11,T1553.005|T1566.002,windows;zero-day;motw-bypass;cisa-kev,Microsoft,Windows Shell MotW bypass - actively exploited zero-day
+cve,CVE-2026-21513,Microsoft-PatchTuesday-Feb2026,cve,high,high,2026-02-11,2026-02-11,T1553.005|T1218,mshtml;zero-day;security-bypass,Microsoft,MSHTML security feature bypass - actively exploited
+cve,CVE-2026-21514,Microsoft-PatchTuesday-Feb2026,cve,high,high,2026-02-11,2026-02-11,T1566.001|T1553.005,word;ole;zero-day;security-bypass,Microsoft,Microsoft Word OLE mitigation bypass - actively exploited
+cve,CVE-2026-21519,Microsoft-PatchTuesday-Feb2026,cve,critical,high,2026-02-11,2026-02-11,T1068,dwm;zero-day;privilege-escalation;system,Microsoft,Desktop Window Manager EoP to SYSTEM - actively exploited
+cve,CVE-2026-21525,Microsoft-PatchTuesday-Feb2026,cve,medium,high,2026-02-11,2026-02-11,T1499,windows;zero-day;dos,Microsoft,Remote Access Connection Manager DoS - actively exploited
+cve,CVE-2026-21533,Microsoft-PatchTuesday-Feb2026,cve,high,high,2026-02-11,2026-02-11,T1068,rdp;zero-day;privilege-escalation,Microsoft,Remote Desktop Services EoP - actively exploited
+cve,CVE-2026-21643,Fortinet-FortiClientEMS,cve,critical,high,2026-02-10,2026-02-10,T1190|T1059,fortinet;sqli;pre-auth;rce,FortiGuard,FortiClientEMS SQL injection - unauthenticated RCE (CVSS 9.1)
+cve,CVE-2026-24858,Fortinet-FortiCloud-SSO,cve,critical,high,2026-02-10,2026-02-10,T1190|T1136.001,fortinet;auth-bypass;actively-exploited,FortiGuard,FortiOS/FortiManager FortiCloud SSO auth bypass - actively exploited
+cve,CVE-2025-52691,Warlock-Storm2603,cve,critical,high,2026-01-29,2026-02-11,T1190,smartermail;critical,SmarterTools,SmarterMail critical vulnerability (earlier CVE in chain)
