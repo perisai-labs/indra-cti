@@ -1,0 +1,4 @@
+date,indicator,type,category,threat,description,severity
+2026-02-20,f0c5a5dc4ab51d8f3988e778996419acdfd7aa66139d10fb17606efb7c284cc2,sha256,malware,XWorm RAT Feb 2026,.NET RAT with HVNC keylogger process injection,critical
+2026-02-20,b4aba14905490385e94de86aafabb2e0,md5,malware,XWorm RAT Feb 2026,.NET RAT with HVNC keylogger process injection,critical
+2026-02-20,6f20243b33962da0b4ba46ecfebafa2cca864b09,sha1,malware,XWorm RAT Feb 2026,.NET RAT with HVNC keylogger process injection,critical
