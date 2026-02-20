@@ -235,30 +235,6 @@ rule Stealc_Infostealer_Dropper {
 }
 ```
 
-### Brahma XDR Rules
-
-**Rule highlights:**
-- **90001:** Stealc dropper execution (filename + size match)
-- **90002:** Self-extracting archive with wextract signature (imphash)
-- **90003:** Dropped file creation (Batteries, Bigger, Ssl)
-- **90004:** Browser credential access
-- **90005:** HTTP POST exfiltration
-- **90006:** Registry persistence
-- **90010:** Full kill chain correlation
-
-**Full ruleset:** [xdr-rules.xml](xdr-rules.xml)
-
-### Brahma NDR Rules
-
-**Rule highlights (Suricata format):**
-- **9000001:** HTTP POST exfiltration with multipart/form-data
-- **9000002:** C2 beacon communication
-- **9000007:** Browser credential exfiltration
-- **9000008:** Cryptocurrency wallet theft
-- **9000009:** FL Studio trojanized installer download
-
-**Full ruleset:** [ndr-rules.rules](ndr-rules.rules)
-
 ### Recommended Mitigations
 
 1. **Email Security:**
@@ -271,7 +247,7 @@ rule Stealc_Infostealer_Dropper {
    - Enable script blocking (PowerShell execution policy)
 
 3. **Network Security:**
-   - Deploy Brahma NDR rules to IDS/IPS
+   - Deploy network detection rules to IDS/IPS
    - Monitor for large HTTP POST requests
    - Block access to known Stealc C2 infrastructure
 

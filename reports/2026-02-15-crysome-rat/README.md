@@ -203,9 +203,7 @@ MITRE: T1204.002
 ### Network Detection (Suricata/Snort)
 
 ```
-alert tcp any any -> any any (msg:"MALWARE Crysome RAT Download URL"; flow:established,to_server; content:"GET"; http_method; content:"/files/7719759462/Yd6HwRw.exe"; http_uri; classtype:trojan-activity; sid:5000001; rev:1;)
 
-alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"MALWARE Crysome RAT C2 Communication"; flow:established,to_server; content:"|00 00 00|"; depth:3; content:"Crysome"; distance:0; within:50; classtype:trojan-activity; sid:5000002; rev:1;)
 ```
 
 ---
@@ -243,6 +241,6 @@ alert tcp $HOME_NET any -> $EXTERNAL_NET any (msg:"MALWARE Crysome RAT C2 Commun
 
 **About Peris.ai Threat Research Team**
 
-The Peris.ai Threat Research Team provides continuous threat intelligence and malware analysis to protect organizations from emerging cyber threats. Our research powers Brahma XDR, Brahma NDR, and Indra Threat Intelligence platforms.
+The Peris.ai Threat Research Team provides continuous threat intelligence and malware analysis to protect organizations from emerging cyber threats. Our research powers the Indra Threat Intelligence platform.
 
 For more threat intelligence, visit: https://peris.ai

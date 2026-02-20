@@ -268,25 +268,6 @@ rule Ransomware_0APT_Feb2026 {
 
 ## Detection & Response
 
-### Brahma XDR Rules
-6 detection rules covering:
-- File encryption activity (`.0apt` extension)
-- Ransom note creation (`README0apt.txt`)
-- Mass file modification (50+ files in 60 seconds)
-- Tor C2 connections
-- Desktop wallpaper modification
-
-### Brahma NDR Rules (Suricata)
-4 network signatures for:
-- DNS queries to `.onion` domains
-- HTTP traffic to torproject.org
-- SMB file renames with `.0apt` extension
-- HTTP POST with victim ID pattern
-
-**Full detection rules:** See `detection-rules.md`
-
----
-
 ## Recommendations
 
 ### Prevention
@@ -296,7 +277,7 @@ rule Ransomware_0APT_Feb2026 {
 4. **Email Filtering** — Block `.exe` attachments and suspicious archives
 
 ### Detection
-1. **Deploy XDR/NDR Rules** — Implement Brahma XDR and NDR signatures
+1. **Deploy XDR/NDR Rules** — Implement endpoint and network detection signatures
 2. **Monitor File Activity** — Alert on mass file rename operations
 3. **Registry Monitoring** — Track changes to `Control Panel\Desktop\Wallpaper`
 4. **Network Monitoring** — Flag DNS queries for `.onion` domains
