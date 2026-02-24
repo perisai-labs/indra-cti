@@ -1,0 +1,9 @@
+indicator,type,threat_type,source,description,first_seen,confidence
+ujitiperb-dehub-go.id,domain,phishing,phishing-campaign,Fake Ministry of Transportation (Kemenhub) SRUT portal,2026-01-12,high
+88.223.91.190,ipv4,phishing,phishing-campaign,Phishing site infrastructure (Hostinger ID),2026-02-24,high
+185.124.137.191,ipv4,phishing,phishing-campaign,Phishing site infrastructure (Hostinger ID),2026-02-24,high
+91.108.119.14,ipv4,phishing,phishing-campaign,Phishing site infrastructure historical (Hostinger ID),2026-02-24,medium
+185.124.137.32,ipv4,phishing,phishing-campaign,Phishing site infrastructure historical (Hostinger ID),2026-02-24,medium
+https://ujitiperb-dehub-go.id/login,url,phishing,phishing-campaign,Credential harvesting endpoint,2026-02-24,high
+2a02:4780:1c:90a:4b1e:acab:821e:a117,ipv6,phishing,phishing-campaign,Phishing site infrastructure IPv6 (Hostinger ID),2026-02-24,medium
+2a02:4780:3b:1252:433a:52b6:9357:aad,ipv6,phishing,phishing-campaign,Phishing site infrastructure IPv6 (Hostinger ID),2026-02-24,medium
