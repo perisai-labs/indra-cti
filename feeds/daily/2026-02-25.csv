@@ -1,8 +1,1 @@
-date,type,value,malware_family,severity,source,note
-2026-02-25,sha256,8e75dc34d4e08c4f03db2fa125a1ecc90ad445e9a222d0ca191ba03827d823f9,RedLine|Stealc,critical,MalwareBazaar,Amadey botnet payload
-2026-02-25,md5,b397b9309a04ea958aa087b7f8538551,RedLine|Stealc,critical,MalwareBazaar,
-2026-02-25,sha1,b0f83cc969145324cd494ac7bac112407fe60ac9,RedLine|Stealc,critical,MalwareBazaar,
-2026-02-25,imphash,59f37c13d2cae7cc547b602d07aa7033,RedLine|Stealc,high,Analysis,
-2026-02-25,ip,62.60.226.159,Amadey,critical,URLhaus,Malware hosting
-2026-02-25,ip,196.251.107.104,RedLine,critical,Triage,C2 panel port 1912
-2026-02-25,url,http://62.60.226.159/s.exe,RedLine|Stealc,critical,URLhaus,Payload download
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
