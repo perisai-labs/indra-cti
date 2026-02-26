@@ -1,1 +1,1 @@
-38074efa0a6d9816d9eb8b922922006dbddfe1b24f68ba5adadc989ad7d02342,SalatStealer,malware,2026-02-26
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
