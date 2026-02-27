@@ -1,8 +1,1 @@
-date,indicator,type,family,category,severity,description
-2026-02-27,a558b4ba7d4b18cea0f69daaa0cd432454fd18b8f467502e3493f1e407460d21,sha256,NetSupport RAT,malware,critical,PyInstaller-packaged NetSupport Manager RAT
-2026-02-27,1efe6b617b20f1cebe4c471d099ea3f1986ee218,sha1,NetSupport RAT,malware,critical,PyInstaller-packaged NetSupport Manager RAT
-2026-02-27,5ccd38b39a45ab1242129fe7f6bed6ac,md5,NetSupport RAT,malware,critical,PyInstaller-packaged NetSupport Manager RAT
-2026-02-27,bFiles\Client32.ini,file,NetSupport RAT,artifact,high,NetSupport configuration file
-2026-02-27,bFiles\NSM.LIC,file,NetSupport RAT,artifact,high,NetSupport license file
-2026-02-27,bFiles\PCICL32.DLL,file,NetSupport RAT,artifact,high,NetSupport client DLL
-2026-02-27,5405,port,NetSupport RAT,network,medium,Default NetSupport port
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
