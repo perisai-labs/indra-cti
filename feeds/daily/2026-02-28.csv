@@ -1,0 +1,7 @@
+date,indicator,type,description,severity,category
+2026-02-28,84f77ade3d79ef5872557dd8d9c1c720b58d1d924785ab34f9fee896ea06a995,sha256,RLoader VMProtect Trojan (Wacatac),high,malware
+2026-02-28,8739de86cd836ae1476705562c069cc0,imphash,RLoader VMProtect Trojan (Wacatac),high,malware
+2026-02-28,162.159.36.2,ip,RLoader C2 (Cloudflare CDN),medium,c2
+2026-02-28,RLoader.exe,filename,RLoader VMProtect Trojan,medium,malware
+2026-02-28,sdkdrv8878.exe,filename,RLoader VMProtect Trojan,medium,malware
+2026-02-28,orw82st.exe,filename,RLoader VMProtect Trojan,medium,malware

@@ -69,3 +69,9 @@ chrome-extension-id,djhjckkfgancelbmgcamjimgphaphjdl,AiFrame Chrome Extension Ca
 chrome-extension-id,fdlagfnfaheppaigholhoojabfaapnhb,AiFrame Chrome Extension Campaign,malware,high,high,2026-02-12,2026-02-12,"T1195.002,T1204.001",chrome-extension;ai-lure,LayerX Security,Google Gemini - malicious extension (10K users)
 filename,vhost.exe,Crazy Ransomware,ransomware,high,high,2026-02-11,2026-02-12,"T1219,T1036.005",simplehelp;rmm-abuse,Huntress,SimpleHelp payload disguised as VS host - Crazy ransomware persistence
 file-path,C:\ProgramData\OneDriveSvc\OneDriveSvc.exe,Crazy Ransomware,ransomware,high,high,2026-02-11,2026-02-12,"T1219,T1036.005",simplehelp;rmm-abuse,Huntress,SimpleHelp payload disguised as OneDrive service - Crazy ransomware
+2026-02-28,84f77ade3d79ef5872557dd8d9c1c720b58d1d924785ab34f9fee896ea06a995,sha256,RLoader VMProtect Trojan (Wacatac),high,malware
+2026-02-28,8739de86cd836ae1476705562c069cc0,imphash,RLoader VMProtect Trojan (Wacatac),high,malware
+2026-02-28,162.159.36.2,ip,RLoader C2 (Cloudflare CDN),medium,c2
+2026-02-28,RLoader.exe,filename,RLoader VMProtect Trojan,medium,malware
+2026-02-28,sdkdrv8878.exe,filename,RLoader VMProtect Trojan,medium,malware
+2026-02-28,orw82st.exe,filename,RLoader VMProtect Trojan,medium,malware
