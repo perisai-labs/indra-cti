@@ -1,2 +1,1 @@
-date,sha256,md5,sha1,family,filename,origin
-2026-03-01,3ff05f14a134b5bc60770b15cd326719052f1c4f42bf3d6aa7bfa47116a97877,6ed909bf08d75276f27eb9b39a1bc2bb,6072cf2500b28bc404bd5fea2f3e43cb56a8f322,PulsarRAT,Client.exe,Chile
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
