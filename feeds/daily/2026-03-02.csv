@@ -1,0 +1,3 @@
+130.12.180.151,ipv4,mirai-arm-adb,c2,high
+http://130.12.180.151/file/adb-shell.sh,url,mirai-arm-adb,payload,high
+336687311750c9c8ec9483b664289c61a2869bbe68696c217e56f077a342551b,sha256,mirai-arm-adb,sample,high
