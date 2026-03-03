@@ -1,0 +1,4 @@
+type,value,malware_family,severity,first_seen,reference
+sha256,e8ff2c7daf775a23680e2caba0dccb8d71a280c54dfaeae9b3d2a1318dc1bf92,Vidar,high,2026-03-03,https://bazaar.abuse.ch/sample/e8ff2c7daf775a23680e2caba0dccb8d71a280c54dfaeae9b3d2a1318dc1bf92/
+md5,5b020055fb7c2ac398768cfba07a5b9b,Vidar,high,2026-03-03,MalwareBazaar
+sha1,f373297038e035a953187a127126f351b831b7f5,Vidar,high,2026-03-03,MalwareBazaar
