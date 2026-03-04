@@ -1,6 +1,1 @@
-date,ioc_type,ioc_value,hash_type,description,severity,category
-2026-03-04,file_hash,8d51b594c3f05f8e19d1fb07b0f7c6be20cbc12f63fb1bf462fe9b7a2cdccaa6,SHA256,AsyncRAT March 2026 variant,HIGH,malware
-2026-03-04,file_hash,c2f137108af41d3f33a2fb1177f93244,MD5,AsyncRAT March 2026 variant,HIGH,malware
-2026-03-04,file_hash,2b9ea9a1a97c3758581f66429c80f1105438ccd7,SHA1,AsyncRAT March 2026 variant,HIGH,malware
-2026-03-04,file_pattern,AsyncRAT.exe,filename,AsyncRAT executable filename,HIGH,malware
-2026-03-04,file_pattern,*\AsyncRAT*.pdb,pdb_path,AsyncRAT debug path pattern,HIGH,malware
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
