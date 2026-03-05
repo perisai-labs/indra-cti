@@ -1,6 +1,1 @@
-2026-03-05,16594fcc90351cb2e73b7381e9627806c79a376e11dfc9dffd9e1024cbd41bf0,sha256,Polar Mirai/CondiBot,malware,high
-2026-03-05,78b47f734fa6fedbacd7b170e5e689f2,md5,Polar Mirai/CondiBot,malware,high
-2026-03-05,a384d3ff5f5076d36354544fa41372b9441b4f86,sha1,Polar Mirai/CondiBot,malware,high
-2026-03-05,/var/condibot,filepath,Polar Mirai/CondiBot,malware,high
-2026-03-05,/var/CondiBot,filepath,Polar Mirai/CondiBot,malware,high
-2026-03-05,239.255.255.250:1900,network,Polar Mirai SSDP Amplification,malware,high
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
