@@ -1,0 +1,4 @@
+date,family,indicator,type,description,severity,reference
+2026-03-06,Mirai,r34fa352.duckdns.org,domain,C2 domain for Mirai botnet variant,high,7b9ba082df5fd5dbcba73175f3bba57ddccef25fce1512c0708367bbd0fb3859
+2026-03-06,Mirai,176.65.139.42,ipv4,C2 IP address for Mirai botnet variant,high,7b9ba082df5fd5dbcba73175f3bba57ddccef25fce1512c0708367bbd0fb3859
+2026-03-06,Mirai,7b9ba082df5fd5dbcba73175f3bba57ddccef25fce1512c0708367bbd0fb3859,sha256,Mirai botnet MIPS32 ELF sample,critical,malware
