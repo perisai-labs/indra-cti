@@ -1,0 +1,5 @@
+indicator,type,category,malware_family,tags,date,severity,description
+b0635a6f452c4ccb33d6672d623c5ca29da63dda5f8fa6f85b595fa0f3d0cc87,file_hash,sha256,mirai,botnet,2026-03-07,high,MIPS IoT botnet DDoS malware
+481b05d81bf0db2fc0ab99de260b1caa,file_hash,md5,mirai,botnet,2026-03-07,high,MIPS IoT botnet DDoS malware
+50e45224afcd106b8db290f7c768e7ddc0df5568,file_hash,sha1,mirai,botnet,2026-03-07,high,MIPS IoT botnet DDoS malware
+8.8.8.8,ip,c2,mirai,botnet,2026-03-07,medium,C2 beacon (Google DNS abuse)
