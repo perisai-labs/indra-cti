@@ -1,8 +1,1 @@
-date,type,value,family,severity,source,description
-2026-03-10,sha256,74eb23de1b2fdc7862447dddaadaa82fd5b43659b3c41205a40ea194dff373a9,Akira,high,Peris.ai,Weaponized Cloudflared C2 tool (Oracle.exe)
-2026-03-10,sha1,8c7b5a3e82791123b9810b065244ad1f95a3fc6c,Akira,high,Peris.ai,Weaponized Cloudflared C2 tool
-2026-03-10,md5,b2ee0b89ef1e8d83445e34b54c60eb58,Akira,high,Peris.ai,Weaponized Cloudflared C2 tool
-2026-03-10,domain,*.trycloudflare.com,Akira,medium,Peris.ai,Cloudflare tunnel C2 infrastructure (wildcard)
-2026-03-10,domain,cftunnel.com,Akira,medium,Peris.ai,Cloudflare tunnel C2 infrastructure
-2026-03-10,port,7844/udp,Akira,low,Peris.ai,Default QUIC tunnel port
-2026-03-10,filename,Oracle.exe,Akira,medium,Peris.ai,Deceptive filename for cloudflared
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
