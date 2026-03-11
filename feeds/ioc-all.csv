@@ -69,3 +69,8 @@ chrome-extension-id,djhjckkfgancelbmgcamjimgphaphjdl,AiFrame Chrome Extension Ca
 chrome-extension-id,fdlagfnfaheppaigholhoojabfaapnhb,AiFrame Chrome Extension Campaign,malware,high,high,2026-02-12,2026-02-12,"T1195.002,T1204.001",chrome-extension;ai-lure,LayerX Security,Google Gemini - malicious extension (10K users)
 filename,vhost.exe,Crazy Ransomware,ransomware,high,high,2026-02-11,2026-02-12,"T1219,T1036.005",simplehelp;rmm-abuse,Huntress,SimpleHelp payload disguised as VS host - Crazy ransomware persistence
 file-path,C:\ProgramData\OneDriveSvc\OneDriveSvc.exe,Crazy Ransomware,ransomware,high,high,2026-02-11,2026-02-12,"T1219,T1036.005",simplehelp;rmm-abuse,Huntress,SimpleHelp payload disguised as OneDrive service - Crazy ransomware
+367169f5607fa2bfab512fbd7f1c7093f7c52982e6d1447fc749a8357bc15642,sha256,malware,Bitter APT ZxxZ Downloader,2026-03-11,high
+d4e2e2c9dd1104f1da68caca0ac1fa949c762038,sha1,malware,Bitter APT ZxxZ Downloader,2026-03-11,high
+e15c5eaf6ec6a98f208a8ab3679ee92e,md5,malware,Bitter APT ZxxZ Downloader,2026-03-11,high
+1558a68fff2ed1b2060c0c344b24acf0,imphash,malware,Bitter APT ZxxZ Downloader,2026-03-11,high
+81df7102540b8d871efbf8a77830f5d12ae3fc5652fb450f979ca227cda013cb,sha256,malware,Bitter APT ZxxZ Downloader (UPX-packed parent),2026-03-11,high

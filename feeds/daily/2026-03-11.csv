@@ -1,0 +1,7 @@
+type,value,context,threat,severity,source
+sha256,367169f5607fa2bfab512fbd7f1c7093f7c52982e6d1447fc749a8357bc15642,malware,Bitter APT ZxxZ Downloader,high,MalwareBazaar
+sha1,d4e2e2c9dd1104f1da68caca0ac1fa949c762038,malware,Bitter APT ZxxZ Downloader,high,MalwareBazaar
+md5,e15c5eaf6ec6a98f208a8ab3679ee92e,malware,Bitter APT ZxxZ Downloader,high,MalwareBazaar
+imphash,1558a68fff2ed1b2060c0c344b24acf0,malware,Bitter APT ZxxZ Downloader,high,Static Analysis
+sha256,81df7102540b8d871efbf8a77830f5d12ae3fc5652fb450f979ca227cda013cb,malware,Bitter APT ZxxZ Downloader (Dropper),high,MalwareBazaar
+registry_key,HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run,persistence,Bitter APT ZxxZ Downloader,medium,Dynamic Analysis
