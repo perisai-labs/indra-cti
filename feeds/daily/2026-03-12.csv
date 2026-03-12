@@ -1,2 +1,1 @@
-date,type,value,malware_family,severity,reference
-2026-03-12,sha256,3ff05f14a134b5bc60770b15cd326719052f1c4f42bf3d6aa7bfa47116a97877,Pulsar RAT,high,reports/2026-03-12-pulsar-rat.md
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
