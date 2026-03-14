@@ -1,0 +1,4 @@
+indicator,type,malware_family,severity,date,description
+0bc2a9d8c2aa8639da0aa5389c773f368dcf1cefbc66996c2736532afec08c04,sha256,stage5-final-payload,high,2026-03-14,Multi-stage loader/injector with anti-debugging and code injection
+ec7641e10208558fc17ba4d6d990f94e,md5,stage5-final-payload,high,2026-03-14,Multi-stage loader/injector with anti-debugging and code injection
+2038c537e9c5045844ea5ae4c7e9513937f882e6,sha1,stage5-final-payload,high,2026-03-14,Multi-stage loader/injector with anti-debugging and code injection
