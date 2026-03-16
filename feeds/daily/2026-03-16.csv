@@ -1,9 +1,1 @@
-date,indicator,type,threat,description,severity,mitre_attack
-2026-03-16,204108aa3133bc549454fccbc2aa081b0e1f4d5964ad3a6d5c32a7c25c255af3,sha256,ACRStealer,Credential Stealer DLL,high,T1555
-2026-03-16,dce9d84c5992876b3ee4c4a6bd0520b2c4ada79f,sha1,ACRStealer,Credential Stealer DLL,high,T1555
-2026-03-16,22aef6813b51489b1161e18c30cb8930,md5,ACRStealer,Credential Stealer DLL,high,T1555
-2026-03-16,syssecond2.dll,filename,ACRStealer,Malicious DLL filename,high,T1204
-2026-03-16,DbgUnregisterPipelineData,export_name,ACRStealer,Fake Windows API export,medium,T1027
-2026-03-16,EtwResetComponentA_4,export_name,ACRStealer,Fake Windows API export,medium,T1027
-2026-03-16,FltAcquireProvider,export_name,ACRStealer,Fake Windows API export,medium,T1027
-2026-03-16,ZwDeleteProxyW,export_name,ACRStealer,Fake Windows API export,medium,T1027
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
