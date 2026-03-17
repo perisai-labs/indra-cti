@@ -1,6 +1,1 @@
-2026-03-17,a61cfdb1585ebd47d4046b62ed7ad8a756234f54b24ee0755385c39fb12dbd40,SHA256,Linux CoinMiner dconf-backup masquerading,HIGH,MalwareBazaar
-2026-03-17,github.com/catherine935/dbus/raw/refs/heads/main/dbus-helper,URL,CoinMiner C2 download,HIGH,Static Analysis
-2026-03-17,api.telegram.org/bot,URL,Telegram Bot API exfiltration,MEDIUM,Static Analysis
-2026-03-17,api.ipify.org,URL,IP reconnaissance,LOW,Static Analysis
-2026-03-17,/usr/local/bin/dconf-backup,FilePath,Malicious binary location,HIGH,Static Analysis
-2026-03-17,dbus-helper.service,String,Malicious systemd service,HIGH,Static Analysis
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
