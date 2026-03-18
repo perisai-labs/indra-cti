@@ -1,1 +1,2 @@
 ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+hash-sha256,b08da7db6d928857eed0a404b54a8b74e876c3d75378fb001b3ce50bb47ac138,RustyStealer,malware,high,high,2026-03-18,2026-03-18,T1497.001|T1082|T1057|T1012|T1005|T1041|T1022,rustystealer;infostealer;rust;vm-evasion;aes-encryption,MalwareBazaar,Rust-compiled infostealer with VM/sandbox detection and AES encryption
