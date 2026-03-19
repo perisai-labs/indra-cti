@@ -3470,3 +3470,4 @@ domain,api.ipify.org,CoinMiner-dconf-backup,malware,low,high,2026-03-17,2026-03-
 filename,dconf-backup,CoinMiner-dconf-backup,malware,high,high,2026-03-17,2026-03-17,T1036.005,coinminer;masquerading;linux,Analysis,Fake dconf-backup binary name
 filename,dbus-helper.service,CoinMiner-dconf-backup,malware,high,high,2026-03-17,2026-03-17,T1543.002,coinminer;persistence;systemd,Analysis,Malicious systemd service for persistence
 hash-sha256,b08da7db6d928857eed0a404b54a8b74e876c3d75378fb001b3ce50bb47ac138,RustyStealer,malware,high,high,2026-03-18,2026-03-18,T1497.001|T1082|T1057|T1012|T1005|T1041|T1022,rustystealer;infostealer;rust;vm-evasion;aes-encryption,MalwareBazaar,Rust-compiled infostealer with VM/sandbox detection and AES encryption
+2025-03-19,88.214.20.14,ipv4,Mirai IoT Botnet C2,critical,6050b4c3def76eddfe712c0333f181c499848a187580bb845b1c4a0dca93ee30
