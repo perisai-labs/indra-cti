@@ -1439,11 +1439,11 @@ file-path,/usr/sbin/tftp,Mirai TitanJr ARC Variant — Feb 2026,unknown,medium,m
 **First Seen:** 2026-02-22  
 **Detection Rate:** 12/76 (15.8%)  
 **Severity:** HIGH"
-**Variant Name:** TitanJr  
-**Architecture:** ARCompact ARC700 (32-bit)  
-**First Seen:** 2026-02-22  
-**Detection Rate:** 12/76 (15.8%)  
-**Severity:** HIGH"
+**Variant Name:** TitanJr  ,,,,,,,,,,,
+**Architecture:** ARCompact ARC700 (32-bit)  ,,,,,,,,,,,
+**First Seen:** 2026-02-22  ,,,,,,,,,,,
+**Detection Rate:** 12/76 (15.8%)  ,,,,,,,,,,,
+"**Severity:** HIGH""",,,,,,,,,,,
 file-path,/usr/bin/.sh`,Mirai TitanJr ARC Variant — Feb 2026,unknown,medium,medium,2026-03-13,2026-03-13,T1046|T1057|T1059.004|T1071.001|T1110.001|T1486|T1498.001|T1543.002,[malware-analysis;arc-architecture];botnet;iot;mirai;mirai-titanjr-arc-variant-—-feb-2026,mirai-titanjr-arc-feb2026,"**Malware Family:** Mirai  
 **Variant Name:** TitanJr  
 **Architecture:** ARCompact ARC700 (32-bit)  
@@ -3460,3 +3460,5 @@ filename,policy_draft_2025.zip,Amaranth-Dragon - Southeast Asia Government & Law
 registry-key,HKCU\Software\Microsoft\Windows\CurrentVersion\Run</registry_path>,Amaranth-Dragon - Southeast Asia Government & Law Enforcement Espionage Campaign,apt,medium,medium,2026-03-13,2026-03-13,T1005|T1041|T1053|T1071.001|T1082|T1102|T1113|T1135|T1190|T1204.002|T1497|T1547.001|T1555|T1566.001|T1574.002|T1588.005|T1591.003,amaranth-dragon---southeast-asia-government-&-law-enforcement-espionage-campaign,Amaranth-Dragon-Southeast-Asia-Espionage,
 file-path,C:\ProgramData\Microsoft\Windows\Tasks\update.exe,Amaranth-Dragon - Southeast Asia Government & Law Enforcement Espionage Campaign,apt,medium,medium,2026-03-13,2026-03-13,T1005|T1041|T1053|T1071.001|T1082|T1102|T1113|T1135|T1190|T1204.002|T1497|T1547.001|T1555|T1566.001|T1574.002|T1588.005|T1591.003,amaranth-dragon---southeast-asia-government-&-law-enforcement-espionage-campaign,Amaranth-Dragon-Southeast-Asia-Espionage,
 cve,cve-2026-25108,Skills Index,unknown,medium,medium,2026-03-13,2026-03-13,T1195.001|T1588.001,skills-index,INDEX,
+hash-sha256,6050b4c3def76eddfe712c0333f181c499848a187580bb845b1c4a0dca93ee30,Mirai-IoT-Botnet,malware,critical,high,2026-03-19,2026-03-19,T1059.004|T1071.001|T1082|T1190|T1498.001,mirai;iot;botnet;ddos;linux,MalwareBazaar,Mirai IoT botnet variant - ARM 32-bit ELF
+ipv4,88.214.20.14,Mirai-IoT-Botnet,malware,critical,high,2026-03-19,2026-03-19,T1071.001,mirai;iot;botnet;ddos;linux;c2,Analysis,Mirai botnet C2 server

@@ -1,1 +1,3 @@
 ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+hash-sha256,6050b4c3def76eddfe712c0333f181c499848a187580bb845b1c4a0dca93ee30,Mirai-IoT-Botnet,malware,critical,high,2026-03-19,2026-03-19,T1059.004|T1071.001|T1082|T1190|T1498.001,mirai;iot;botnet;ddos;linux,MalwareBazaar,Mirai IoT botnet variant - ARM 32-bit ELF
+ipv4,88.214.20.14,Mirai-IoT-Botnet,malware,critical,high,2026-03-19,2026-03-19,T1071.001,mirai;iot;botnet;ddos;linux;c2,Analysis,Mirai botnet C2 server
