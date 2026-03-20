@@ -3462,3 +3462,4 @@ file-path,C:\ProgramData\Microsoft\Windows\Tasks\update.exe,Amaranth-Dragon - So
 cve,cve-2026-25108,Skills Index,unknown,medium,medium,2026-03-13,2026-03-13,T1195.001|T1588.001,skills-index,INDEX,
 hash-sha256,6050b4c3def76eddfe712c0333f181c499848a187580bb845b1c4a0dca93ee30,Mirai-IoT-Botnet,malware,critical,high,2026-03-19,2026-03-19,T1059.004|T1071.001|T1082|T1190|T1498.001,mirai;iot;botnet;ddos;linux,MalwareBazaar,Mirai IoT botnet variant - ARM 32-bit ELF
 ipv4,88.214.20.14,Mirai-IoT-Botnet,malware,critical,high,2026-03-19,2026-03-19,T1071.001,mirai;iot;botnet;ddos;linux;c2,Analysis,Mirai botnet C2 server
+2025-03-20,ab5a5aa399949370a99cfc953d9e93a11c7a5c16623f9ce3b94da126e3c9bd49,sha256,OffLoader Dropper,high,malware
