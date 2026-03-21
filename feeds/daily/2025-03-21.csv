@@ -1,0 +1,4 @@
+# Peris.ai Threat Intelligence Feed - 2025-03-21
+# Category: Offensive Tools
+indicator,type,name,category,date,severity,description
+93a2fe494017319e1b6ecd78a28db3d349f762e71e59a1a81bae5aea361f358b,sha256,winPEAS.exe,offensive-tool,2025-03-21,high,Windows privilege escalation enumeration tool frequently used during post-exploitation
