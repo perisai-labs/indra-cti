@@ -1,0 +1,7 @@
+type,indicator,malware_family,threat_actor,severity,first_seen,source,context
+sha256,1e3d5fe030122186af6224340deb2440165cf36a932b59ef03d8fc2ca57495b3,RemcosRAT,,high,2026-03-22,MalwareBazaar,Commercial RAT with UAC bypass and surveillance
+domain,geoplugin.net,RemcosRAT,,medium,2026-03-22,Static Analysis,Geolocation beacon service
+url,http://geoplugin.net/json.gp,RemcosRAT,,medium,2026-03-22,Static Analysis,IP geolocation API endpoint
+filename,rmclient.exe,RemcosRAT,,high,2026-03-22,Static Analysis,Main RAT executable name
+registry,HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System,RemcosRAT,,high,2026-03-22,Behavioral Analysis,UAC bypass via EnableLUA modification
+registry,HKCU\Software\Microsoft\Windows\CurrentVersion\Run\,RemcosRAT,,high,2026-03-22,Static Analysis,Persistence mechanism
