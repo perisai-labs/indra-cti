@@ -1,1 +1,1 @@
-fdea7c3832a87b08fc88835b621ff6028d18a211b52f8720b455d36f6e35b16a,sha256,Vidar infostealer,high,malware,2026-03-23
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
