@@ -1,0 +1,92 @@
+# AgentTesla Malware Analysis - March 2026
+
+**Date:** 2026-03-25  
+**Sample:** 57e24050c502a859421b68b57eb37c74d02078ccf5c1b9636282d48f37aeabbb  
+**Family:** AgentTesla Infostealer  
+**Severity:** High  
+
+## Key Findings
+
+- **Packed .NET malware** with anomalously large .reloc section (2MB)
+- **Info stealer** targeting credentials, keystrokes, screenshots, clipboard
+- **Anti-debugging** capabilities detected
+- **Dynamic API resolution** for evasion
+- Multiple **MITRE ATT&CK** techniques employed
+
+## Technical Details
+
+### File Characteristics
+- PE32+ x64 executable
+- Size: 2.2 MB
+- Compiled: 2026-03-20
+- Security: Canary + NX + PIE enabled
+
+### Packing Indicators
+- .reloc section: 90%+ of file size
+- Obfuscated strings
+- VirtualProtect import
+- Encrypted payload in .reloc
+
+### Behavior
+1. Anti-debug/anti-VM checks
+2. Payload unpacking via VirtualProtect
+3. Credential harvesting
+4. Keylogging
+5. Data exfiltration (likely SMTP)
+
+## IOCs
+
+**Hash:**
+```
+SHA256: 57e24050c502a859421b68b57eb37c74d02078ccf5c1b9636282d48f37aeabbb
+```
+
+**YARA Rule:** `AgentTesla_Mar2026_Packed` (see `
+
+## Detection Rules
+
+### Brahma XDR
+- Rule ID: 900501
+- Detects process execution with suspicious PE characteristics
+- MITRE: T1055, T1027, T1056.001, T1113, T1555
+
+### Brahma NDR
+- SID 9000501: HTTP C2 traffic detection
+- SID 9000502: SMTP exfiltration detection
+
+## MITRE ATT&CK
+
+| Tactic | Technique |
+|--------|-----------|
+| Initial Access | T1566.001 (Spearphishing) |
+| Execution | T1204.002 (User Execution) |
+| Defense Evasion | T1027 (Obfuscation), T1055 (Process Injection), T1497 (Anti-VM) |
+| Credential Access | T1056.001 (Keylogging), T1555 (Password Stores) |
+| Collection | T1113 (Screen Capture), T1115 (Clipboard Data) |
+| Exfiltration | T1041 (C2 Channel), T1048.003 (SMTP) |
+
+## Recommendations
+
+1. Block hash across all endpoints
+2. Hunt for IOC in environment
+3. Review email gateways for similar samples
+4. Monitor outbound SMTP traffic from non-mail servers
+5. Deploy YARA rules
+6. User phishing awareness training
+
+## References
+
+- MalwareBazaar: https://bazaar.abuse.ch/
+- Full analysis: `
+- Screenshots: `
+
+## Tools Used
+
+- radare2 (static analysis)
+- rabin2 (PE analysis)
+- YARA (detection)
+- binwalk (entropy)
+
+---
+**Analysis by:** Xhavero (Peris.ai Threat Research Team)  
+**Next Steps:** Monitor for similar packed AgentTesla variants
