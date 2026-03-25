@@ -1,0 +1,2 @@
+hash_sha256,family,type,severity,description
+57e24050c502a859421b68b57eb37c74d02078ccf5c1b9636282d48f37aeabbb,AgentTesla,malware,high,Packed AgentTesla infostealer variant
