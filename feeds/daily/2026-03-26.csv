@@ -1,8 +1,1 @@
-type,value,description,source,first_seen,last_seen,confidence,tags
-sha256,087d8ad89e86a067625085c072653ed9b1501818a1da6e2e15c12f9ad2353be2,Mirai botnet variant ELF binary,MalwareBazaar,2026-03-26,2026-03-26,high,"malware,botnet,mirai,elf,linux,iot"
-string,wget http://%s/%s/%s -O %s,Mirai payload download command,static-analysis,2026-03-26,2026-03-26,high,"malware,mirai,command"
-string,curl -o %s http://%s/%s/%s,Mirai payload download command,static-analysis,2026-03-26,2026-03-26,high,"malware,mirai,command"
-string,ftpget -v -u anonymous -p anonymous,Mirai FTP download command,static-analysis,2026-03-26,2026-03-26,high,"malware,mirai,command"
-path,/usr/bin/wget,Binary path used by Mirai,static-analysis,2026-03-26,2026-03-26,medium,"malware,mirai,path"
-path,/usr/bin/curl,Binary path used by Mirai,static-analysis,2026-03-26,2026-03-26,medium,"malware,mirai,path"
-path,/usr/sbin/tftp,Binary path used by Mirai,static-analysis,2026-03-26,2026-03-26,medium,"malware,mirai,path"
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
