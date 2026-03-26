@@ -3506,3 +3506,11 @@ filename,policy_draft_2025.zip,Amaranth-Dragon - Southeast Asia Government & Law
 registry-key,HKCU\Software\Microsoft\Windows\CurrentVersion\Run</registry_path>,Amaranth-Dragon - Southeast Asia Government & Law Enforcement Espionage Campaign,apt,medium,medium,2026-03-13,2026-03-13,T1005|T1041|T1053|T1071.001|T1082|T1102|T1113|T1135|T1190|T1204.002|T1497|T1547.001|T1555|T1566.001|T1574.002|T1588.005|T1591.003,amaranth-dragon---southeast-asia-government-&-law-enforcement-espionage-campaign,Amaranth-Dragon-Southeast-Asia-Espionage,
 file-path,C:\ProgramData\Microsoft\Windows\Tasks\update.exe,Amaranth-Dragon - Southeast Asia Government & Law Enforcement Espionage Campaign,apt,medium,medium,2026-03-13,2026-03-13,T1005|T1041|T1053|T1071.001|T1082|T1102|T1113|T1135|T1190|T1204.002|T1497|T1547.001|T1555|T1566.001|T1574.002|T1588.005|T1591.003,amaranth-dragon---southeast-asia-government-&-law-enforcement-espionage-campaign,Amaranth-Dragon-Southeast-Asia-Espionage,
 cve,cve-2026-25108,Skills Index,unknown,medium,medium,2026-03-13,2026-03-13,T1195.001|T1588.001,skills-index,INDEX,
+type,value,description,source,first_seen,last_seen,confidence,tags
+sha256,087d8ad89e86a067625085c072653ed9b1501818a1da6e2e15c12f9ad2353be2,Mirai botnet variant ELF binary,MalwareBazaar,2026-03-26,2026-03-26,high,"malware,botnet,mirai,elf,linux,iot"
+string,wget http://%s/%s/%s -O %s,Mirai payload download command,static-analysis,2026-03-26,2026-03-26,high,"malware,mirai,command"
+string,curl -o %s http://%s/%s/%s,Mirai payload download command,static-analysis,2026-03-26,2026-03-26,high,"malware,mirai,command"
+string,ftpget -v -u anonymous -p anonymous,Mirai FTP download command,static-analysis,2026-03-26,2026-03-26,high,"malware,mirai,command"
+path,/usr/bin/wget,Binary path used by Mirai,static-analysis,2026-03-26,2026-03-26,medium,"malware,mirai,path"
+path,/usr/bin/curl,Binary path used by Mirai,static-analysis,2026-03-26,2026-03-26,medium,"malware,mirai,path"
+path,/usr/sbin/tftp,Binary path used by Mirai,static-analysis,2026-03-26,2026-03-26,medium,"malware,mirai,path"
