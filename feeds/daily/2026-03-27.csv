@@ -1,17 +1,1 @@
 ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
-hash-sha256,54a26884f7cfeec3d9a374dddafae55820eb0cee8facb98778eef7ea61ae47e4,RevengeRAT,malware,high,high,2026-03-27,2026-03-27,T1566|T1548.002|T1027|T1036.005|T1056.001|T1071.001|T1041,revengerat;dotnet;obfuscated;confuserex;masquerading,MalwareBazaar,Heavily obfuscated RevengeRAT masquerading as SettingSyncHost.exe
-file-name,SettingSyncHost.exe,RevengeRAT,ioc,medium,medium,2026-03-27,2026-03-27,T1036.005,revengerat;masquerading,Static Analysis,Suspicious filename (outside System32)
-file-metadata,InternalName:SettingSyncHost.exe|FileVersion:2.1.7.9|AssemblyName:izy,RevengeRAT,ioc,high,high,2026-03-27,2026-03-27,T1036.005,revengerat;metadata,Static Analysis,Fake metadata mimicking Windows component
-registry-key,HKCU\Software\Microsoft\Windows\CurrentVersion\Run,RevengeRAT,ioc,low,low,2026-03-27,2026-03-27,T1547.001,revengerat;persistence,Static Analysis,Common RAT persistence location
-network-port,4444,RevengeRAT,ioc,medium,medium,2026-03-27,2026-03-27,T1071.001|T1095,revengerat;c2,Static Analysis,Common RAT C2 port
-network-port,5555,RevengeRAT,ioc,medium,medium,2026-03-27,2026-03-27,T1071.001|T1095,revengerat;c2,Static Analysis,Common RAT C2 port
-network-port,6666,RevengeRAT,ioc,medium,medium,2026-03-27,2026-03-27,T1071.001|T1095,revengerat;c2,Static Analysis,Common RAT C2 port
-network-port,7777,RevengeRAT,ioc,medium,medium,2026-03-27,2026-03-27,T1071.001|T1095,revengerat;c2,Static Analysis,Common RAT C2 port
-network-port,8080,RevengeRAT,ioc,medium,medium,2026-03-27,2026-03-27,T1071.001|T1095,revengerat;c2,Static Analysis,Common RAT C2 port
-network-port,8888,RevengeRAT,ioc,medium,medium,2026-03-27,2026-03-27,T1071.001|T1095,revengerat;c2,Static Analysis,Common RAT C2 port
-network-port,9999,RevengeRAT,ioc,medium,medium,2026-03-27,2026-03-27,T1071.001|T1095,revengerat;c2,Static Analysis,Common RAT C2 port
-dns-pattern,*.ddns.net,RevengeRAT,ioc,low,low,2026-03-27,2026-03-27,T1071.001,revengerat;ddns;c2,Static Analysis,Dynamic DNS service for C2 infrastructure
-dns-pattern,*.ddns.org,RevengeRAT,ioc,low,low,2026-03-27,2026-03-27,T1071.001,revengerat;ddns;c2,Static Analysis,Dynamic DNS service for C2 infrastructure
-dns-pattern,*.no-ip.com,RevengeRAT,ioc,low,low,2026-03-27,2026-03-27,T1071.001,revengerat;ddns;c2,Static Analysis,Dynamic DNS service for C2 infrastructure
-file-path,%APPDATA%\[Random3-10Chars]\*.exe,RevengeRAT,ioc,medium,medium,2026-03-27,2026-03-27,T1547.001,revengerat;persistence,Static Analysis,Common RAT dropped file location
-file-path,%LOCALAPPDATA%\[Random3-10Chars]\*.exe,RevengeRAT,ioc,medium,medium,2026-03-27,2026-03-27,T1547.001,revengerat;persistence,Static Analysis,Alternative RAT dropped file location
