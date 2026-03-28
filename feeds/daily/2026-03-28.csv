@@ -1,0 +1,9 @@
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+hash-sha256,40750c5d1422a9d4c4161cbe0a2d8f32fc5537265665961002f96f8290c29116,ValleyRAT,malware,high,high,2026-03-28,2026-03-28,T1036.005|T1548.002|T1547.001|T1071.001|T1071.004|T1090|T1041|T1046|T1082,valleyrat;netherlands;rat;pe64;routing-manipulation;homiloa,MalwareBazaar,ValleyRAT PE64 RAT with network routing table manipulation capability - masquerades as conhost.exe with fake Homiloa company signature
+string,Homiloa,ValleyRAT,malware,high,high,2026-03-28,2026-03-28,T1036.005,valleyrat;company-signature;fake-certificate,Analysis,Fake company name used by ValleyRAT to masquerade as legitimate Windows conhost.exe
+registry,HKCU\Software\Microsoft\Windows\CurrentVersion\Run,ValleyRAT,malware,medium,high,2026-03-28,2026-03-28,T1547.001,valleyrat;persistence;autostart,Analysis,Registry persistence mechanism used by ValleyRAT for autostart
+network,CreateIpForwardEntry,ValleyRAT,malware,high,high,2026-03-28,2026-03-28,T1090,valleyrat;routing-manipulation;network,Analysis,Windows API call used by ValleyRAT to modify routing tables for traffic redirection
+port,8080,ValleyRAT,malware,medium,medium,2026-03-28,2026-03-28,T1071.001,valleyrat;c2;common-port,Analysis,Common C2 port used by ValleyRAT
+port,8443,ValleyRAT,malware,medium,medium,2026-03-28,2026-03-28,T1071.001,valleyrat;c2;common-port,Analysis,Common C2 port used by ValleyRAT
+port,9090,ValleyRAT,malware,medium,medium,2026-03-28,2026-03-28,T1071.001,valleyrat;c2;common-port,Analysis,Common C2 port used by ValleyRAT
+port,4444,ValleyRAT,malware,medium,medium,2026-03-28,2026-03-28,T1071.001,valleyrat;c2;common-port,Analysis,Common C2 port used by ValleyRAT
