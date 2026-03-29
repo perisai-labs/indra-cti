@@ -1,0 +1,7 @@
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+hash-sha256,52ba679694fa019918e32b699fa4f23a30221802a982bc61204072d69f5d9648,QuasarRAT-Infostealer,malware,critical,high,2026-03-29,2026-03-29,T1003|T1005|T1012|T1055|T1056|T1057|T1082|T1112|T1113|T1203|T1547|T1552,quasarrat;infostealer;cryptocurrency;credential-theft;dotnet;rat,MalwareBazaar,QuasarRAT variant with cryptocurrency wallet stealing - .NET assembly Client-merged v1.4.1.0
+file-name,Client-merged,QuasarRAT-Infostealer,malware,high,high,2026-03-29,2026-03-29,T1203|T1552,.net;assembly-name;quasarrat,Peris.ai,"QuasarRAT .NET assembly name pattern"
+code-pattern,Intelix.Targets.Crypto,QuasarRAT-Infostealer,malware,high,high,2026-03-29,2026-03-29,T1552|T1005,.net;namespace;cryptocurrency,Peris.ai,"QuasarRAT cryptocurrency theft namespace"
+code-pattern,Intelix.Targets.Browsers,QuasarRAT-Infostealer,malware,high,high,2026-03-29,2026-03-29,T1552|T1555,.net;namespace;credential-theft,Peris.ai,"QuasarRAT browser credential theft namespace"
+code-pattern,CvMega.ToxStealRunner,QuasarRAT-Infostealer,malware,critical,high,2026-03-29,2026-03-29,T1041,.net;namespace;exfiltration,Peris.ai,"QuasarRAT data exfiltration component"
+code-pattern,Quasar.Common.Messages,QuasarRAT-Infostealer,malware,high,high,2026-03-29,2026-03-29,T1071,.net;namespace;c2,Peris.ai,"QuasarRAT C2 communication framework"
