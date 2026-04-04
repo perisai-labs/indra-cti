@@ -1,0 +1,5 @@
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+hash-sha256,c03ca9e42802851951cac696aa7ac0ae80fa07e4b188c2e26ca73845f6542200,LummaStealer,infostealer,high,high,2025-04-04,2025-04-04,T1555.003|T1539|T1082|T1113|T1071.001|T1041,lummastealer;lummac2;infostealer;switzerland;packer,MalwareBazaar,LummaStealer infostealer with custom packer - LC2 variant from Switzerland
+artifact,LC2\LC2_servConf\Release\LC2.pdb,LummaStealer,infostealer,high,high,2025-04-04,2025-04-04,T1555.003,lummastealer;pdb;artifact,Peris.ai,LummaStealer PDB path artifact indicating LC2 server configuration
+artifact,33BC9A3154E27E9B4C4C44205044422E1,LummaStealer,infostealer,medium,high,2025-04-04,2025-04-04,T1555.003,lummastealer;guid;artifact,Peris.ai,LummaStealer PE GUID artifact
+pattern,lumma[a-z0-9-]{5\,15}.(top|xyz|info|su|online),LummaStealer,infostealer,high,medium,2025-04-04,2025-04-04,T1071.001,lummastealer;c2;domain,Peris.ai,LummaStealer C2 domain pattern
