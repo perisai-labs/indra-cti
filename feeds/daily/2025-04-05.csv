@@ -1,0 +1,5 @@
+date,indicator,type,description,severity,category
+2025-04-05,0a65892df4903823e00869e42a58403ef4e125bcb55838016e3cd227fb5f9635,sha256,RISC-V Go DDoS Botnet,high,malware
+2025-04-05,proxyscrape.com,domain,DDoS botnet proxy infrastructure,medium,c2
+2025-04-05,Go-http-client/1.1,user-agent,RISC-V DDoS botnet indicator,low,network
+2025-04-05,Go-http-client/2.0,user-agent,RISC-V DDoS botnet indicator,low,network
