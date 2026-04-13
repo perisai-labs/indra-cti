@@ -706,7 +706,7 @@
 2026-04-09,filename,w3wp.exe,Malicious NuGet Packages - JIT Hooking & Credential Exfiltration,unknown,medium
 2026-04-09,hash-sha256,8d577a095d2dcc693ea232afc45c6c23dd83755496151ec708acc6216456032b,Skill: Encrypted ELF with Custom-Modified UPX Packer,unknown,medium
 2026-04-09,domain,article.md,Skill: Encrypted ELF with Custom-Modified UPX Packer,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-17-unknown-elf/article.md`,Skill: Encrypted ELF with Custom-Modified UPX Packer,unknown,medium
+2026-04-09,file-path,output/articles/2026-02-17-unknown-elf/article.md`,Skill: Encrypted ELF with Custom-Modified UPX Packer,unknown,medium
 2026-04-09,hash-md5,4f2f006e2ecf7172ad368f8289dc96c1,SalatStealer (Golang Credential Stealer) — February 2026,unknown,medium
 2026-04-09,- **Type:** Infostealer,,,,
 2026-04-09,- **Language:** Golang,,,,
@@ -941,9 +941,9 @@
 2026-04-09,domain,brahma-ndr-rule.rules,AsyncRAT March 2026 Variant — Malware Analysis,unknown,medium
 2026-04-09,filename,asyncrat.exe,AsyncRAT March 2026 Variant — Malware Analysis,unknown,medium
 2026-04-09,filename,irfv1.exe,AsyncRAT March 2026 Variant — Malware Analysis,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-04-asyncrat/article.md`,AsyncRAT March 2026 Variant — Malware Analysis,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-04-asyncrat/brahma-xdr-rule.xml`,AsyncRAT March 2026 Variant — Malware Analysis,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-04-asyncrat/brahma-ndr-rule.rules`,AsyncRAT March 2026 Variant — Malware Analysis,unknown,medium
+2026-04-09,file-path,output/articles/2026-03-04-asyncrat/article.md`,AsyncRAT March 2026 Variant — Malware Analysis,unknown,medium
+2026-04-09,file-path,output/articles/2026-03-04-asyncrat/brahma-xdr-rule.xml`,AsyncRAT March 2026 Variant — Malware Analysis,unknown,medium
+2026-04-09,file-path,output/articles/2026-03-04-asyncrat/brahma-ndr-rule.rules`,AsyncRAT March 2026 Variant — Malware Analysis,unknown,medium
 2026-04-09,file-path,D:\Cong,AsyncRAT March 2026 Variant — Malware Analysis,unknown,medium
 2026-04-09,domain,module.name,UAT-9921 — VoidLink Malware Framework,unknown,medium
 2026-04-09,domain,blog.talosintelligence.com,UAT-9921 — VoidLink Malware Framework,unknown,medium
@@ -1045,8 +1045,8 @@
 2026-04-09,filename,crypt32.dll,Vidar Stealer Analysis - March 2026,unknown,medium
 2026-04-09,filename,advapi32.dll,Vidar Stealer Analysis - March 2026,unknown,medium
 2026-04-09,filename,stationplaylist.com,Vidar Stealer Analysis - March 2026,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-03-vidar-stealer/`,Vidar Stealer Analysis - March 2026,unknown,medium
-2026-04-09,file-path,/home/kali/research/test_rule.yar`,Vidar Stealer Analysis - March 2026,unknown,medium
+2026-04-09,file-path,output/articles/2026-03-03-vidar-stealer/`,Vidar Stealer Analysis - March 2026,unknown,medium
+2026-04-09,file-path,test_rule.yar`,Vidar Stealer Analysis - March 2026,unknown,medium
 2026-04-09,domain,com.accessibility.service,PromptSpy - First Android Malware Using Generative AI at Runtime,unknown,medium
 2026-04-09,domain,com.google.android.marvin,PromptSpy - First Android Malware Using Generative AI at Runtime,unknown,medium
 2026-04-09,domain,android.view,PromptSpy - First Android Malware Using Generative AI at Runtime,unknown,medium
@@ -1085,7 +1085,7 @@
 2026-04-09,filename,xywdk5jqx.exe,Pulsar RAT - Chile Campaign (March 2026),unknown,medium
 2026-04-09,filename,client.exe,Pulsar RAT - Chile Campaign (March 2026),unknown,medium
 2026-04-09,registry-key,HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run|HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run</field>,Pulsar RAT - Chile Campaign (March 2026),unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-01-njrat-chile/article.md`,Pulsar RAT - Chile Campaign (March 2026),unknown,medium
+2026-04-09,file-path,output/articles/2026-03-01-njrat-chile/article.md`,Pulsar RAT - Chile Campaign (March 2026),unknown,medium
 2026-04-09,domain,www.microsoft.com,MIMICRAT RAT: ClickFix Campaign Delivers Custom Remote Access Trojan,unknown,medium
 2026-04-09,domain,www.elastic.co,MIMICRAT RAT: ClickFix Campaign Delivers Custom Remote Access Trojan,unknown,medium
 2026-04-09,domain,www.uvcyber.com,MIMICRAT RAT: ClickFix Campaign Delivers Custom Remote Access Trojan,unknown,medium
@@ -1237,11 +1237,11 @@
 2026-04-09,filename,tunnel4.com,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
 2026-04-09,filename,ttcheats.apk,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
 2026-04-09,filename,gmail.com,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
-2026-04-09,file-path,/home/kali/research/extracted/49b40786a01886ad8e962bd74e5d2e3ede8472de5cabe7b060284c54e5941182.apk`,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
-2026-04-09,file-path,/home/kali/research/extracted/spynote-decompiled/`,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-23-spynote-tiktok-cheats/screenshots/`,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-23-spynote-tiktok-cheats/article.md`,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
-2026-04-09,file-path,/home/kali/research/spynote-tiktok-cheats.yar`,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
+2026-04-09,file-path,extracted/49b40786a01886ad8e962bd74e5d2e3ede8472de5cabe7b060284c54e5941182.apk`,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
+2026-04-09,file-path,extracted/spynote-decompiled/`,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
+2026-04-09,file-path,output/articles/2026-02-23-spynote-tiktok-cheats/screenshots/`,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
+2026-04-09,file-path,output/articles/2026-02-23-spynote-tiktok-cheats/article.md`,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
+2026-04-09,file-path,spynote-tiktok-cheats.yar`,SpyNote Android RAT — TikTok Cheats Campaign (Feb 2026),unknown,medium
 2026-04-09,hash-md5,5ccd38b39a45ab1242129fe7f6bed6ac,NetSupport RAT Analysis — PyInstaller-Packaged Remote Access Trojan,unknown,medium
 2026-04-09,hash-sha1,1efe6b617b20f1cebe4c471d099ea3f1986ee218,NetSupport RAT Analysis — PyInstaller-Packaged Remote Access Trojan,unknown,medium
 2026-04-09,hash-sha256,a558b4ba7d4b18cea0f69daaa0cd432454fd18b8f467502e3493f1e407460d21,NetSupport RAT Analysis — PyInstaller-Packaged Remote Access Trojan,unknown,medium
@@ -1264,7 +1264,7 @@
 2026-04-09,registry-key,"HKCU\Software\Microsoft\Windows\CurrentVersion\Run""",NetSupport RAT Analysis — PyInstaller-Packaged Remote Access Trojan,unknown,medium
 2026-04-09,registry-key,HKCU\Software\Microsoft\Windows\CurrentVersion\Run\NetSupport,NetSupport RAT Analysis — PyInstaller-Packaged Remote Access Trojan,unknown,medium
 2026-04-09,registry-key,HKCU\Software\NetSupport,NetSupport RAT Analysis — PyInstaller-Packaged Remote Access Trojan,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-27-netsupport-rat/`,NetSupport RAT Analysis — PyInstaller-Packaged Remote Access Trojan,unknown,medium
+2026-04-09,file-path,output/articles/2026-02-27-netsupport-rat/`,NetSupport RAT Analysis — PyInstaller-Packaged Remote Access Trojan,unknown,medium
 2026-04-09,file-path,C:\bFiles\`,NetSupport RAT Analysis — PyInstaller-Packaged Remote Access Trojan,unknown,medium
 2026-04-09,domain,conn.log,Massiv Android Banking Trojan - Fake IPTV Campaign (Feb 2026),unknown,medium
 2026-04-09,domain,com.livetv.hd,Massiv Android Banking Trojan - Fake IPTV Campaign (Feb 2026),unknown,medium
@@ -1363,8 +1363,8 @@
 2026-04-09,filename,wextract.exe,Stealc Infostealer - FL Studio Trojan Dropper Analysis,unknown,medium
 2026-04-09,filename,49971.exe,Stealc Infostealer - FL Studio Trojan Dropper Analysis,unknown,medium
 2026-04-09,filename,mscoree.dll,Stealc Infostealer - FL Studio Trojan Dropper Analysis,unknown,medium
-2026-04-09,file-path,/home/kali/research/stealc-yara.yar`,Stealc Infostealer - FL Studio Trojan Dropper Analysis,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-16-stealc-infostealer/article.md`,Stealc Infostealer - FL Studio Trojan Dropper Analysis,unknown,medium
+2026-04-09,file-path,stealc-yara.yar`,Stealc Infostealer - FL Studio Trojan Dropper Analysis,unknown,medium
+2026-04-09,file-path,output/articles/2026-02-16-stealc-infostealer/article.md`,Stealc Infostealer - FL Studio Trojan Dropper Analysis,unknown,medium
 2026-04-09,domain,host.type,"SSHStalker — IRC C2 Linux Botnet (Wormable, Legacy Kernel Exploitation)",unknown
 2026-04-09,domain,outlaw-group-uses-ssh-brute-force-to.html,"SSHStalker — IRC C2 Linux Botnet (Wormable, Legacy Kernel Exploitation)",unknown
 2026-04-09,domain,main.bruteforce,"SSHStalker — IRC C2 Linux Botnet (Wormable, Legacy Kernel Exploitation)",unknown
@@ -1455,7 +1455,7 @@
 2026-04-09,**First Seen:** 2026-02-22  ,,,,
 2026-04-09,**Detection Rate:** 12/76 (15.8%)  ,,,,
 2026-04-09,**Severity:** HIGH",,,,
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-22-mirai-titanjr-arc/article.md`,Mirai TitanJr ARC Variant — Feb 2026,unknown,medium
+2026-04-09,file-path,output/articles/2026-02-22-mirai-titanjr-arc/article.md`,Mirai TitanJr ARC Variant — Feb 2026,unknown,medium
 2026-04-09,**Variant Name:** TitanJr  ,,,,
 2026-04-09,**Architecture:** ARCompact ARC700 (32-bit)  ,,,,
 2026-04-09,**First Seen:** 2026-02-22  ,,,,
@@ -1492,7 +1492,7 @@
 2026-04-09,filename,s.exe,RedLine/Stealc Infostealer — Amadey Botnet Payload (Feb 2026),unknown,medium
 2026-04-09,registry-key,HKCU\...\Run,RedLine/Stealc Infostealer — Amadey Botnet Payload (Feb 2026),unknown,medium
 2026-04-09,file-path,C:\Path\To\Suspicious\File.exe,RedLine/Stealc Infostealer — Amadey Botnet Payload (Feb 2026),unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-25-redline-stealc/`,RedLine/Stealc Infostealer — Amadey Botnet Payload (Feb 2026),unknown,medium
+2026-04-09,file-path,output/articles/2026-02-25-redline-stealc/`,RedLine/Stealc Infostealer — Amadey Botnet Payload (Feb 2026),unknown,medium
 2026-04-09,file-path,C:\Users\*\AppData\Local\,RedLine/Stealc Infostealer — Amadey Botnet Payload (Feb 2026),unknown,medium
 2026-04-09,file-path,"p:\/\/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1
 2026-04-09,hash-md5,78b47f734fa6fedbacd7b170e5e689f2,Polar Mirai / CondiBot - Malware Analysis,unknown,medium
@@ -1502,8 +1502,8 @@
 2026-04-09,file-path,/var/CondiBot`,Polar Mirai / CondiBot - Malware Analysis,unknown,medium
 2026-04-09,file-path,/var/CondiBot,Polar Mirai / CondiBot - Malware Analysis,unknown,medium
 2026-04-09,file-path,/var/condibot,Polar Mirai / CondiBot - Malware Analysis,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-05-polar-mirai/`,Polar Mirai / CondiBot - Malware Analysis,unknown,medium
-2026-04-09,file-path,/home/kali/research/polar_mirai.yar`,Polar Mirai / CondiBot - Malware Analysis,unknown,medium
+2026-04-09,file-path,output/articles/2026-03-05-polar-mirai/`,Polar Mirai / CondiBot - Malware Analysis,unknown,medium
+2026-04-09,file-path,polar_mirai.yar`,Polar Mirai / CondiBot - Malware Analysis,unknown,medium
 2026-04-09,file-path,/tmp`,Polar Mirai / CondiBot - Malware Analysis,unknown,medium
 2026-04-09,file-path,/var`,Polar Mirai / CondiBot - Malware Analysis,unknown,medium
 2026-04-09,file-path,/var/condibot`,Polar Mirai / CondiBot - Malware Analysis,unknown,medium
@@ -1519,8 +1519,8 @@
 2026-04-09,filename,pvq60nge.exe,XWorm RAT — February 2026 Variant,unknown,medium
 2026-04-09,filename,bst08vq.exe,XWorm RAT — February 2026 Variant,unknown,medium
 2026-04-09,registry-key,HKCU\Software\Microsoft\Windows\CurrentVersion\Run\*,XWorm RAT — February 2026 Variant,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-20-xworm-rat/article.md`,XWorm RAT — February 2026 Variant,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-20-xworm-rat/screenshots/*.png`,XWorm RAT — February 2026 Variant,unknown,medium
+2026-04-09,file-path,output/articles/2026-02-20-xworm-rat/article.md`,XWorm RAT — February 2026 Variant,unknown,medium
+2026-04-09,file-path,output/articles/2026-02-20-xworm-rat/screenshots/*.png`,XWorm RAT — February 2026 Variant,unknown,medium
 2026-04-09,file-path,C:\Windows\System32`,XWorm RAT — February 2026 Variant,unknown,medium
 2026-04-09,hash-sha256,12db648c3d516bb4210f37388077273757ea792168a6c32a9c0210cbfc7c01f9,GuLoader Phishing Campaign - February 2026,unknown,medium
 2026-04-09,domain,win.guloader,GuLoader Phishing Campaign - February 2026,unknown,medium
@@ -1541,14 +1541,14 @@
 2026-04-09,hash-sha1,50e45224afcd106b8db290f7c768e7ddc0df5568,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
 2026-04-09,hash-sha256,b0635a6f452c4ccb33d6672d623c5ca29da63dda5f8fa6f85b595fa0f3d0cc87,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
 2026-04-09,filename,b0635a6f452c4ccb33d6672d623c5ca29da63dda5f8fa6f85b595fa0f3d0cc87.elf,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-07-mirai-iot-botnet/article.md`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-07-mirai-iot-botnet/brahma_xdr_rule.xml`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-07-mirai-iot-botnet/`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
+2026-04-09,file-path,output/articles/2026-03-07-mirai-iot-botnet/article.md`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
+2026-04-09,file-path,output/articles/2026-03-07-mirai-iot-botnet/brahma_xdr_rule.xml`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
+2026-04-09,file-path,output/articles/2026-03-07-mirai-iot-botnet/`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
 2026-04-09,file-path,/usr/bin/python`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-07-mirai-iot-botnet/screenshots/*.png`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-07-mirai-iot-botnet/brahma_ndr_rules.rules`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
-2026-04-09,file-path,/home/kali/research/mirai_iot_botnet.yar`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
-2026-04-09,file-path,/home/kali/research/extracted/b0635a6f452c4ccb33d6672d623c5ca29da63dda5f8fa6f85b595fa0f3d0cc87.elf`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
+2026-04-09,file-path,output/articles/2026-03-07-mirai-iot-botnet/screenshots/*.png`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
+2026-04-09,file-path,output/articles/2026-03-07-mirai-iot-botnet/brahma_ndr_rules.rules`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
+2026-04-09,file-path,mirai_iot_botnet.yar`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
+2026-04-09,file-path,extracted/b0635a6f452c4ccb33d6672d623c5ca29da63dda5f8fa6f85b595fa0f3d0cc87.elf`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
 2026-04-09,file-path,/usr/sbin/dropbear`,Malware Analysis: Mirai IoT Botnet MIPS Variant,unknown,medium
 2026-04-09,domain,groups.google.com,Lumma Stealer + Ninja Browser Campaign (February 2026),unknown,medium
 2026-04-09,- **First Observed:** February 2026,,,,
@@ -1642,10 +1642,10 @@
 2026-04-09,hash-sha256,7b9ba082df5fd5dbcba73175f3bba57ddccef25fce1512c0708367bbd0fb3859,Mirai Botnet Variant — r34fa352.duckdns.org,unknown,medium
 2026-04-09,ipv4,176.65.139.42,Mirai Botnet Variant — r34fa352.duckdns.org,unknown,medium
 2026-04-09,domain,r34fa352.duckdns.org,Mirai Botnet Variant — r34fa352.duckdns.org,unknown,medium
-2026-04-09,file-path,/home/kali/research/brahma_xdr_mirai_r34fa352.xml`,Mirai Botnet Variant — r34fa352.duckdns.org,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-06-mirai-botnet/`,Mirai Botnet Variant — r34fa352.duckdns.org,unknown,medium
-2026-04-09,file-path,/home/kali/research/brahma_ndr_mirai_r34fa352.rules`,Mirai Botnet Variant — r34fa352.duckdns.org,unknown,medium
-2026-04-09,file-path,/home/kali/research/mirai_variant_r34fa352.yar`,Mirai Botnet Variant — r34fa352.duckdns.org,unknown,medium
+2026-04-09,file-path,brahma_xdr_mirai_r34fa352.xml`,Mirai Botnet Variant — r34fa352.duckdns.org,unknown,medium
+2026-04-09,file-path,output/articles/2026-03-06-mirai-botnet/`,Mirai Botnet Variant — r34fa352.duckdns.org,unknown,medium
+2026-04-09,file-path,brahma_ndr_mirai_r34fa352.rules`,Mirai Botnet Variant — r34fa352.duckdns.org,unknown,medium
+2026-04-09,file-path,mirai_variant_r34fa352.yar`,Mirai Botnet Variant — r34fa352.duckdns.org,unknown,medium
 2026-04-09,ipv4,54.0.0.0,BRICKSTORM — PRC State-Sponsored Backdoor for Long-Term Persistence,unknown,medium
 2026-04-09,ipv4,52.0.0.0,BRICKSTORM — PRC State-Sponsored Backdoor for Long-Term Persistence,unknown,medium
 2026-04-09,ipv4,13.0.0.0,BRICKSTORM — PRC State-Sponsored Backdoor for Long-Term Persistence,unknown,medium
@@ -1920,7 +1920,7 @@
 2026-04-09,url,http://130.12.180.43/files/7719759462/Yd6HwRw.exe,Crysome RAT Analysis,unknown,medium
 2026-04-09,filename,yd6hwrw.exe,Crysome RAT Analysis,unknown,medium
 2026-04-09,file-path,C:\Users\eve\Desktop\DzSocket-3.1,Crysome RAT Analysis,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-15-amadey-dropper/article.md`,Crysome RAT Analysis,unknown,medium
+2026-04-09,file-path,output/articles/2026-02-15-amadey-dropper/article.md`,Crysome RAT Analysis,unknown,medium
 2026-04-09,hash-md5,8739de86cd836ae1476705562c069cc0,RLoader: VMProtect-Packed Trojan Analysis,unknown,medium
 2026-04-09,hash-sha256,84f77ade3d79ef5872557dd8d9c1c720b58d1d924785ab34f9fee896ea06a995,RLoader: VMProtect-Packed Trojan Analysis,unknown,medium
 2026-04-09,ipv4,162.159.36.2,RLoader: VMProtect-Packed Trojan Analysis,unknown,medium
@@ -1946,11 +1946,11 @@
 2026-04-09,domain,adb-shell.sh,Mirai ARM ADB Variant (March 2026),unknown,medium
 2026-04-09,url,http://130.12.180.151/file/adb-shell.sh,Mirai ARM ADB Variant (March 2026),unknown,medium
 2026-04-09,filename,336687311750c9c8ec9483b664289c61a2869bbe68696c217e56f077a342551b.elf,Mirai ARM ADB Variant (March 2026),unknown,medium
-2026-04-09,file-path,/home/kali/research/mirai_arm4_adb.yar,Mirai ARM ADB Variant (March 2026),unknown,medium
+2026-04-09,file-path,mirai_arm4_adb.yar,Mirai ARM ADB Variant (March 2026),unknown,medium
 2026-04-09,file-path,/tmp/,Mirai ARM ADB Variant (March 2026),unknown,medium
-2026-04-09,file-path,/home/kali/research/extracted/336687311750c9c8ec9483b664289c61a2869bbe68696c217e56f077a342551b.elf,Mirai ARM ADB Variant (March 2026),unknown,medium
+2026-04-09,file-path,extracted/336687311750c9c8ec9483b664289c61a2869bbe68696c217e56f077a342551b.elf,Mirai ARM ADB Variant (March 2026),unknown,medium
 2026-04-09,file-path,/tmp/;,Mirai ARM ADB Variant (March 2026),unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-02-mirai-arm4/article.md,Mirai ARM ADB Variant (March 2026),unknown,medium
+2026-04-09,file-path,output/articles/2026-03-02-mirai-arm4/article.md,Mirai ARM ADB Variant (March 2026),unknown,medium
 2026-04-09,domain,www.cyfirma.com,INC Ransomware — Active Double-Extortion RaaS Campaign (March 2026),ransomware,medium
 2026-04-09,domain,file.action,INC Ransomware — Active Double-Extortion RaaS Campaign (March 2026),ransomware,medium
 2026-04-09,domain,darkwebinformer.com,INC Ransomware — Active Double-Extortion RaaS Campaign (March 2026),ransomware,medium
@@ -2033,7 +2033,7 @@
 2026-04-09,hash-sha256,a40193b7b352fe3a14cfe1ca65c9b5250c663f0240cbcda9be70b7898e57f31f,AsyncRAT Malware Analysis — RobloxHack.exe,malware,medium
 2026-04-09,filename,robloxhack.exe,AsyncRAT Malware Analysis — RobloxHack.exe,malware,medium
 2026-04-09,filename,stub.exe,AsyncRAT Malware Analysis — RobloxHack.exe,malware,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-09-dotnet-stealer/article.md`,AsyncRAT Malware Analysis — RobloxHack.exe,malware,medium
+2026-04-09,file-path,output/articles/2026-03-09-dotnet-stealer/article.md`,AsyncRAT Malware Analysis — RobloxHack.exe,malware,medium
 2026-04-09,hash-md5,e15c5eaf6ec6a98f208a8ab3679ee92e,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
 2026-04-09,hash-md5,1558a68fff2ed1b2060c0c344b24acf0,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
 2026-04-09,hash-sha1,d4e2e2c9dd1104f1da68caca0ac1fa949c762038,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
@@ -2045,11 +2045,11 @@
 2026-04-09,url,https://www.secuinfra.com/en/techtalk/whatever-floats-your-boat-bitter-apt-continues-to-target-bangladesh),Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
 2026-04-09,filename,secuinfra.com,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
 2026-04-09,filename,node.exe,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-11-bitter-zxxz-downloader/xdr-rule.xml`,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-11-bitter-zxxz-downloader/ndr-rule.rules`,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-11-bitter-zxxz-downloader/screenshots/*.png`,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
-2026-04-09,file-path,/home/kali/research/bitter_zxxz_nodejs.yar`,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-11-bitter-zxxz-downloader/article.md`,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
+2026-04-09,file-path,output/articles/2026-03-11-bitter-zxxz-downloader/xdr-rule.xml`,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
+2026-04-09,file-path,output/articles/2026-03-11-bitter-zxxz-downloader/ndr-rule.rules`,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
+2026-04-09,file-path,output/articles/2026-03-11-bitter-zxxz-downloader/screenshots/*.png`,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
+2026-04-09,file-path,bitter_zxxz_nodejs.yar`,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
+2026-04-09,file-path,output/articles/2026-03-11-bitter-zxxz-downloader/article.md`,Bitter APT ZxxZ Downloader — Node.js Embedded Malware,malware,medium
 2026-04-09,hash-md5,b2ee0b89ef1e8d83445e34b54c60eb58,Akira Ransomware - Weaponized Cloudflared C2 Tool,malware,medium
 2026-04-09,hash-md5,fc22e4f95641f6606222121e1a8a8508,Akira Ransomware - Weaponized Cloudflared C2 Tool,malware,medium
 2026-04-09,hash-sha1,8c7b5a3e82791123b9810b065244ad1f95a3fc6c,Akira Ransomware - Weaponized Cloudflared C2 Tool,malware,medium
@@ -2060,7 +2060,7 @@
 2026-04-09,filename,cloudflared.exe,Akira Ransomware - Weaponized Cloudflared C2 Tool,malware,medium
 2026-04-09,filename,oracle.exe,Akira Ransomware - Weaponized Cloudflared C2 Tool,malware,medium
 2026-04-09,filename,cftunnel.com,Akira Ransomware - Weaponized Cloudflared C2 Tool,malware,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-10-akira-ransomware/article.md,Akira Ransomware - Weaponized Cloudflared C2 Tool,malware,medium
+2026-04-09,file-path,output/articles/2026-03-10-akira-ransomware/article.md,Akira Ransomware - Weaponized Cloudflared C2 Tool,malware,medium
 2026-04-09,domain,windows.network,Pulsar RAT (njRAT Variant) - Malware Analysis,malware,medium
 2026-04-09,domain,windows.registry,Pulsar RAT (njRAT Variant) - Malware Analysis,malware,medium
 2026-04-09,domain,system.memory,Pulsar RAT (njRAT Variant) - Malware Analysis,malware,medium
@@ -2068,7 +2068,7 @@
 2026-04-09,domain,windows.process,Pulsar RAT (njRAT Variant) - Malware Analysis,malware,medium
 2026-04-09,filename,messagepack.dll,Pulsar RAT (njRAT Variant) - Malware Analysis,malware,medium
 2026-04-09,filename,common.dll,Pulsar RAT (njRAT Variant) - Malware Analysis,malware,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-03-12-njrat/article.md`,Pulsar RAT (njRAT Variant) - Malware Analysis,malware,medium
+2026-04-09,file-path,output/articles/2026-03-12-njrat/article.md`,Pulsar RAT (njRAT Variant) - Malware Analysis,malware,medium
 2026-04-09,hash-md5,0ec7d167c7ee8764e21c792d6a65d059,0APT Ransomware Analysis — Feb 2026,unknown,medium
 2026-04-09,hash-sha1,976230f9d94fbf5798f20a2eea44248be74aa82c,0APT Ransomware Analysis — Feb 2026,unknown,medium
 2026-04-09,hash-sha256,b2f915cbf1a2b6879d278f613b13d790de9a460759142f30457c3238e598e077,0APT Ransomware Analysis — Feb 2026,unknown,medium
@@ -2082,10 +2082,10 @@
 2026-04-09,domain,torproject.org,0APT Ransomware Analysis — Feb 2026,unknown,medium
 2026-04-09,url,https://www.capesandbox.com/analysis/53314/),0APT Ransomware Analysis — Feb 2026,unknown,medium
 2026-04-09,url,https://tria.ge/reports/260214-jr97nsdy2f/),0APT Ransomware Analysis — Feb 2026,unknown,medium
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-19-0apt-ransomware/detection-rules.md`,0APT Ransomware Analysis — Feb 2026,unknown,medium
+2026-04-09,file-path,output/articles/2026-02-19-0apt-ransomware/detection-rules.md`,0APT Ransomware Analysis — Feb 2026,unknown,medium
 2026-04-09,file-path,"/windows`,",0APT Ransomware Analysis — Feb 2026,unknown
 2026-04-09,file-path,"/program files`,",0APT Ransomware Analysis — Feb 2026,unknown
-2026-04-09,file-path,/home/kali/research/output/articles/2026-02-19-0apt-ransomware/article.md`,0APT Ransomware Analysis — Feb 2026,unknown,medium
+2026-04-09,file-path,output/articles/2026-02-19-0apt-ransomware/article.md`,0APT Ransomware Analysis — Feb 2026,unknown,medium
 2026-04-09,domain,halcyon.ai,0Apt Ransomware — Emerging High-Volume Threat,unknown,medium
 2026-04-09,domain,www.halcyon.ai,0Apt Ransomware — Emerging High-Volume Threat,unknown,medium
 2026-04-09,url,https://www.halcyon.ai/ransomware-alerts/emerging-ransomware-group-0apt),0Apt Ransomware — Emerging High-Volume Threat,unknown,medium
