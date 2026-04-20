@@ -3,115 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Indra CTI IOC Feeds - Searchable and filterable database of indicators of compromise.">
-  <meta name="robots" content="index, follow">
-  
   <title>IOC Feeds — Indra CTI</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <a href="index.html" class="nav-brand">🛡️ Indra CTI</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="feeds.html">IOC Feeds</a></li>
-      <li><a href="reports.html">Reports</a></li>
-      <li><a href="download.html">Download</a></li>
-    </ul>
-    <a href="https://github.com/perisai-labs/indra-cti" class="nav-github" title="GitHub" target="_blank">⬡</a>
-  </nav>
-
-  <section class="container" style="padding: var(--spacing-xl) var(--spacing-lg);">
-    <h1>🔍 IOC Feed Browser</h1>
-    <p class="text-muted">Search and filter thousands of indicators of compromise. Tip: Click any IOC value to copy to clipboard.</p>
-
-    <!-- Search & Filters -->
-    <div class="search-bar">
-      <input 
-        type="text" 
-        id="search-input" 
-        placeholder="Search IOC value, threat name, description..."
-        style="flex: 1; min-width: 250px;"
-      >
-      <select id="filter-type">
-        <option value="">All Types</option>
-        <option value="hash-md5">Hash (MD5)</option>
-        <option value="hash-sha256">Hash (SHA256)</option>
-        <option value="ip">IP Address</option>
-        <option value="domain">Domain</option>
-        <option value="url">URL</option>
-        <option value="email">Email</option>
-        <option value="filename">Filename</option>
-      </select>
-      <select id="filter-severity">
-        <option value="">All Severities</option>
-        <option value="critical">🔴 Critical</option>
-        <option value="high">🟠 High</option>
-        <option value="medium">🟡 Medium</option>
-        <option value="low">🔵 Low</option>
-        <option value="informational">⚪ Informational</option>
-      </select>
-      <select id="filter-threat-type">
-        <option value="">All Threat Types</option>
-        <option value="apt">APT</option>
-        <option value="malware">Malware</option>
-        <option value="ransomware">Ransomware</option>
-        <option value="phishing">Phishing</option>
-        <option value="exploit">Exploit</option>
-        <option value="cve">CVE</option>
-      </select>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h2>Indra CTI</h2>
+      <small>by Peris.ai</small>
     </div>
-
-    <!-- Results counter -->
-    <div style="margin-bottom: var(--spacing-md); color: var(--text-secondary); font-size: 0.95rem;">
-      Results: <strong id="result-count">0</strong> IOCs
-      <span id="page-info" style="margin-left: var(--spacing-md);"></span>
+    <nav class="sidebar-nav">
+      <div class="sidebar-label">Overview</div>
+      <a href="index.html" class="sidebar-link"><span class="icon">📊</span> Dashboard</a>
+      <div class="sidebar-label">Threat Intel</div>
+      <a href="feeds.html" class="sidebar-link active">
+        <span class="icon">🎯</span> IOC Feeds
+        <span class="badge-count" id="count-iocs"></span>
+      </a>
+      <a href="reports.html" class="sidebar-link">
+        <span class="icon">📋</span> Reports
+        <span class="badge-count">8</span>
+      </a>
+      <div class="sidebar-label">Data</div>
+      <a href="download.html" class="sidebar-link"><span class="icon">📥</span> Downloads</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="https://github.com/perisai-labs/indra-cti" target="_blank">⬡ GitHub Repository</a>
     </div>
+  </aside>
 
-    <!-- IOC Table -->
-    <div style="overflow-x: auto; margin-bottom: var(--spacing-lg);">
-      <table id="ioc-table">
-        <thead>
-          <tr>
-            <th onclick="sortTable('ioc_type')" style="cursor: pointer;">Type ↕</th>
-            <th onclick="sortTable('ioc_value')" style="cursor: pointer;">IOC Value ↕</th>
-            <th onclick="sortTable('threat_name')" style="cursor: pointer;">Threat ↕</th>
-            <th onclick="sortTable('threat_type')" style="cursor: pointer;">Type ↕</th>
-            <th onclick="sortTable('severity')" style="cursor: pointer;">Severity ↕</th>
-            <th onclick="sortTable('first_seen')" style="cursor: pointer;">First Seen ↕</th>
-            <th>MITRE ATT&CK</th>
-          </tr>
-        </thead>
-        <tbody id="ioc-tbody">
-          <tr><td colspan="7" style="text-align: center; padding: var(--spacing-lg);">Loading IOC data...</td></tr>
-        </tbody>
-      </table>
+  <div class="main">
+    <header class="header">
+      <div class="header-title">
+        <h1>IOC Feeds</h1>
+        <p>Search and filter indicators of compromise</p>
+      </div>
+    </header>
+    <div class="content">
+
+      <div class="filters">
+        <input type="text" class="search-input" placeholder="🔍 Search IOC value, threat, tags..." id="search-input" style="width:320px;">
+        <select class="filter-select" id="filter-type">
+          <option value="">All Types</option>
+          <option value="hash-md5">MD5 Hash</option>
+          <option value="hash-sha256">SHA256 Hash</option>
+          <option value="ip">IP Address</option>
+          <option value="domain">Domain</option>
+          <option value="url">URL</option>
+          <option value="email">Email</option>
+          <option value="filename">Filename</option>
+        </select>
+        <select class="filter-select" id="filter-severity">
+          <option value="">All Severities</option>
+          <option value="critical">Critical</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+          <option value="informational">Informational</option>
+        </select>
+        <select class="filter-select" id="filter-threat-type">
+          <option value="">All Threat Types</option>
+          <option value="apt">APT</option>
+          <option value="malware">Malware</option>
+          <option value="ransomware">Ransomware</option>
+          <option value="phishing">Phishing</option>
+          <option value="exploit">Exploit</option>
+          <option value="cve">CVE</option>
+        </select>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h3>📊 <span id="result-count">—</span> Indicators</h3>
+          <div id="page-info" style="font-size:0.82rem;color:var(--text-muted);"></div>
+        </div>
+        <div class="panel-body no-padding" style="overflow-x:auto;">
+          <table class="fusion-table" id="ioc-table">
+            <thead>
+              <tr>
+                <th onclick="sortTable('ioc_type')">Type ↕</th>
+                <th onclick="sortTable('ioc_value')">IOC Value ↕</th>
+                <th onclick="sortTable('threat_name')">Threat ↕</th>
+                <th onclick="sortTable('threat_type')">Category ↕</th>
+                <th onclick="sortTable('severity')">Severity ↕</th>
+                <th onclick="sortTable('first_seen')">First Seen ↕</th>
+                <th>MITRE</th>
+              </tr>
+            </thead>
+            <tbody id="ioc-tbody">
+              <tr><td colspan="7" style="padding:32px;text-align:center;color:var(--text-muted);">Loading IOC data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <div class="pagination-info" id="pagination-info"></div>
+          <div class="pagination-pages" id="pagination"></div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Pagination -->
-    <div class="pagination" id="pagination"></div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p style="margin-bottom: var(--spacing-md);">
-        🛡️ <strong>Indra CTI</strong> — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a>
-      </p>
-      <p style="font-size: 0.85rem; color: var(--text-secondary);">
-        All data is public and sanitized. Licensed under CC BY 4.0.
-      </p>
+    <div class="footer">
+      🛡️ Indra CTI — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0
     </div>
-  </footer>
+  </div>
+</div>
 
-  <script src="js/common.js"></script>
-  <script src="js/stats.js"></script>
-  <script src="js/feed-browser.js"></script>
+<script src="js/common.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/feed-browser.js"></script>
+<script>
+// Override to use Fusion design
+document.addEventListener('DOMContentLoaded', async () => {
+  await initializeStats();
+  if (allIOCs.length === 0) return;
+  iocs = [...allIOCs];
+  filteredIOCs = [...iocs];
+  document.getElementById('count-iocs').textContent = allIOCs.length.toLocaleString();
+  ['search-input','filter-type','filter-severity','filter-threat-type'].forEach(id => {
+    document.getElementById(id).addEventListener(id.startsWith('search') ? 'input' : 'change', applyFilters);
+  });
+  renderTable();
+  renderPagination();
+  updateResultCount();
+});
+
+function renderTable() {
+  const p = paginate(filteredIOCs, currentPage, pageSize);
+  const tbody = document.getElementById('ioc-tbody');
+  if (!p.items.length) {
+    tbody.innerHTML = '<tr><td colspan="7" style="padding:32px;text-align:center;color:var(--text-muted);">No IOCs found matching your filters.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = p.items.map(ioc => {
+    const sev = (ioc.severity || 'info').toLowerCase();
+    const sevClass = 'severity-' + (sev === 'informational' ? 'info' : sev);
+    const mitre = ioc.mitre_attack ? `<span class="tag tag-purple">${ioc.mitre_attack}</span>` : '<span class="text-muted">—</span>';
+    return `<tr>
+      <td><span class="tag tag-blue">${escapeHtml(ioc.ioc_type || 'unknown')}</span></td>
+      <td><span class="mono clickable" onclick="copyToClipboard('${escapeHtml(ioc.ioc_value)}', this)">${truncate(escapeHtml(ioc.ioc_value || '-'), 45)}</span></td>
+      <td style="color:var(--text);font-weight:500;">${truncate(escapeHtml(ioc.threat_name || '-'), 25)}</td>
+      <td><span class="tag tag-muted">${escapeHtml(ioc.threat_type || '-')}</span></td>
+      <td><span class="${sevClass}">${sev}</span></td>
+      <td style="color:var(--text-muted);font-size:0.85rem;">${formatDate(ioc.first_seen || '')}</td>
+      <td>${mitre}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderPagination() {
+  const p = paginate(filteredIOCs, currentPage, pageSize);
+  let html = '';
+  if (p.hasPrev) html += `<button class="page-btn" onclick="goToPage(${currentPage - 1})">←</button>`;
+  else html += `<button class="page-btn" disabled>←</button>`;
+  let s = Math.max(1, currentPage - 2), e = Math.min(p.pages, s + 4);
+  if (e - s < 4) s = Math.max(1, e - 4);
+  for (let i = s; i <= e; i++) html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+  if (p.hasNext) html += `<button class="page-btn" onclick="goToPage(${currentPage + 1})">→</button>`;
+  else html += `<button class="page-btn" disabled>→</button>`;
+  document.getElementById('pagination').innerHTML = html;
+}
+
+function updateResultCount() {
+  const p = paginate(filteredIOCs, 1, pageSize);
+  document.getElementById('result-count').textContent = p.total.toLocaleString();
+  const start = (currentPage - 1) * pageSize + 1;
+  const end = Math.min(currentPage * pageSize, p.total);
+  document.getElementById('pagination-info').textContent = p.total > 0 ? `Showing ${start}–${end} of ${p.total.toLocaleString()}` : 'No results';
+}
+
+function goToPage(pg) {
+  const p = paginate(filteredIOCs, 1, pageSize);
+  if (pg > 0 && pg <= p.pages) { currentPage = pg; renderTable(); renderPagination(); updateResultCount(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+}
+
+function escapeHtml(t) { const m = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}; return (t||'').replace(/[&<>"']/g, c => m[c]); }
+function truncate(t, l) { return t.length > l ? t.substring(0, l) + '…' : t; }
+</script>
 </body>
 </html>

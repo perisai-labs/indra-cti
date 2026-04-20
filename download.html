@@ -3,275 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Download Indra CTI IOC feeds in multiple formats - CSV, JSON, STIX 2.1.">
-  
-  <title>Download Feeds — Indra CTI</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  
+  <title>Downloads — Indra CTI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .download-card {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      padding: var(--spacing-lg);
-      border-radius: 8px;
-      margin-bottom: var(--spacing-lg);
-      transition: all 0.3s ease;
-    }
-    
-    .download-card:hover {
-      border-color: var(--color-secondary);
-    }
-    
-    .download-card h4 {
-      margin-top: 0;
-      color: var(--color-primary);
-    }
-    
-    .download-buttons {
-      display: flex;
-      gap: var(--spacing-md);
-      flex-wrap: wrap;
-      margin-top: var(--spacing-md);
-    }
-    
-    .download-btn {
-      padding: var(--spacing-sm) var(--spacing-md);
-      background-color: var(--color-secondary);
-      color: var(--bg-base);
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      font-size: 0.9rem;
-    }
-    
-    .download-btn:hover {
-      background-color: #00d9ff;
-      transform: translateY(-2px);
-    }
-    
-    .download-btn:disabled {
-      background-color: var(--text-secondary);
-      cursor: not-allowed;
-      opacity: 0.5;
-    }
-  </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <a href="index.html" class="nav-brand">🛡️ Indra CTI</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="feeds.html">IOC Feeds</a></li>
-      <li><a href="reports.html">Reports</a></li>
-      <li><a href="download.html">Download</a></li>
-    </ul>
-    <a href="https://github.com/perisai-labs/indra-cti" class="nav-github" title="GitHub" target="_blank">⬡</a>
-  </nav>
-
-  <section class="container" style="padding: var(--spacing-xl) var(--spacing-lg);">
-    <h1>📥 Download IOC Feeds</h1>
-    <p class="text-muted">Export threat indicators in your preferred format for integration into your security tools and workflows.</p>
-
-    <!-- Direct Downloads -->
-    <h2 style="margin-top: var(--spacing-xl);">Direct Downloads (from GitHub)</h2>
-    <div class="features">
-      <div class="download-card">
-        <h4>📊 All IOCs (ioc-all.csv)</h4>
-        <p>Complete feed containing 3,500+ indicators of compromise from all threat categories.</p>
-        <div class="download-buttons">
-          <a href="https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv" class="download-btn" download>📥 CSV</a>
-          <a href="https://github.com/perisai-labs/indra-cti/raw/master/feeds/ioc-all.csv" class="download-btn">View on GitHub</a>
-        </div>
-      </div>
-      
-      <div class="download-card">
-        <h4>🎯 APT IOCs (ioc-apt.csv)</h4>
-        <p>Filtered feed containing only APT-related indicators and threat actor infrastructure.</p>
-        <div class="download-buttons">
-          <a href="https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-apt.csv" class="download-btn" download>📥 CSV</a>
-        </div>
-      </div>
-      
-      <div class="download-card">
-        <h4>🦠 Malware IOCs (ioc-malware.csv)</h4>
-        <p>Malware-specific indicators including hashes, C2 servers, and distribution infrastructure.</p>
-        <div class="download-buttons">
-          <a href="https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-malware.csv" class="download-btn" download>📥 CSV</a>
-        </div>
-      </div>
-      
-      <div class="download-card">
-        <h4>🔐 Ransomware IOCs (ioc-ransomware.csv)</h4>
-        <p>Ransomware campaign indicators, payment infrastructure, and victim identification.</p>
-        <div class="download-buttons">
-          <a href="https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-ransomware.csv" class="download-btn" download>📥 CSV</a>
-        </div>
-      </div>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h2>Indra CTI</h2>
+      <small>by Peris.ai</small>
     </div>
-
-    <!-- Format Conversion -->
-    <h2 style="margin-top: var(--spacing-xl);">Export Formats (Client-Side Conversion)</h2>
-    <p class="text-muted">Convert the complete IOC feed to JSON or STIX 2.1 format for integration with SIEM platforms and threat intelligence tools.</p>
-    
-    <div class="download-card">
-      <h4>🔄 Format Conversion</h4>
-      <p style="color: var(--text-secondary); margin-bottom: var(--spacing-md);">
-        The IOC data is loaded client-side and converted to your chosen format. This ensures all data remains within your control.
-      </p>
-      <div class="download-buttons">
-        <button class="download-btn" onclick="exportAsJSON()" id="btn-json">📄 Export as JSON</button>
-        <button class="download-btn" onclick="exportAsSTIX()" id="btn-stix">🔗 Export as STIX 2.1</button>
-      </div>
-      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: var(--spacing-md);">
-        ℹ️ Format exports will trigger after IOC data is loaded from GitHub.
-      </p>
+    <nav class="sidebar-nav">
+      <div class="sidebar-label">Overview</div>
+      <a href="index.html" class="sidebar-link"><span class="icon">📊</span> Dashboard</a>
+      <div class="sidebar-label">Threat Intel</div>
+      <a href="feeds.html" class="sidebar-link"><span class="icon">🎯</span> IOC Feeds<span class="badge-count" id="count-iocs"></span></a>
+      <a href="reports.html" class="sidebar-link"><span class="icon">📋</span> Reports</a>
+      <div class="sidebar-label">Data</div>
+      <a href="download.html" class="sidebar-link active"><span class="icon">📥</span> Downloads</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="https://github.com/perisai-labs/indra-cti" target="_blank">⬡ GitHub Repository</a>
     </div>
+  </aside>
 
-    <!-- API Access -->
-    <h2 style="margin-top: var(--spacing-xl);">API Access</h2>
-    <div class="download-card">
-      <h4>Raw Data URLs</h4>
-      <p style="margin-bottom: var(--spacing-md);">Use these URLs directly in your automation scripts:</p>
-      <pre style="background-color: var(--bg-base); padding: var(--spacing-md); border-radius: 6px; overflow-x: auto;"><code style="color: var(--color-primary);">https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv
+  <div class="main">
+    <header class="header">
+      <div class="header-title">
+        <h1>IOC Downloads</h1>
+        <p>Export threat indicators in multiple formats</p>
+      </div>
+    </header>
+    <div class="content">
+
+      <!-- CSV Downloads -->
+      <div class="panel">
+        <div class="panel-header">
+          <h3>📁 Direct Downloads (CSV)</h3>
+        </div>
+        <div class="panel-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+            <div class="download-card">
+              <div class="download-icon" style="background:var(--blue-dim);color:var(--blue);">📊</div>
+              <div class="download-info">
+                <h4>All IOCs</h4>
+                <p>Complete feed · 3,500+ indicators</p>
+              </div>
+              <a href="https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv" class="btn btn-primary" download>Download</a>
+            </div>
+            <div class="download-card">
+              <div class="download-icon" style="background:var(--purple-dim);color:var(--purple);">🕵️</div>
+              <div class="download-info">
+                <h4>APT IOCs</h4>
+                <p>APT-specific indicators</p>
+              </div>
+              <a href="https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-apt.csv" class="btn btn-secondary" download>Download</a>
+            </div>
+            <div class="download-card">
+              <div class="download-icon" style="background:var(--amber-dim);color:var(--amber);">🦠</div>
+              <div class="download-info">
+                <h4>Malware IOCs</h4>
+                <p>Malware-specific indicators</p>
+              </div>
+              <a href="https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-malware.csv" class="btn btn-secondary" download>Download</a>
+            </div>
+            <div class="download-card">
+              <div class="download-icon" style="background:var(--red-dim);color:var(--red);">🔒</div>
+              <div class="download-info">
+                <h4>Ransomware IOCs</h4>
+                <p>Ransomware campaign indicators</p>
+              </div>
+              <a href="https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-ransomware.csv" class="btn btn-secondary" download>Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Format Export -->
+      <div class="panel">
+        <div class="panel-header">
+          <h3>🔄 Client-Side Export</h3>
+        </div>
+        <div class="panel-body">
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px;">Convert IOC feed to JSON or STIX 2.1 format for SIEM / threat intel platform integration.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <button class="btn btn-primary" onclick="exportJSON()" id="btn-json">📄 Export JSON</button>
+            <button class="btn btn-primary" onclick="exportSTIX()" id="btn-stix" style="background:var(--purple);">🔗 Export STIX 2.1</button>
+          </div>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-top:12px;">Data loaded client-side. No server-side processing.</p>
+        </div>
+      </div>
+
+      <!-- API Access -->
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-header">
+            <h3>🔌 Raw URLs</h3>
+          </div>
+          <div class="panel-body">
+            <div class="code-block"><code>https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv
 https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-apt.csv
 https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-malware.csv
-https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-ransomware.csv</code></pre>
-      <p style="font-size: 0.85rem; color: var(--text-secondary);">
-        ⚠️ GitHub raw URL rate limit: 60 requests/hour per IP. For high-volume access, clone the repo or contact us.
-      </p>
-    </div>
+https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-ransomware.csv</code></div>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;">⚠️ GitHub rate limit: 60 req/hr per IP. For high-volume access, clone the repo.</p>
+          </div>
+        </div>
 
-    <!-- Integration Examples -->
-    <h2 style="margin-top: var(--spacing-xl);">Integration Examples</h2>
-    <div class="features">
-      <div class="feature-item">
-        <h4>🐍 Python</h4>
-        <p><code style="background: var(--bg-surface); padding: 2px 4px;">import pandas as pd<br>df = pd.read_csv('https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv')</code></p>
+        <div class="panel">
+          <div class="panel-header">
+            <h3>📖 CSV Schema</h3>
+          </div>
+          <div class="panel-body">
+            <table class="fusion-table" style="margin:0;">
+              <thead><tr><th>Field</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td class="mono" style="color:var(--blue);">ioc_type</td><td style="color:var(--text-muted);">hash-md5, ip, domain, url, etc</td></tr>
+                <tr><td class="mono" style="color:var(--blue);">ioc_value</td><td style="color:var(--text-muted);">The actual indicator</td></tr>
+                <tr><td class="mono" style="color:var(--blue);">threat_name</td><td style="color:var(--text-muted);">Malware/threat name</td></tr>
+                <tr><td class="mono" style="color:var(--blue);">threat_type</td><td style="color:var(--text-muted);">apt, malware, ransomware</td></tr>
+                <tr><td class="mono" style="color:var(--blue);">severity</td><td style="color:var(--text-muted);">critical, high, medium, low</td></tr>
+                <tr><td class="mono" style="color:var(--blue);">first_seen</td><td style="color:var(--text-muted);">First detection date</td></tr>
+                <tr><td class="mono" style="color:var(--blue);">last_seen</td><td style="color:var(--text-muted);">Last active date</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="feature-item">
-        <h4>curl / wget</h4>
-        <p><code style="background: var(--bg-surface); padding: 2px 4px;">curl https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv -o iocs.csv</code></p>
+
+      <!-- License -->
+      <div class="panel">
+        <div class="panel-header">
+          <h3>📜 License & Attribution</h3>
+        </div>
+        <div class="panel-body">
+          <p style="color:var(--text-secondary);font-size:0.9rem;">
+            All Indra CTI data is released under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+            Use, modify, and distribute the data with attribution to Peris.ai.
+          </p>
+          <p style="color:var(--text-muted);font-size:0.85rem;margin:0;"><strong>Attribution:</strong> "Data from Indra CTI by Peris.ai"</p>
+        </div>
       </div>
-      <div class="feature-item">
-        <h4>Splunk</h4>
-        <p>Use the <code style="background: var(--bg-surface); padding: 2px 4px;">lookup_generator</code> or ingest CSV via HTTP Event Collector</p>
-      </div>
-      <div class="feature-item">
-        <h4>MISP / OpenCTI</h4>
-        <p>Import STIX 2.1 feed or CSV connector for automated ingestion</p>
-      </div>
-    </div>
 
-    <!-- Data Schema -->
-    <h2 style="margin-top: var(--spacing-xl);">CSV Data Schema</h2>
-    <div style="overflow-x: auto;">
-      <table>
-        <thead>
-          <tr>
-            <th>Field</th>
-            <th>Description</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>ioc_type</code></td>
-            <td>Type of indicator</td>
-            <td>hash-md5, ip, domain, url, etc</td>
-          </tr>
-          <tr>
-            <td><code>ioc_value</code></td>
-            <td>The actual indicator</td>
-            <td>192.168.1.1, example.com</td>
-          </tr>
-          <tr>
-            <td><code>threat_name</code></td>
-            <td>Name of threat/malware</td>
-            <td>Mirai, AgentTesla, Emotet</td>
-          </tr>
-          <tr>
-            <td><code>threat_type</code></td>
-            <td>Category of threat</td>
-            <td>malware, apt, ransomware</td>
-          </tr>
-          <tr>
-            <td><code>severity</code></td>
-            <td>Risk level</td>
-            <td>critical, high, medium, low</td>
-          </tr>
-          <tr>
-            <td><code>confidence</code></td>
-            <td>Confidence in indicator</td>
-            <td>0-100</td>
-          </tr>
-          <tr>
-            <td><code>first_seen</code></td>
-            <td>When indicator was first detected</td>
-            <td>2026-02-15</td>
-          </tr>
-          <tr>
-            <td><code>last_seen</code></td>
-            <td>When indicator was last active</td>
-            <td>2026-02-20</td>
-          </tr>
-          <tr>
-            <td><code>mitre_attack</code></td>
-            <td>MITRE ATT&CK technique ID</td>
-            <td>T1059.001 (Command and Scripting)</td>
-          </tr>
-          <tr>
-            <td><code>tags</code></td>
-            <td>Additional classification tags</td>
-            <td>botnet, c2, trojan, steal</td>
-          </tr>
-          <tr>
-            <td><code>source</code></td>
-            <td>Data source attribution</td>
-            <td>public-feed, research, community</td>
-          </tr>
-          <tr>
-            <td><code>description</code></td>
-            <td>Context and details</td>
-            <td>Command & Control server for Mirai botnet</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
-
-    <!-- License -->
-    <div style="background-color: var(--bg-surface); border-left: 3px solid var(--color-primary); padding: var(--spacing-lg); border-radius: 6px; margin-top: var(--spacing-xl);">
-      <h3 style="margin-top: 0; color: var(--color-primary);">📜 License & Attribution</h3>
-      <p>
-        All Indra CTI data is released under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>. 
-        You are free to use, modify, and distribute the data as long as you provide attribution to Peris.ai.
-      </p>
-      <p style="font-size: 0.9rem; color: var(--text-secondary);">
-        <strong>Attribution Example:</strong> "Data from Indra CTI by Peris.ai"
-      </p>
+    <div class="footer">
+      🛡️ Indra CTI — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p style="margin-bottom: var(--spacing-md);">
-        🛡️ <strong>Indra CTI</strong> — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a>
-      </p>
-      <p style="font-size: 0.85rem; color: var(--text-secondary);">
-        All data is public and sanitized. Licensed under CC BY 4.0. For support: cti@peris.ai
-      </p>
-    </div>
-  </footer>
+<script>
+async function init() {
+  try {
+    const r = await fetch('https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv');
+    const t = await r.text();
+    const lines = t.split('\n').filter(l => l.trim());
+    document.getElementById('count-iocs').textContent = (lines.length - 1).toLocaleString();
+  } catch(e) { console.warn('Failed to fetch IOC count', e); }
+}
+init();
 
-  <script src="js/common.js"></script>
-  <script src="js/stats.js"></script>
-  <script src="js/export.js"></script>
+async function exportJSON() {
+  const btn = document.getElementById('btn-json');
+  btn.disabled = true; btn.textContent = '⏳ Loading...';
+  try {
+    const r = await fetch('https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv');
+    const t = await r.text();
+    const lines = t.split('\n').filter(l => l.trim());
+    const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+    const data = lines.slice(1).map(l => {
+      const v = l.split(',');
+      return Object.fromEntries(headers.map((h, i) => [h, (v[i] || '').trim()]));
+    });
+    const json = JSON.stringify({ source: 'Indra CTI by Peris.ai', generated: new Date().toISOString(), total: data.length, data }, null, 2);
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+    a.download = `indra-cti-${new Date().toISOString().split('T')[0]}.json`; a.click();
+    btn.textContent = '✓ Downloaded!'; setTimeout(() => { btn.textContent = '📄 Export JSON'; btn.disabled = false; }, 2000);
+  } catch(e) { alert('Export failed: ' + e.message); btn.textContent = '📄 Export JSON'; btn.disabled = false; }
+}
+
+async function exportSTIX() {
+  const btn = document.getElementById('btn-stix');
+  btn.disabled = true; btn.textContent = '⏳ Loading...';
+  try {
+    const r = await fetch('https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv');
+    const t = await r.text();
+    const lines = t.split('\n').filter(l => l.trim());
+    const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+    const data = lines.slice(1).map(l => {
+      const v = l.split(',');
+      return Object.fromEntries(headers.map((h, i) => [h, (v[i] || '').trim()]));
+    });
+    
+    const typeMap = { 'hash-md5': 'file:hashes.MD5', 'hash-sha256': 'file:hashes.SHA-256', 'ip': 'ipv4-addr:value', 'domain': 'domain-name:value', 'url': 'url:value', 'email': 'email-addr:value', 'filename': 'file:name' };
+    const objects = data.filter(ioc => {
+      const p = typeMap[ioc.ioc_type];
+      return p;
+    }).map(ioc => ({
+      type: 'indicator', id: 'indicator--' + crypto.randomUUID(), created: ioc.first_seen || new Date().toISOString(),
+      modified: ioc.last_seen || new Date().toISOString(), pattern: `[${typeMap[ioc.ioc_type]} = '${ioc.ioc_value}']`,
+      pattern_type: 'stix', labels: ['malicious-activity'], name: ioc.threat_name || 'Unknown',
+      description: ioc.description || '', valid_from: ioc.first_seen || new Date().toISOString()
+    }));
+    
+    const stix = JSON.stringify({ type: 'bundle', id: 'bundle--' + crypto.randomUUID(), created: new Date().toISOString(), modified: new Date().toISOString(), objects }, null, 2);
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([stix], { type: 'application/json' }));
+    a.download = `indra-cti-stix-${new Date().toISOString().split('T')[0]}.json`; a.click();
+    btn.textContent = '✓ Downloaded!'; setTimeout(() => { btn.textContent = '🔗 Export STIX 2.1'; btn.disabled = false; }, 2000);
+  } catch(e) { alert('STIX export failed: ' + e.message); btn.textContent = '🔗 Export STIX 2.1'; btn.disabled = false; }
+}
+</script>
 </body>
 </html>
