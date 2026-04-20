@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Indra CTI IOC Feeds - Searchable and filterable database of indicators of compromise.">
+  <meta name="robots" content="index, follow">
+  
+  <title>IOC Feeds — Indra CTI</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">🛡️ Indra CTI</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="feeds.html">IOC Feeds</a></li>
+      <li><a href="reports.html">Reports</a></li>
+      <li><a href="download.html">Download</a></li>
+    </ul>
+    <a href="https://github.com/perisai-labs/indra-cti" class="nav-github" title="GitHub" target="_blank">⬡</a>
+  </nav>
+
+  <section class="container" style="padding: var(--spacing-xl) var(--spacing-lg);">
+    <h1>🔍 IOC Feed Browser</h1>
+    <p class="text-muted">Search and filter thousands of indicators of compromise. Tip: Click any IOC value to copy to clipboard.</p>
+
+    <!-- Search & Filters -->
+    <div class="search-bar">
+      <input 
+        type="text" 
+        id="search-input" 
+        placeholder="Search IOC value, threat name, description..."
+        style="flex: 1; min-width: 250px;"
+      >
+      <select id="filter-type">
+        <option value="">All Types</option>
+        <option value="hash-md5">Hash (MD5)</option>
+        <option value="hash-sha256">Hash (SHA256)</option>
+        <option value="ip">IP Address</option>
+        <option value="domain">Domain</option>
+        <option value="url">URL</option>
+        <option value="email">Email</option>
+        <option value="filename">Filename</option>
+      </select>
+      <select id="filter-severity">
+        <option value="">All Severities</option>
+        <option value="critical">🔴 Critical</option>
+        <option value="high">🟠 High</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="low">🔵 Low</option>
+        <option value="informational">⚪ Informational</option>
+      </select>
+      <select id="filter-threat-type">
+        <option value="">All Threat Types</option>
+        <option value="apt">APT</option>
+        <option value="malware">Malware</option>
+        <option value="ransomware">Ransomware</option>
+        <option value="phishing">Phishing</option>
+        <option value="exploit">Exploit</option>
+        <option value="cve">CVE</option>
+      </select>
+    </div>
+
+    <!-- Results counter -->
+    <div style="margin-bottom: var(--spacing-md); color: var(--text-secondary); font-size: 0.95rem;">
+      Results: <strong id="result-count">0</strong> IOCs
+      <span id="page-info" style="margin-left: var(--spacing-md);"></span>
+    </div>
+
+    <!-- IOC Table -->
+    <div style="overflow-x: auto; margin-bottom: var(--spacing-lg);">
+      <table id="ioc-table">
+        <thead>
+          <tr>
+            <th onclick="sortTable('ioc_type')" style="cursor: pointer;">Type ↕</th>
+            <th onclick="sortTable('ioc_value')" style="cursor: pointer;">IOC Value ↕</th>
+            <th onclick="sortTable('threat_name')" style="cursor: pointer;">Threat ↕</th>
+            <th onclick="sortTable('threat_type')" style="cursor: pointer;">Type ↕</th>
+            <th onclick="sortTable('severity')" style="cursor: pointer;">Severity ↕</th>
+            <th onclick="sortTable('first_seen')" style="cursor: pointer;">First Seen ↕</th>
+            <th>MITRE ATT&CK</th>
+          </tr>
+        </thead>
+        <tbody id="ioc-tbody">
+          <tr><td colspan="7" style="text-align: center; padding: var(--spacing-lg);">Loading IOC data...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: var(--spacing-md);">
+        🛡️ <strong>Indra CTI</strong> — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a>
+      </p>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        All data is public and sanitized. Licensed under CC BY 4.0.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="js/feed-browser.js"></script>
+</body>
+</html>

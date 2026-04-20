@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Indra CTI - Threat Intelligence Platform by Peris.ai. Real-time IOC feeds, MITRE ATT&CK mapping, and research reports.">
+  <meta name="keywords" content="threat intelligence, IOC, malware, ransomware, APT, MITRE ATT&CK">
+  <meta property="og:title" content="Indra CTI — Threat Intelligence by Peris.ai">
+  <meta property="og:description" content="Open-source threat intelligence platform with real-time IOC feeds and malware analysis.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perisai-labs.github.io/indra-cti/">
+  
+  <title>Indra CTI — Threat Intelligence by Peris.ai</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">🛡️ Indra CTI</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="feeds.html">IOC Feeds</a></li>
+      <li><a href="reports.html">Reports</a></li>
+      <li><a href="download.html">Download</a></li>
+    </ul>
+    <a href="https://github.com/perisai-labs/indra-cti" class="nav-github" title="GitHub" target="_blank">⬡</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Indra CTI</h1>
+      <p class="subtitle">Open-Source Threat Intelligence Platform</p>
+      <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: var(--spacing-lg);">
+        Real-time IOC feeds, MITRE ATT&CK mapping, and curated malware research by Peris.ai
+      </p>
+      <div class="cta">
+        <a href="feeds.html" class="btn btn-primary">Browse IOC Feeds →</a>
+        <a href="download.html" class="btn btn-secondary">Download Feeds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="container" style="padding: var(--spacing-xl) var(--spacing-lg);">
+    <div class="stats" id="stats-container">
+      <div class="stat-card">
+        <div class="number" id="total-iocs">-</div>
+        <div class="label">Total IOCs</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="apt-count">-</div>
+        <div class="label">APT Incidents</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="malware-count">-</div>
+        <div class="label">Malware Samples</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="ransomware-count">-</div>
+        <div class="label">Ransomware</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Threat Activity Chart -->
+  <section class="container" style="padding: var(--spacing-xl) var(--spacing-lg);">
+    <h2>Threat Activity (Last 30 Days)</h2>
+    <div class="chart-container">
+      <canvas id="activity-chart"></canvas>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="container" style="padding: var(--spacing-xl) var(--spacing-lg);">
+    <h2 style="text-align: center; margin-bottom: var(--spacing-xl);">Why Choose Indra CTI?</h2>
+    <div class="features">
+      <div class="feature-item">
+        <h4>📊 Real-time IOC Feeds</h4>
+        <p>Updated hourly with the latest indicators of compromise from active threats, APTs, and malware campaigns across Southeast Asia and beyond.</p>
+      </div>
+      <div class="feature-item">
+        <h4>🎯 MITRE ATT&CK Mapping</h4>
+        <p>Every indicator is mapped to MITRE ATT&CK framework tactics and techniques for better threat assessment and defense alignment.</p>
+      </div>
+      <div class="feature-item">
+        <h4>🔬 Research Reports</h4>
+        <p>In-depth malware analysis, reverse engineering reports, and threat actor profiles with technical artifacts and detection rules.</p>
+      </div>
+      <div class="feature-item">
+        <h4>⚙️ Integration Ready</h4>
+        <p>Download feeds in CSV, JSON, or STIX 2.1 formats. Simple REST access or direct GitHub raw URLs for automation.</p>
+      </div>
+      <div class="feature-item">
+        <h4>🔐 Open & Transparent</h4>
+        <p>Licensed under CC BY 4.0. All data is sanitized and public-ready. No tracking, no ads, just pure threat intelligence.</p>
+      </div>
+      <div class="feature-item">
+        <h4>🌏 SEA-Focused</h4>
+        <p>Specializing in threats targeting Southeast Asia, including local APTs, cybercriminals, and regional malware campaigns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Threats Table Preview -->
+  <section class="container" style="padding: var(--spacing-xl) var(--spacing-lg);">
+    <h2>Recent Threats (Latest 10)</h2>
+    <div style="overflow-x: auto;">
+      <table id="recent-table">
+        <thead>
+          <tr>
+            <th>IOC Type</th>
+            <th>IOC Value</th>
+            <th>Threat</th>
+            <th>Type</th>
+            <th>Severity</th>
+            <th>First Seen</th>
+          </tr>
+        </thead>
+        <tbody id="recent-tbody">
+          <tr><td colspan="6" style="text-align: center; color: var(--text-secondary);">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: var(--spacing-md);">
+        🛡️ <strong>Indra CTI</strong> — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a>
+      </p>
+      <p style="margin-bottom: var(--spacing-sm);">
+        Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> | 
+        <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub Repository</a> | 
+        For threats & inquiries: <code>cti@peris.ai</code>
+      </p>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);">
+        Updated hourly | IOC data sourced from public threat feeds, vendor reports, and community contributions
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/common.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Initialize page stats on load
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeStats();
+    });
+  </script>
+</body>
+</html>
