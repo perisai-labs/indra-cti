@@ -1,0 +1,2 @@
+Date,SHA256,Family,Severity,C2_IP,C2_Port,Description
+2026-04-21,ea5a5bf8d66b961eb51215df77d5d32a874e3e08379dab0b647a6584eda5fc7b,Gafgyt,High,192.109.200.254,1111,IoT botnet with C2 communication
