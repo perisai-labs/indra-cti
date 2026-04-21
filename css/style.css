@@ -321,7 +321,7 @@ a:hover { color: var(--blue); }
 
 /* CODE BLOCKS */
 .code-block { background: var(--bg-input); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; overflow-x: auto; margin: 16px 0; }
-.code-block code { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--blue); white-space: pre; }
+.code-block code { font-family: 'Iosevka Term', 'Iosevka', monospace; font-size: 0.82rem; color: var(--blue); white-space: pre; }
 
 /* FOOTER */
 .footer { padding: 24px 32px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
