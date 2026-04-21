@@ -29,7 +29,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  font-family: 'Iosevka Term', 'Iosevka', -apple-system, BlinkMacSystemFont, 'Segoe UI', monospace;
   background: var(--bg-base);
   color: var(--text);
   line-height: 1.6;
@@ -241,7 +241,7 @@ a:hover { color: var(--blue); }
 .fusion-table th { background: var(--bg-secondary); color: var(--text-muted); padding: 14px 24px; text-align: left; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; white-space: nowrap; }
 .fusion-table td { padding: 14px 24px; border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--text-sec); }
 .fusion-table tr:hover td { background: rgba(255, 255, 255, 0.02); }
-.fusion-table .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; }
+.fusion-table .mono { font-family: 'Iosevka Term', 'Iosevka', monospace; font-size: 0.82rem; }
 .fusion-table .clickable { cursor: pointer; color: var(--blue); }
 
 /* PAGINATION */
@@ -347,7 +347,7 @@ a:hover { color: var(--blue); }
 .feature-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
 .feature-item p { font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
 .text-muted { color: var(--text-muted); }
-.mono { font-family: 'JetBrains Mono', monospace; }
+.mono { font-family: 'Iosevka Term', 'Iosevka', monospace; }
 .flex { display: flex; align-items: center; gap: 8px; }
 .flex-between { display: flex; align-items: center; justify-content: space-between; }
 
