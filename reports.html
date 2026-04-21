@@ -7,8 +7,13 @@
   <!-- Iosevka font (typeof.net) -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iosevka@30.3.0/dist/iosevka.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iosevka@30.3.0/dist/iosevka-term.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .report-card { cursor: pointer; }
+    .report-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  </style>
 </head>
 <body>
 <div class="app">
@@ -27,6 +32,7 @@
       </a>
       <a href="reports.html" class="sidebar-link active">
         <span class="icon"><i data-lucide="clipboard-list"></i></span> Reports
+        <span class="badge-count" id="count-reports">—</span>
       </a>
       <div class="sidebar-label">Data</div>
       <a href="download.html" class="sidebar-link"><span class="icon"><i data-lucide="download"></i></span> Downloads</a>
@@ -44,6 +50,9 @@
         <h1>Research Reports</h1>
         <p>Malware analysis and threat intelligence reports</p>
       </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <span id="report-total" style="font-size:0.85rem;color:var(--text-muted);"></span>
+      </div>
     </header>
     <div class="content">
 
@@ -55,9 +64,12 @@
         </select>
         <select class="filter-select" id="filter-type">
           <option value="">All Types</option>
-          <option value="malware">Malware</option>
           <option value="ransomware">Ransomware</option>
+          <option value="rat">RAT</option>
+          <option value="stealer">Stealer</option>
+          <option value="botnet">Botnet</option>
           <option value="apt">APT</option>
+          <option value="cryptominer">Cryptominer</option>
           <option value="analysis">Analysis</option>
         </select>
       </div>
@@ -72,15 +84,96 @@
 
 <script src="js/common.js"></script>
 <script>
+const REPORT_BASE = 'https://raw.githubusercontent.com/perisai-labs/indra-cti/master/reports/';
+
+// Full report manifest — auto-scraped from repo
 const reports = [
-  { id: 'agenttesla-stegano', date: '2026-02-11', title: 'AgentTesla Steganography Loader', desc: 'Sophisticated steganography-based AgentTesla loader variant using image embedding techniques.', type: 'malware', tags: ['infostealer','stegano','loader','dotnet'], sev: 'high' },
-  { id: 'mirai-variant', date: '2026-02-12', title: 'Mirai Botnet Variant', desc: 'New Mirai IoT botnet variant with enhanced C2 capabilities and persistence mechanisms.', type: 'malware', tags: ['botnet','mirai','iot','ddos'], sev: 'critical' },
-  { id: 'crysome-rat', date: '2026-02-15', title: 'Crysome RAT Technical Breakdown', desc: 'Detailed reverse engineering of Crysome RAT targeting Southeast Asian organizations.', type: 'malware', tags: ['rat','remoteaccess','sea','crimeware'], sev: 'high' },
-  { id: 'stealc-infostealer', date: '2026-02-16', title: 'Stealc Information Stealer', desc: 'Comprehensive analysis of Stealc stealer targeting browser credentials and crypto wallets.', type: 'malware', tags: ['infostealer','credentials','wallets'], sev: 'high' },
-  { id: '0apt-ransomware', date: '2026-02-19', title: '0APT Ransomware Operation', desc: 'Analysis of 0APT ransomware group operations, infrastructure, and attribution indicators.', type: 'ransomware', tags: ['ransomware','0apt','encryption'], sev: 'critical' },
-  { id: 'xworm-rat', date: '2026-02-20', title: 'XWorm RAT Campaign', desc: 'Multi-stage analysis of XWorm RAT distribution infrastructure and C2 communication.', type: 'malware', tags: ['rat','xworm','c2','crimeware'], sev: 'high' },
-  { id: 'pureminer', date: '2026-02-21', title: 'PureMiner Cryptocurrency Miner', desc: 'Technical analysis of PureMiner cryptomining malware targeting Linux servers.', type: 'analysis', tags: ['cryptominer','linux','performance'], sev: 'medium' },
-  { id: 'mirai-titanjr', date: '2026-02-22', title: 'Mirai TitanJR ARC Analysis', desc: 'Reverse engineering of Mirai TitanJR variant targeting ARC architecture devices.', type: 'malware', tags: ['mirai','arc','iot','credentials'], sev: 'high' },
+  // === 2025 Reports ===
+  { file: '2025-03-15-netsupport-rat.md', folder: '2025-03-15-netsupport-rat', date: '2025-03-15', type: 'rat', title: 'NetSupport RAT', sev: 'high' },
+  { file: '2025-03-18-rustystealer.md', folder: '2025-03-18-rustystealer', date: '2025-03-18', type: 'stealer', title: 'RustyStealer', sev: 'high' },
+  { file: '2025-03-19-mirai-iot-botnet.md', folder: '2025-03-19-mirai-iot-botnet', date: '2025-03-19', type: 'botnet', title: 'Mirai IoT Botnet', sev: 'critical' },
+  { file: '2025-03-20-offloader.md', folder: '2025-03-20-offloader', date: '2025-03-20', type: 'stealer', title: 'Offloader', sev: 'medium' },
+  { file: '2025-03-21-winpeas.md', folder: '2025-03-21-winpeas', date: '2025-03-21', type: 'analysis', title: 'WinPEAS PrivEsc Tool', sev: 'medium' },
+  { file: '2025-03-24-lummastealer.md', folder: '2025-03-24-lummastealer', date: '2025-03-24', type: 'stealer', title: 'LummaStealer', sev: 'high' },
+  { file: '2025-03-31-acrstealer.md', folder: '2025-03-31-acrstealer', date: '2025-03-31', type: 'stealer', title: 'ACRStealer', sev: 'high' },
+  { file: '2025-04-01-silverfox-rat.md', folder: '2025-04-01-silverfox-rat', date: '2025-04-01', type: 'rat', title: 'SilverFox RAT', sev: 'high' },
+  { file: '2025-04-05-riscv-go-ddos-botnet.md', folder: '2025-04-05-riscv-go-ddos-botnet', date: '2025-04-05', type: 'botnet', title: 'RISC-V Go DDoS Botnet', sev: 'high' },
+
+  // === 2026 Reports ===
+  { file: '2026-02-10-asyncrat-vietnam/README.md', folder: '2026-02-10-asyncrat-vietnam', date: '2026-02-10', type: 'rat', title: 'AsyncRAT Vietnam Campaign', sev: 'high' },
+  { file: '2026-02-11-agenttesla-stegano-loader/README.md', folder: '2026-02-11-agenttesla-stegano-loader', date: '2026-02-11', type: 'stealer', title: 'AgentTesla Stegano Loader', sev: 'high' },
+  { file: '2026-02-12-mirai-variant/README.md', folder: '2026-02-12-mirai-variant', date: '2026-02-12', type: 'botnet', title: 'Mirai Variant Analysis', sev: 'critical' },
+  { file: '2026-02-15-crysome-rat/README.md', folder: '2026-02-15-crysome-rat', date: '2026-02-15', type: 'rat', title: 'Crysome RAT', sev: 'high' },
+  { file: '2026-02-16-stealc-infostealer/README.md', folder: '2026-02-16-stealc-infostealer', date: '2026-02-16', type: 'stealer', title: 'Stealc Infostealer', sev: 'critical' },
+  { file: '2026-02-17-encrypted-elf-custom-upx/README.md', folder: '2026-02-17-encrypted-elf-custom-upx', date: '2026-02-17', type: 'analysis', title: 'Encrypted ELF (Custom UPX)', sev: 'medium' },
+  { file: '2026-02-18-formbook-po-phishing/README.md', folder: '2026-02-18-formbook-po-phishing', date: '2026-02-18', type: 'stealer', title: 'FormBook Phishing Campaign', sev: 'high' },
+  { file: '2026-02-19-0apt-ransomware/README.md', folder: '2026-02-19-0apt-ransomware', date: '2026-02-19', type: 'ransomware', title: '0APT Ransomware', sev: 'critical' },
+  { file: '2026-02-20-xworm-rat/README.md', folder: '2026-02-20-xworm-rat', date: '2026-02-20', type: 'rat', title: 'XWorm RAT', sev: 'high' },
+  { file: '2026-02-21-pureminer-cryptocurrency-miner/README.md', folder: '2026-02-21-pureminer-cryptocurrency-miner', date: '2026-02-21', type: 'cryptominer', title: 'PureMiner Cryptominer', sev: 'medium' },
+  { file: '2026-02-22-mirai-titanjr-arc/README.md', folder: '2026-02-22-mirai-titanjr-arc', date: '2026-02-22', type: 'botnet', title: 'Mirai TitanJR (ARC)', sev: 'high' },
+  { file: '2026-02-23-santastealer/README.md', folder: '2026-02-23-santastealer', date: '2026-02-23', type: 'stealer', title: 'SantaStealer', sev: 'medium' },
+  { file: '2026-02-23-spynote-tiktok-cheats/README.md', folder: '2026-02-23-spynote-tiktok-cheats', date: '2026-02-23', type: 'rat', title: 'Spynote TikTok Cheats', sev: 'high' },
+  { file: '2026-02-24-phishing-fake-kemenhub-srut/README.md', folder: '2026-02-24-phishing-fake-kemenhub-srut', date: '2026-02-24', type: 'apt', title: 'Fake Kemenhub Phishing', sev: 'high' },
+  { file: '2026-02-25-redline-stealc/README.md', folder: '2026-02-25-redline-stealc', date: '2026-02-25', type: 'stealer', title: 'RedLine + Stealc', sev: 'critical' },
+  { file: '2026-02-26-salatstealer/README.md', folder: '2026-02-26-salatstealer', date: '2026-02-26', type: 'stealer', title: 'SalatStealer', sev: 'medium' },
+  { file: '2026-02-27-netsupport-rat/README.md', folder: '2026-02-27-netsupport-rat', date: '2026-02-27', type: 'rat', title: 'NetSupport RAT', sev: 'high' },
+  { file: '2026-02-28-rloader-vmprotect/README.md', folder: '2026-02-28-rloader-vmprotect', date: '2026-02-28', type: 'analysis', title: 'RLoader + VMProtect', sev: 'high' },
+  { file: '2026-03-01-pulsar-rat-chile/README.md', folder: '2026-03-01-pulsar-rat-chile', date: '2026-03-01', type: 'rat', title: 'Pulsar RAT (Chile)', sev: 'high' },
+  { file: '2026-03-02-mirai-arm-adb/README.md', folder: '2026-03-02-mirai-arm-adb', date: '2026-03-02', type: 'botnet', title: 'Mirai ARM ADB', sev: 'high' },
+  { file: '2026-03-03-vidar-stealer.md', folder: null, date: '2026-03-03', type: 'stealer', title: 'Vidar Stealer', sev: 'high' },
+  { file: '2026-03-04-asyncrat.md', folder: null, date: '2026-03-04', type: 'rat', title: 'AsyncRAT', sev: 'high' },
+  { file: '2026-03-05-polar-mirai.md', folder: null, date: '2026-03-05', type: 'botnet', title: 'Polar Mirai', sev: 'high' },
+  { file: '2026-03-06-mirai-r34fa352.md', folder: null, date: '2026-03-06', type: 'botnet', title: 'Mirai R34FA352', sev: 'high' },
+  { file: '2026-03-07-inc-ransomware.md', folder: null, date: '2026-03-07', type: 'ransomware', title: 'INC Ransomware', sev: 'critical' },
+  { file: '2026-03-07-mirai-iot-botnet.md', folder: null, date: '2026-03-07', type: 'botnet', title: 'Mirai IoT Botnet', sev: 'high' },
+  { file: '2026-03-08-asyncrat-robloxhack.md', folder: null, date: '2026-03-08', type: 'rat', title: 'AsyncRAT (RobloxHack)', sev: 'high' },
+  { file: '2026-03-09-asyncrat-robloxhack.md', folder: null, date: '2026-03-09', type: 'rat', title: 'AsyncRAT (RobloxHack) — 2', sev: 'high' },
+  { file: '2026-03-10-akira-cloudflared.md', folder: null, date: '2026-03-10', type: 'ransomware', title: 'Akira (Cloudflared)', sev: 'critical' },
+  { file: '2026-03-11-bitter-zxxz-downloader.md', folder: null, date: '2026-03-11', type: 'apt', title: 'Bitter ZXXZ Downloader', sev: 'high' },
+  { file: '2026-03-12-pulsar-rat.md', folder: null, date: '2026-03-12', type: 'rat', title: 'Pulsar RAT', sev: 'high' },
+  { file: '2026-03-14-blacksanta-edr-killer.md', folder: null, date: '2026-03-14', type: 'analysis', title: 'BlackSanta EDR Killer', sev: 'critical' },
+  { file: '2026-03-14-stage5-payload.md', folder: null, date: '2026-03-14', type: 'analysis', title: 'Stage5 Payload', sev: 'high' },
+  { file: '2026-03-16-acrstealer.md', folder: null, date: '2026-03-16', type: 'stealer', title: 'ACRStealer', sev: 'high' },
+  { file: '2026-03-17-coinminer-dconf-backup.md', folder: null, date: '2026-03-17', type: 'cryptominer', title: 'CoinMiner (dconf backup)', sev: 'medium' },
+  { file: '2026-03-22-remcosrat.md', folder: null, date: '2026-03-22', type: 'rat', title: 'RemcosRAT', sev: 'high' },
+  { file: '2026-03-23-vidar-stealer.md', folder: null, date: '2026-03-23', type: 'stealer', title: 'Vidar Stealer', sev: 'high' },
+  { file: '2026-03-25-agenttesla-mar2026.md', folder: null, date: '2026-03-25', type: 'stealer', title: 'AgentTesla Mar 2026', sev: 'high' },
+  { file: '2026-03-25-agenttesla.md', folder: null, date: '2026-03-25', type: 'stealer', title: 'AgentTesla', sev: 'high' },
+  { file: '2026-03-25-dark-pink-indonesia.md', folder: null, date: '2026-03-25', type: 'apt', title: 'Dark Pink (Indonesia)', sev: 'critical' },
+  { file: '2026-03-25-medusa-ransomware-campaign.md', folder: null, date: '2026-03-25', type: 'ransomware', title: 'Medusa Ransomware Campaign', sev: 'critical' },
+  { file: '2026-03-25-silver-fox-apt.md', folder: null, date: '2026-03-25', type: 'apt', title: 'Silver Fox APT', sev: 'critical' },
+  { file: '2026-03-26-mirai-botnet.md', folder: null, date: '2026-03-26', type: 'botnet', title: 'Mirai Botnet', sev: 'high' },
+  { file: '2026-03-27-revengerat.md', folder: null, date: '2026-03-27', type: 'rat', title: 'RevengeRAT', sev: 'high' },
+  { file: '2026-03-28-valleyrat.md', folder: null, date: '2026-03-28', type: 'rat', title: 'ValleyRAT', sev: 'high' },
+  { file: '2026-03-29-quasarrat.md', folder: null, date: '2026-03-29', type: 'rat', title: 'QuasarRAT', sev: 'high' },
+  { file: '2026-03-31-teampcp-vect-supply-chain.md', folder: null, date: '2026-03-31', type: 'apt', title: 'TeamPCP / VECT Supply Chain', sev: 'critical' },
+  { file: '2026-04-03-offloader.md', folder: null, date: '2026-04-03', type: 'stealer', title: 'Offloader', sev: 'medium' },
+  { file: '2026-04-11-ratonrat.md', folder: null, date: '2026-04-11', type: 'rat', title: 'RatonRAT', sev: 'high' },
+  { file: '2026-04-12-smoke-loader.md', folder: null, date: '2026-04-12', type: 'stealer', title: 'Smoke Loader', sev: 'high' },
+  { file: '2026-04-15-snakekeylogger.md', folder: null, date: '2026-04-15', type: 'stealer', title: 'SnakeKeylogger', sev: 'medium' },
+
+  // === Special Reports ===
+  { file: 'CVE-2026-32201-SharePoint-zero-day.md', folder: null, date: '2026-04', type: 'apt', title: 'CVE-2026-32201 SharePoint Zero-Day', sev: 'critical' },
+  { file: 'CVE-2026-5281-chrome-webgpu-zero-day.md', folder: null, date: '2026-04', type: 'analysis', title: 'CVE-2026-5281 Chrome WebGPU Zero-Day', sev: 'critical' },
+  { file: 'CVE-2026-20131-cisco-fmc-rce-interlock-ransomware.md', folder: null, date: '2026-04', type: 'ransomware', title: 'Cisco FMC RCE + Interlock Ransomware', sev: 'critical' },
+  { file: 'CVE-2026-21509-microsoft-office-zero-day.md', folder: null, date: '2026-04', type: 'analysis', title: 'Microsoft Office Zero-Day', sev: 'critical' },
+  { file: 'CVE-2026-35616-forticlient-ems-rce.md', folder: null, date: '2026-04', type: 'analysis', title: 'FortiClient EMS RCE', sev: 'high' },
+  { file: 'APT41-Earth-Baku-Indonesia-SEA.md', folder: null, date: '2026', type: 'apt', title: 'APT41 / Earth Baku (Indonesia)', sev: 'critical' },
+  { file: 'TA416-plugx-oauth-phishing-2026.md', folder: null, date: '2026', type: 'apt', title: 'TA416 PlugX OAuth Phishing', sev: 'critical' },
+  { file: 'TeamPCP-DPRK-Supply-Chain.md', folder: null, date: '2026', type: 'apt', title: 'TeamPCP DPRK Supply Chain', sev: 'critical' },
+  { file: 'amaranth-dragon-apt41-asean-2026.md', folder: null, date: '2026', type: 'apt', title: 'Amaranth Dragon / APT41 ASEAN', sev: 'critical' },
+  { file: 'sidewinder-ragaserpent-indonesia-sea-2026.md', folder: null, date: '2026', type: 'apt', title: 'Sidewinder / RagaSerpent (Indonesia/SEA)', sev: 'critical' },
+  { file: 'interlock-ransomware-2026.md', folder: null, date: '2026', type: 'ransomware', title: 'Interlock Ransomware 2026', sev: 'critical' },
+  { file: 'qilin-warlock-byovd-edr-bypass.md', folder: null, date: '2026', type: 'ransomware', title: 'Qilin Warlock BYOVD EDR Bypass', sev: 'critical' },
+  { file: 'saas-notification-pipeline-abuse-paap.md', folder: null, date: '2026', type: 'analysis', title: 'SaaS Notification Pipeline Abuse', sev: 'medium' },
+  { file: 'malicious-npm-strapi-supply-chain-2026-04.md', folder: null, date: '2026-04', type: 'analysis', title: 'Malicious NPM (Strapi Supply Chain)', sev: 'high' },
+  { file: 'device-code-phishing-surge-2026.md', folder: null, date: '2026', type: 'analysis', title: 'Device Code Phishing Surge 2026', sev: 'high' },
+  { file: 'unc1069-axios-npm-supply-chain.md', folder: null, date: '2026', type: 'analysis', title: 'UNC1069 Axios NPM Supply Chain', sev: 'high' },
+  { file: 'storm-1175-medusa-zero-day-attacks.md', folder: null, date: '2026', type: 'ransomware', title: 'Storm-1175 / Medusa Zero-Day Attacks', sev: 'critical' },
+  { file: 'sparkcat-v2-crypto-wallet-theft-2026.md', folder: null, date: '2026', type: 'stealer', title: 'SparkCat v2 Crypto Wallet Theft', sev: 'high' },
+  { file: 'yurei-ransomware-2026.md', folder: null, date: '2026', type: 'ransomware', title: 'Yurei Ransomware 2026', sev: 'critical' },
+  { file: 'bluehammer-windows-lpe-zero-day.md', folder: null, date: '2026', type: 'analysis', title: 'BlueHammer Windows LPE Zero-Day', sev: 'critical' },
+  { file: 'dprk-drift-285m-social-engineering-2026-04.md', folder: null, date: '2026-04', type: 'apt', title: 'DPRK Drift $285M Social Engineering', sev: 'critical' },
 ];
 
 let filtered = [...reports];
@@ -89,10 +182,13 @@ document.addEventListener('DOMContentLoaded', () => {
   lucide.createIcons();
   document.getElementById('filter-year').addEventListener('change', applyFilters);
   document.getElementById('filter-type').addEventListener('change', applyFilters);
+  document.getElementById('count-reports').textContent = reports.length;
+  document.getElementById('report-total').textContent = reports.length + ' reports';
   renderReports();
-  // Also update ioc count in sidebar
+
+  // IOC count
   fetchCSV('https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv').then(d => {
-    if (d.length) document.getElementById('count-iocs').textContent = d.length.toLocaleString();
+    if (d.length) document.getElementById('count-iocs').textContent = d.length;
   }).catch(() => {});
 });
 
@@ -104,33 +200,32 @@ function applyFilters() {
     return (!y || yr === y) && (!t || r.type === t);
   });
   renderReports();
+  document.getElementById('report-total').textContent = filtered.length + ' reports';
 }
 
 function renderReports() {
   const el = document.getElementById('reports-list');
-  const tagColor = { infostealer: 'blue', stegano: 'purple', loader: 'amber', botnet: 'red', rat: 'red', ransomware: 'red', cryptominer: 'green', mirai: 'red' };
-  const tagColorDefault = 'muted';
-  const sevClass = r => `tag tag-${r === 'critical' ? 'red' : r === 'high' ? 'amber' : r === 'medium' ? 'blue' : 'muted'}`;
+  const sevTag = r => `tag tag-${r === 'critical' ? 'red' : r === 'high' ? 'amber' : r === 'medium' ? 'blue' : 'muted'}`;
+  const typeTag = t => `tag tag-${t === 'apt' ? 'purple' : t === 'ransomware' ? 'red' : t === 'rat' ? 'orange' : t === 'stealer' ? 'blue' : t === 'botnet' ? 'red' : t === 'cryptominer' ? 'green' : 'muted'}`;
 
   el.innerHTML = filtered
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .map(r => `
-    <div class="report-card">
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .map(r => {
+      const reportFile = r.file;
+      const detailUrl = `report.html?file=${encodeURIComponent(reportFile)}`;
+      return `
+    <div class="report-card" onclick="window.location.href='${detailUrl}'">
       <h3>${r.title}</h3>
       <div class="meta">
         <span>${r.date}</span>
-        <span class="${sevClass(r.sev)}">${r.sev}</span>
+        <span class="${sevTag(r.sev)}">${r.sev}</span>
+        <span class="${typeTag(r.type)}">${r.type}</span>
+      </div>
+      <div class="tags">
         <span class="tag tag-muted">${r.type}</span>
       </div>
-      <div class="desc">${r.desc}</div>
-      <div class="tags">
-        ${r.tags.map(tg => `<span class="tag tag-${tagColor[tg] || tagColorDefault}">${tg}</span>`).join('')}
-      </div>
-      <div style="margin-top:16px;">
-        <a href="https://github.com/perisai-labs/indra-cti/tree/master/reports" target="_blank" style="font-size:0.85rem;color:var(--blue);font-weight:600;">View Full Report →</a>
-      </div>
-    </div>
-  `).join('');
+    </div>`;
+    }).join('');
 
   if (!filtered.length) el.innerHTML = '<div style="padding:48px;text-align:center;color:var(--text-muted);">No reports found matching your filters.</div>';
 }
@@ -138,7 +233,7 @@ function renderReports() {
 async function fetchCSV(url) {
   const r = await fetch(url);
   const t = await r.text();
-  return t.split('\n').length - 1;
+  return t.split('\n').filter(l => l.trim());
 }
 </script>
 </body>
