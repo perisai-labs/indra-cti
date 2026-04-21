@@ -4,60 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Report — Indra CTI</title>
-  <!-- Iosevka font (typeof.net) -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iosevka@30.3.0/dist/iosevka.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iosevka@30.3.0/dist/iosevka-term.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
-    .report-content { max-width: 860px; margin: 0 auto; }
-    .report-content h1 { font-size: 2rem; margin-bottom: 8px; }
-    .report-content h2 { font-size: 1.5rem; margin-top: 32px; margin-bottom: 12px; color: var(--text); padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-    .report-content h3 { font-size: 1.2rem; margin-top: 24px; margin-bottom: 8px; color: var(--text); }
-    .report-content p { color: var(--text-sec); line-height: 1.8; margin-bottom: 16px; font-size: 0.95rem; }
-    .report-content ul, .report-content ol { color: var(--text-sec); margin-bottom: 16px; padding-left: 24px; }
-    .report-content li { margin-bottom: 6px; line-height: 1.7; }
-    .report-content code { background: var(--bg-secondary); padding: 2px 8px; border-radius: 5px; font-size: 0.85rem; color: var(--blue); }
-    .report-content pre { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; overflow-x: auto; margin-bottom: 16px; }
-    .report-content pre code { background: none; padding: 0; color: var(--text-sec); font-size: 0.82rem; line-height: 1.6; }
-    .report-content blockquote { border-left: 3px solid var(--blue); padding: 12px 16px; background: rgba(59,130,246,0.05); border-radius: 0 8px 8px 0; margin-bottom: 16px; }
-    .report-content blockquote p { margin: 0; color: var(--text-sec); }
-    .report-content img { max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin: 16px 0; background: var(--bg-secondary); }
-    .report-content a { color: var(--blue); text-decoration: underline; }
-    .report-content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
-    .report-content table th { background: var(--bg-secondary); color: var(--text-muted); padding: 10px 14px; text-align: left; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border); }
-    .report-content table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text-sec); font-size: 0.9rem; }
-    .report-content hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
-    .report-content strong { color: var(--text); font-weight: 700; }
-
-    .back-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: var(--text-muted); font-size: 0.85rem; font-weight: 500;
-      margin-bottom: 24px; cursor: pointer; transition: color 0.2s; text-decoration: none;
-    }
-    .back-btn:hover { color: var(--blue); }
-    .back-btn i { width: 16px; height: 16px; }
-
-    .report-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
-    .report-meta span { font-size: 0.82rem; color: var(--text-muted); }
-
-    .loading-state { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 0; color: var(--text-muted); }
-    .loading-state .spinner {
-      width: 32px; height: 32px; border: 3px solid var(--border);
-      border-top-color: var(--blue); border-radius: 50%;
-      animation: spin 0.8s linear infinite; margin-bottom: 16px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    .report-content{max-width:860px;margin:0 auto}
+    .report-content h1{font-size:2rem;margin-bottom:8px}
+    .report-content h2{font-size:1.5rem;margin-top:32px;margin-bottom:12px;color:var(--text);padding-bottom:8px;border-bottom:1px solid var(--border)}
+    .report-content h3{font-size:1.2rem;margin-top:24px;margin-bottom:8px;color:var(--text)}
+    .report-content p{color:var(--text-sec);line-height:1.8;margin-bottom:16px;font-size:.95rem}
+    .report-content ul,.report-content ol{color:var(--text-sec);margin-bottom:16px;padding-left:24px}
+    .report-content li{margin-bottom:6px;line-height:1.7}
+    .report-content code{background:var(--bg-secondary);padding:2px 8px;border-radius:5px;font-size:.85rem;color:var(--blue)}
+    .report-content pre{background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:16px 20px;overflow-x:auto;margin-bottom:16px}
+    .report-content pre code{background:none;padding:0;color:var(--text-sec);font-size:.82rem;line-height:1.6}
+    .report-content blockquote{border-left:3px solid var(--blue);padding:12px 16px;background:rgba(59,130,246,.05);border-radius:0 8px 8px 0;margin-bottom:16px}
+    .report-content blockquote p{margin:0;color:var(--text-sec)}
+    .report-content img{max-width:100%;border-radius:8px;border:1px solid var(--border);margin:16px 0;background:var(--bg-secondary)}
+    .report-content a{color:var(--blue);text-decoration:underline}
+    .report-content table{width:100%;border-collapse:collapse;margin-bottom:16px}
+    .report-content table th{background:var(--bg-secondary);color:var(--text-muted);padding:10px 14px;text-align:left;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)}
+    .report-content table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-sec);font-size:.9rem}
+    .report-content hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+    .report-content strong{color:var(--text);font-weight:700}
+    .back-btn{display:inline-flex;align-items:center;gap:8px;color:var(--text-muted);font-size:.85rem;font-weight:500;margin-bottom:24px;cursor:pointer;transition:color .2s;text-decoration:none}
+    .back-btn:hover{color:var(--blue)}
+    .back-btn i{width:16px;height:16px}
+    .report-meta{display:flex;align-items:center;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+    .report-meta span{font-size:.82rem;color:var(--text-muted)}
+    .loading-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 0;color:var(--text-muted)}
+    .loading-state .spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:16px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .tag{font-size:.7rem;padding:3px 8px;border-radius:6px;font-weight:600;display:inline-block}
+    .tag-muted{background:rgba(100,116,139,.15);color:var(--text-muted)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-weight:600;font-size:.85rem;cursor:pointer;border:none;transition:all .2s;font-family:inherit}
+    .btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:#2563eb}
+    .btn-ghost{background:transparent;color:var(--text-sec);border:1px solid var(--border)}.btn-ghost:hover{background:var(--bg-hover)}
   </style>
 </head>
 <body>
 <div class="app">
   <aside class="sidebar">
-    <div class="sidebar-brand">
-      <h2>Indra CTI</h2>
-      <small>by Peris.ai</small>
-    </div>
+    <div class="sidebar-brand"><h2>Indra CTI</h2><small>by Peris.ai</small></div>
     <nav class="sidebar-nav">
       <div class="sidebar-label">Overview</div>
       <a href="index.html" class="sidebar-link"><span class="icon"><i data-lucide="layout-dashboard"></i></span> Dashboard</a>
@@ -67,19 +57,11 @@
       <div class="sidebar-label">Data</div>
       <a href="download.html" class="sidebar-link"><span class="icon"><i data-lucide="download"></i></span> Downloads</a>
     </nav>
-    <div class="sidebar-footer">
-      <a href="https://github.com/perisai-labs/indra-cti" target="_blank">
-        <i data-lucide="github" style="width:14px;height:14px;"></i> GitHub Repository
-      </a>
-    </div>
+    <div class="sidebar-footer"><a href="https://github.com/perisai-labs/indra-cti" target="_blank"><i data-lucide="github" style="width:14px;height:14px;"></i> GitHub Repository</a></div>
   </aside>
-
   <div class="main">
     <header class="header">
-      <div class="header-title">
-        <h1>Report</h1>
-        <p id="report-subtitle">Loading...</p>
-      </div>
+      <div class="header-title"><h1>Report</h1><p id="report-subtitle">Loading...</p></div>
     </header>
     <div class="content">
       <a href="reports.html" class="back-btn"><i data-lucide="arrow-left"></i> Back to Reports</a>
@@ -87,164 +69,117 @@
         <div class="loading-state"><div class="spinner"></div><div>Loading report...</div></div>
       </div>
     </div>
-    <div class="footer">
-      Indra CTI — by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0
-    </div>
+    <div class="footer">Indra CTI — by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0</div>
   </div>
 </div>
-
 <script>
-document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); loadReport(); });
+document.addEventListener('DOMContentLoaded',()=>{lucide.createIcons();loadReport()});
 
-const REPORT_PATHS = [
-  // Folder-based (README.md)
-  'reports/{folder}/README.md',
-  'reports/{folder}/{folder}.md',
-  // Root-level
-  'reports/{file}',
+const REPORT_PATHS=[
+  // Folder with README
+  (id)=>`reports/${id}/README.md`,
+  // Folder with matching .md
+  (id)=>`reports/${id}/${id}.md`,
+  // Root-level .md
+  (id)=>`reports/${id}.md`,
   // Subfolder patterns
-  'reports/malware/{file}',
-  'reports/apt/{file}',
-  'reports/ransomware/{file}',
-  'reports/2025/{file}',
-  'reports/2026/{file}',
+  (id)=>`reports/malware/${id}.md`,
+  (id)=>`reports/apt/${id}.md`,
+  (id)=>`reports/ransomware/${id}.md`,
+  (id)=>`reports/2025/${id}.md`,
+  (id)=>`reports/2026/${id}.md`,
 ];
 
-async function loadReport() {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('id');
-  if (!id) { showError('No report selected. <a href="reports.html">Back to Reports</a>', ''); return; }
-
-  // Build search paths (all report formats in the repo)
-  const paths = [
-    `reports/${id}/README.md`,
-    `reports/${id}.md`,
-    `reports/${id}/${id}.md`,
-    `reports/malware/${id}.md`,
-    `reports/apt/${id}.md`,
-    `reports/ransomware/${id}.md`,
-    `reports/2025/${id}.md`,
-    `reports/2026/${id}.md`,
-  ];
-
-  let content = null, foundPath = null;
-  for (const p of paths) {
-    const r = await tryFetch(p);
-    if (r) { content = r; foundPath = p; break; }
+async function loadReport(){
+  const params=new URLSearchParams(window.location.search);
+  // Accept any of these params for backwards compatibility
+  const raw=(params.get('id')||params.get('folder')||params.get('file')||'').trim();
+  if(!raw){showError('No report selected. <a href="reports.html">Back to Reports</a>','');return}
+  
+  // Clean id: remove .md extension, leading ./
+  let id=raw.replace(/\.md$/i,'').replace(/^\.\//,'');
+  
+  let content=null,foundPath=null;
+  for(const gen of REPORT_PATHS){
+    const r=await tryFetch(gen(id));
+    if(r){content=r;foundPath=gen(id);break}
   }
-
-  if (!content) {
-    showError('Report not found', id);
-    return;
+  // If id itself contains "reports/" or "reports/xxx/README.md", try as-is
+  if(!content){
+    for(const p of [`reports/${raw}`,`reports/${raw}/README.md`,raw]){
+      const r=await tryFetch(p);
+      if(r){content=r;foundPath=p;break}
+    }
   }
-
-  // Report title
-  const titleMatch = content.match(/^#\s+(.+)$/m) || content.match(/^##\s+(.+)$/m);
-  const title = titleMatch ? titleMatch[1].trim() : id.replace(/[-_]/g, ' ');
-  const dateMatch = id.match(/^(\d{4}-\d{2}-\d{2})/);
-  const date = dateMatch ? dateMatch[1] : '';
-
-  // Image base path for relative images
-  const imgBase = foundPath.replace(/\/[^/]+$/, '');
-  const html = markdownToHtml(content, imgBase);
-
-  document.getElementById('report-subtitle').textContent = date;
-  document.title = title + ' — Indra CTI';
-  document.getElementById('report-content').innerHTML = `
-    <h1>${escHtml(title)}</h1>
-    <div class="report-meta">
-      <span><i data-lucide="calendar" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"></i>${date}</span>
-      <span class="tag tag-muted">CTI Report</span>
-    </div>
-    ${html}
-  `;
+  if(!content){showError('Report not found: '+id+'','');return}
+  
+  // Parse title & date
+  const tm=content.match(/^#\s+(.+)$/m)||content.match(/^##\s+(.+)$/m);
+  const title=tm?tm[1].trim():id.replace(/[-_]/g,' ');
+  const dm=id.match(/^(\d{4}-\d{2}-\d{2})/);
+  const date=dm?dm[1]:'';
+  
+  // Image base path
+  const imgBase=foundPath.replace(/\/[^/]+$/,'');
+  const html=markdownToHtml(content,imgBase);
+  
+  document.getElementById('report-subtitle').textContent=title+' — '+date;
+  document.title=title+' — Indra CTI';
+  document.getElementById('report-content').innerHTML=`<h1>${escHtml(title)}</h1><div class="report-meta"><span><i data-lucide="calendar" style="width:14px;height:14px;vertical-align:middle;margin-right:4px"></i>${date}</span><span class="tag tag-muted">CTI Report</span></div>${html}`;
   lucide.createIcons();
 }
 
-async function tryFetch(url) {
-  try {
-    const r = await fetch(url);
-    if (!r.ok) return null;
-    return await r.text();
-  } catch { return null; }
-}
+async function tryFetch(url){try{const r=await fetch(url);if(!r.ok)return null;return await r.text()}catch(e){return null}}
 
-function showError(msg, detail) {
-  document.getElementById('report-content').innerHTML = `
-    <h2>Report not found</h2>
-    <p style="color:var(--text-muted)">${msg}</p>
-    ${detail ? `<p style="color:var(--text-muted);font-size:0.82rem;">Search ID: <code>${escHtml(detail)}</code></p>` : ''}
-    <p style="margin-top:16px;"><a href="reports.html" class="btn btn-primary">Back to Reports</a></p>
-  `;
-}
+function showError(msg){document.getElementById('report-content').innerHTML=`<h2>Report not found</h2><p style="color:var(--text-muted)">${msg}</p><p style="margin-top:16px"><a href="reports.html" class="btn btn-primary">Back to Reports</a></p>`}
 
-function markdownToHtml(md, imgBase) {
-  // Images (before any other processing)
-  md = md.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => {
-    if (!src.startsWith('http') && !src.startsWith('/')) {
-      src = imgBase ? imgBase + '/' + src.replace(/^\.?\//, '') : src;
-    }
-    return `<figure><img src="${src}" alt="${escHtml(alt)}" loading="lazy"></figure>`;
+function markdownToHtml(md,imgBase){
+  // Images (process first)
+  md=md.replace(/!\[([^\]]*)\]\(([^)]+)\)/g,(_,alt,src)=>{
+    if(!src.startsWith('http')&&!src.startsWith('/')){src=imgBase?imgBase+'/'+src.replace(/^\.?\//,''):src}
+    return`<figure><img src="${src}" alt="${escHtml(alt)}" loading="lazy"></figure>`
   });
-
   // Code blocks
-  md = md.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) =>
-    `<pre><code>${escHtml(code.trimEnd())}</code></pre>`);
-
-  // Inline code (protect already-processed code)
-  md = md.replace(/`([^`\n]+)`/g, '<code>$1</code>');
-
-  // Headers (process # before p to avoid conflict)
-  md = md.replace(/^#### (.+)$/gm, '<h4>$1</h4>');
-  md = md.replace(/^### (.+)$/gm, '<h3>$1</h3>');
-  md = md.replace(/^## (.+)$/gm, '<h2>$1</h2>');
-  md = md.replace(/^# (.+)$/gm, '<h1>$1</h1>');
-
-  // Bold + Italic
-  md = md.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
-  md = md.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-  md = md.replace(/\*(.+?)\*/g, '<em>$1</em>');
-
+  md=md.replace(/```(\w*)\n([\s\S]*?)```/g,(_,lang,code)=>`<pre><code>${escHtml(code.trimEnd())}</code></pre>`);
+  // Inline code
+  md=md.replace(/`([^`\n]+)`/g,'<code>$1</code>');
+  // Headers
+  md=md.replace(/^#### (.+)$/gm,'<h4>$1</h4>');
+  md=md.replace(/^### (.+)$/gm,'<h3>$1</h3>');
+  md=md.replace(/^## (.+)$/gm,'<h2>$1</h2>');
+  md=md.replace(/^# (.+)$/gm,'<h1>$1</h1>');
+  // Bold/italic
+  md=md.replace(/\*\*\*(.+?)\*\*\*/g,'<strong><em>$1</em></strong>');
+  md=md.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+  md=md.replace(/\*(.+?)\*/g,'<em>$1</em>');
   // Blockquotes
-  md = md.replace(/^>\s+(.+)$/gm, '<blockquote><p>$1</p></blockquote>');
-
+  md=md.replace(/^>\s+(.+)$/gm,'<blockquote><p>$1</p></blockquote>');
   // HR
-  md = md.replace(/^---+$/gm, '<hr>');
-
+  md=md.replace(/^---+$/gm,'<hr>');
   // Tables
-  const tableRegex = /^(\|.+\|\r?\n\|[-\s|:]+\|\r?\n(?:\|.+\|\r?\n?)+)/gm;
-  md = md.replace(tableRegex, (match) => {
-    const rows = match.trim().split('\n').filter(r => r.trim());
-    if (rows.length < 2) return match;
-    let html = '<table>';
-    rows.forEach((row, i) => {
-      if (i === 1) return; // skip separator
-      const cells = row.split('|').filter(c => c.trim());
-      const tag = i === 0 ? 'th' : 'td';
-      html += '<tr>' + cells.map(c => `<${tag}>${c.trim()}</${tag}>`).join('') + '</tr>';
+  md=md.replace(/^(\|.+\|\r?\n\|[-\s|:]+\|\r?\n(?:\|.+\|\r?\n?)+)/gm,m=>{
+    const rows=m.trim().split('\n').filter(r=>r.trim());
+    if(rows.length<2)return m;
+    let html='<table>';
+    rows.forEach((row,i)=>{
+      if(i===1)return;
+      const cells=row.split('|').filter(c=>c.trim());
+      const tag=i===0?'th':'td';
+      html+='<tr>'+cells.map(c=>`<${tag}>${c.trim()}</${tag}>`).join('')+'</tr>';
     });
-    html += '</table>';
-    return html;
+    html+='</table>';return html;
   });
-
   // Unordered lists
-  md = md.replace(/^(\s*)[-*] (.+)$/gm, '<li>$2</li>');
-  md = md.replace(/((?:<li>.*<\/li>\n?)+)/g, '<ul>$1</ul>');
-
-  // Links (not inside <img>)
-  md = md.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-
-  // Paragraphs (lines that aren't already HTML)
-  md = md.replace(/^(?!<[a-z/])((?!<)(.+))$/gm, '<p>$1</p>');
-
+  md=md.replace(/^(\s*)[-*] (.+)$/gm,'<li>$2</li>');
+  md=md.replace(/((?:<li>.*<\/li>\n?)+)/g,'<ul>$1</ul>');
+  // Links (not in img)
+  md=md.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+  // Paragraphs
+  md=md.replace(/^(?!<[a-z/])((?!<)(.+))$/gm,'<p>$1</p>');
   return md;
 }
 
-function escHtml(t) {
-  const d = document.createElement('div');
-  d.textContent = t;
-  return d.innerHTML;
-}
+function escHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
 </script>
 </body>
 </html>
