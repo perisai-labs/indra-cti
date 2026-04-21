@@ -40,7 +40,7 @@ This report presents a comprehensive reverse engineering analysis of a Windows x
 
 ### File Structure
 
-![File Info](img/2026-03-14-stage5-payload/file-info.png)
+![File Info](screenshots/file-info.png)
 
 The sample is a 64-bit PE executable compiled for Windows 5.02 (Windows Server 2003/XP x64), though this target OS version may be falsified. Key characteristics:
 
@@ -52,7 +52,7 @@ The sample is a 64-bit PE executable compiled for Windows 5.02 (Windows Server 2
 
 ### PE Sections Analysis
 
-![Sections Entropy](img/2026-03-14-stage5-payload/sections-entropy.png)
+![Sections Entropy](screenshots/sections-entropy.png)
 
 Notable sections:
 
@@ -68,7 +68,7 @@ The `.llc` section is particularly suspicious — not a standard Microsoft linke
 
 ### Import Analysis
 
-![Imports](img/2026-03-14-stage5-payload/imports.png)
+![Imports](screenshots/imports.png)
 
 **Key Imported DLLs:**
 - `KERNEL32.dll` — Core Windows APIs
@@ -92,7 +92,7 @@ The combination of `VirtualProtect*` and dynamic API resolution strongly suggest
 
 ### Strings Analysis
 
-![Strings](img/2026-03-14-stage5-payload/strings.png)
+![Strings](screenshots/strings.png)
 
 String analysis revealed **minimal cleartext strings** — most data appears obfuscated or encoded. This indicates:
 - **Runtime string decryption** (common in modern malware)
@@ -105,7 +105,7 @@ String analysis revealed **minimal cleartext strings** — most data appears obf
 
 ### Entry Point Analysis
 
-![Disassembly Entry](img/2026-03-14-stage5-payload/disassembly-entry.png)
+![Disassembly Entry](screenshots/disassembly-entry.png)
 
 The entry point (`0x140001157`) performs a simple initialization:
 
@@ -128,7 +128,7 @@ Key observations:
 
 ### Main Function Analysis
 
-![Disassembly Main](img/2026-03-14-stage5-payload/disassembly-main.png)
+![Disassembly Main](screenshots/disassembly-main.png)
 
 The main function (`fcn.1400011b5`) implements a **spin-lock synchronization pattern**:
 
@@ -215,7 +215,7 @@ This API is commonly abused by malware to:
 
 ### YARA Rule
 
-![YARA Test](img/2026-03-14-stage5-payload/yara-test.png)
+![YARA Test](screenshots/yara-test.png)
 
 **Tested and validated** against the sample:
 

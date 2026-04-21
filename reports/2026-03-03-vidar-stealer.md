@@ -23,7 +23,7 @@ Vidar is a sophisticated information stealer malware that targets credentials, c
 
 ### File Characteristics
 
-![File Info](img/2026-03-03-vidar-stealer/file-info.png)
+![File Info](screenshots/file-info.png)
 
 **File Metadata:**
 - **MD5:** `5b020055fb7c2ac398768cfba07a5b9b`
@@ -40,17 +40,17 @@ The binary exhibits typical Delphi characteristics with rich runtime libraries a
 
 ### Binary Structure & Entropy
 
-![Sections & Entropy](img/2026-03-03-vidar-stealer/sections-entropy.png)
+![Sections & Entropy](screenshots/sections-entropy.png)
 
 The entropy analysis reveals multiple sections with varying entropy levels. The `.text` section contains the bulk of executable code (8,093 functions), while `.rsrc` holds embedded resources including what appears to be a legitimate StationPlaylist.com application wrapper—a common Vidar delivery mechanism using trojanized legitimate software.
 
-![Hex Dump Header](img/2026-03-03-vidar-stealer/hexdump-header.png)
+![Hex Dump Header](screenshots/hexdump-header.png)
 
 ---
 
 ### Static Analysis: Imports & Exports
 
-![Imports](img/2026-03-03-vidar-stealer/imports.png)
+![Imports](screenshots/imports.png)
 
 **Key Imported Libraries:**
 - **WinINet.dll** — Network communication (HTTP/HTTPS C2)
@@ -65,7 +65,7 @@ These imports strongly indicate credential theft, browser data exfiltration, and
 
 ### String Analysis
 
-![Strings](img/2026-03-03-vidar-stealer/strings.png)
+![Strings](screenshots/strings.png)
 
 **Notable Artifacts:**
 - **StationPlaylist.com** — Legitimate software branding (masquerading tactic)
@@ -78,14 +78,14 @@ The large volume of strings is typical of Delphi binaries, which embed extensive
 
 ### Disassembly Analysis
 
-![Disassembly Entry Point](img/2026-03-03-vidar-stealer/disassembly-entry.png)
+![Disassembly Entry Point](screenshots/disassembly-entry.png)
 
 The entry point (`entry0`) initializes the Delphi runtime and immediately transfers control to the main payload. Analysis of 8,093 functions reveals:
 - **Data collection routines** targeting browser profiles
 - **Encryption/compression** of stolen data
 - **Network upload** functions using HTTP POST
 
-![Functions List](img/2026-03-03-vidar-stealer/functions-list.png)
+![Functions List](screenshots/functions-list.png)
 
 ---
 
@@ -110,7 +110,7 @@ The entry point (`entry0`) initializes the Delphi runtime and immediately transf
 
 ### YARA Rule
 
-![YARA Detection](img/2026-03-03-vidar-stealer/yara-test.png)
+![YARA Detection](screenshots/yara-test.png)
 
 **Detection Rule:**
 ```yara

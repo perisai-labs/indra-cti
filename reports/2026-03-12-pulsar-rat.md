@@ -20,7 +20,7 @@ Our analysis reveals a sophisticated variant of njRAT (also known as Bladabindi)
 
 ### File Information
 
-![File Info](img/2026-03-12-pulsar-rat/file-info.png)
+![File Info](screenshots/file-info.png)
 
 **Key Metadata:**
 - **File Type:** PE32 executable (.NET assembly)
@@ -34,13 +34,13 @@ Our analysis reveals a sophisticated variant of njRAT (also known as Bladabindi)
 
 #### Sections & Entropy
 
-![Sections Entropy](img/2026-03-12-pulsar-rat/sections-entropy.png)
+![Sections Entropy](screenshots/sections-entropy.png)
 
 The binary exhibits typical .NET assembly characteristics with embedded compressed DLLs using Costura embedding framework.
 
 #### Embedded Libraries
 
-![Interesting Strings](img/2026-03-12-pulsar-rat/interesting-strings.png)
+![Interesting Strings](screenshots/interesting-strings.png)
 
 The malware embeds several compressed libraries:
 - **MessagePack** (v3.1.4.0) - High-performance binary serialization
@@ -52,7 +52,7 @@ These libraries indicate a modern, performance-optimized C2 protocol using Messa
 
 ### RAT Capabilities
 
-![Capabilities](img/2026-03-12-pulsar-rat/capabilities.png)
+![Capabilities](screenshots/capabilities.png)
 
 #### Core Features
 
@@ -99,7 +99,7 @@ These libraries indicate a modern, performance-optimized C2 protocol using Messa
 
 ### Anti-Analysis Features
 
-![Functions List](img/2026-03-12-pulsar-rat/functions-list.png)
+![Functions List](screenshots/functions-list.png)
 
 - `PortConnectionAntiVM` - Virtual machine detection
 - Custom string obfuscation through Costura compression
@@ -107,7 +107,7 @@ These libraries indicate a modern, performance-optimized C2 protocol using Messa
 
 ### Disassembly Analysis
 
-![Disassembly Entry](img/2026-03-12-pulsar-rat/disassembly-entry.png)
+![Disassembly Entry](screenshots/disassembly-entry.png)
 
 The entry point follows standard .NET CLR initialization patterns, with the main payload loaded dynamically from embedded resources.
 
@@ -194,7 +194,7 @@ HKLM\Software\Microsoft\Windows\CurrentVersion\Run
 
 ### YARA Rule
 
-![YARA Test](img/2026-03-12-pulsar-rat/yara-test.png)
+![YARA Test](screenshots/yara-test.png)
 
 ```yara
 rule PulsarRAT_njRAT_Variant {

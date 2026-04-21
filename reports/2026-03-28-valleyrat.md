@@ -20,7 +20,7 @@ The malware demonstrates advanced capabilities including:
 
 ### File Information
 
-![File Info](img/2026-03-28-valleyrat/file-info.png)
+![File Info](screenshots/file-info.png)
 
 **Hash Information:**
 - **SHA256:** `40750c5d1422a9d4c4161cbe0a2d8f32fc5537265665961002f96f8290c29116`
@@ -51,7 +51,7 @@ This corresponds to **MITRE ATT&CK T1036.005** - Masquerading: Match Legitimate 
 
 ### PE Structure Analysis
 
-![PE Sections](img/2026-03-28-valleyrat/sections-entropy.png)
+![PE Sections](screenshots/sections-entropy.png)
 
 The malware exhibits unusual PE section characteristics:
 
@@ -70,7 +70,7 @@ The malware exhibits unusual PE section characteristics:
 
 ### Import Analysis
 
-![Imports](img/2026-03-28-valleyrat/imports.png)
+![Imports](screenshots/imports.png)
 
 The malware imports critical Windows APIs for:
 
@@ -113,7 +113,7 @@ This corresponds to **MITRE ATT&CK T1548.002** - Abuse Elevation Control Mechani
 
 ### Disassembly Analysis
 
-![Entry Point](img/2026-03-28-valleyrat/disassembly-entry.png)
+![Entry Point](screenshots/disassembly-entry.png)
 
 The malware's entry point at `0x1404f88b0` immediately calls a function at `0x1404c75de`, which likely performs unpacking or initialization routines. Radare2 analysis identified **1,271 functions** in the binary, indicating substantial functionality.
 
@@ -186,7 +186,7 @@ Based on the static analysis, ValleyRAT is capable of:
 
 ### YARA Rules
 
-![YARA Detection](img/2026-03-28-valleyrat/yara-test.png)
+![YARA Detection](screenshots/yara-test.png)
 
 Three YARA rules have been developed for ValleyRAT detection:
 
