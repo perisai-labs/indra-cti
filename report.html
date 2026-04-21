@@ -112,42 +112,39 @@ const REPORT_PATHS = [
 
 async function loadReport() {
   const params = new URLSearchParams(window.location.search);
-  const folder = params.get('folder');
-  const file = params.get('file');
+  const id = params.get('id');
+  if (!id) { showError('No report selected. <a href="reports.html">Back to Reports</a>', ''); return; }
 
-  if (!folder && !file) {
-    showError('No report selected. <a href="reports.html">Back to Reports</a>', '');
-    return;
-  }
+  // Build search paths (all report formats in the repo)
+  const paths = [
+    `reports/${id}/README.md`,
+    `reports/${id}.md`,
+    `reports/${id}/${id}.md`,
+    `reports/malware/${id}.md`,
+    `reports/apt/${id}.md`,
+    `reports/ransomware/${id}.md`,
+    `reports/2025/${id}.md`,
+    `reports/2026/${id}.md`,
+  ];
 
-  const identifier = file || folder;
-  const searchKey = identifier.replace(/\.md$/i, '');
-  let content = null;
-  let foundPath = null;
-
-  // Try relative paths (these work because reports are on gh-pages)
-  if (folder) {
-    // Try README.md in folder
-    content = await tryFetch(`reports/${folder}/README.md`);
-    foundPath = `reports/${folder}/README.md`;
-  } else if (file) {
-    // Direct file
-    content = await tryFetch(`reports/${file}`);
-    foundPath = `reports/${file}`;
+  let content = null, foundPath = null;
+  for (const p of paths) {
+    const r = await tryFetch(p);
+    if (r) { content = r; foundPath = p; break; }
   }
 
   if (!content) {
-    showError('Report not found', file || folder);
+    showError('Report not found', id);
     return;
   }
 
-  // Parse report
+  // Report title
   const titleMatch = content.match(/^#\s+(.+)$/m) || content.match(/^##\s+(.+)$/m);
-  const title = titleMatch ? titleMatch[1].trim() : searchKey.replace(/-/g, ' ').replace(/_/g, ' ');
-  const dateMatch = searchKey.match(/^(\d{4}-\d{2}-\d{2})/);
+  const title = titleMatch ? titleMatch[1].trim() : id.replace(/[-_]/g, ' ');
+  const dateMatch = id.match(/^(\d{4}-\d{2}-\d{2})/);
   const date = dateMatch ? dateMatch[1] : '';
 
-  // Convert relative image paths to correct base
+  // Image base path for relative images
   const imgBase = foundPath.replace(/\/[^/]+$/, '');
   const html = markdownToHtml(content, imgBase);
 
