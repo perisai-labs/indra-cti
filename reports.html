@@ -211,8 +211,7 @@ function renderReports() {
   el.innerHTML = filtered
     .sort((a, b) => b.date.localeCompare(a.date))
     .map(r => {
-      const reportFile = r.file;
-      const detailUrl = `report.html?file=${encodeURIComponent(reportFile)}`;
+      const detailUrl = `report.html?folder=${encodeURIComponent(r.folder ? r.folder : r.file.replace(/\.md$/,''))}`;
       return `
     <div class="report-card" onclick="window.location.href='${detailUrl}'">
       <h3>${r.title}</h3>
