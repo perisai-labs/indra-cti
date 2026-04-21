@@ -6,6 +6,7 @@
   <title>Downloads — Indra CTI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 <div class="app">
@@ -16,15 +17,22 @@
     </div>
     <nav class="sidebar-nav">
       <div class="sidebar-label">Overview</div>
-      <a href="index.html" class="sidebar-link"><span class="icon">📊</span> Dashboard</a>
+      <a href="index.html" class="sidebar-link"><span class="icon"><i data-lucide="layout-dashboard"></i></span> Dashboard</a>
       <div class="sidebar-label">Threat Intel</div>
-      <a href="feeds.html" class="sidebar-link"><span class="icon">🎯</span> IOC Feeds<span class="badge-count" id="count-iocs"></span></a>
-      <a href="reports.html" class="sidebar-link"><span class="icon">📋</span> Reports</a>
+      <a href="feeds.html" class="sidebar-link">
+        <span class="icon"><i data-lucide="crosshair"></i></span> IOC Feeds
+        <span class="badge-count" id="count-iocs"></span>
+      </a>
+      <a href="reports.html" class="sidebar-link">
+        <span class="icon"><i data-lucide="clipboard-list"></i></span> Reports
+      </a>
       <div class="sidebar-label">Data</div>
-      <a href="download.html" class="sidebar-link active"><span class="icon">📥</span> Downloads</a>
+      <a href="download.html" class="sidebar-link active"><span class="icon"><i data-lucide="download"></i></span> Downloads</a>
     </nav>
     <div class="sidebar-footer">
-      <a href="https://github.com/perisai-labs/indra-cti" target="_blank">⬡ GitHub Repository</a>
+      <a href="https://github.com/perisai-labs/indra-cti" target="_blank">
+        <i data-lucide="github" style="width:14px;height:14px;"></i> GitHub Repository
+      </a>
     </div>
   </aside>
 
@@ -40,20 +48,24 @@
       <!-- CSV Downloads -->
       <div class="panel">
         <div class="panel-header">
-          <h3>📁 Direct Downloads (CSV)</h3>
+          <h3>Direct Downloads (CSV)</h3>
         </div>
         <div class="panel-body">
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
             <div class="download-card">
-              <div class="download-icon" style="background:var(--blue-dim);color:var(--blue);">📊</div>
+              <div class="download-icon" style="background:var(--blue-dim);color:var(--blue);">
+                <i data-lucide="database" style="width:22px;height:22px;"></i>
+              </div>
               <div class="download-info">
                 <h4>All IOCs</h4>
-                <p>Complete feed · 3,500+ indicators</p>
+                <p>Complete feed</p>
               </div>
               <a href="https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv" class="btn btn-primary" download>Download</a>
             </div>
             <div class="download-card">
-              <div class="download-icon" style="background:var(--purple-dim);color:var(--purple);">🕵️</div>
+              <div class="download-icon" style="background:var(--purple-dim);color:var(--purple);">
+                <i data-lucide="eye" style="width:22px;height:22px;"></i>
+              </div>
               <div class="download-info">
                 <h4>APT IOCs</h4>
                 <p>APT-specific indicators</p>
@@ -61,7 +73,9 @@
               <a href="https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-apt.csv" class="btn btn-secondary" download>Download</a>
             </div>
             <div class="download-card">
-              <div class="download-icon" style="background:var(--amber-dim);color:var(--amber);">🦠</div>
+              <div class="download-icon" style="background:var(--amber-dim);color:var(--amber);">
+                <i data-lucide="bug" style="width:22px;height:22px;"></i>
+              </div>
               <div class="download-info">
                 <h4>Malware IOCs</h4>
                 <p>Malware-specific indicators</p>
@@ -69,7 +83,9 @@
               <a href="https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-malware.csv" class="btn btn-secondary" download>Download</a>
             </div>
             <div class="download-card">
-              <div class="download-icon" style="background:var(--red-dim);color:var(--red);">🔒</div>
+              <div class="download-icon" style="background:var(--red-dim);color:var(--red);">
+                <i data-lucide="lock" style="width:22px;height:22px;"></i>
+              </div>
               <div class="download-info">
                 <h4>Ransomware IOCs</h4>
                 <p>Ransomware campaign indicators</p>
@@ -83,13 +99,17 @@
       <!-- Format Export -->
       <div class="panel">
         <div class="panel-header">
-          <h3>🔄 Client-Side Export</h3>
+          <h3>Client-Side Export</h3>
         </div>
         <div class="panel-body">
           <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px;">Convert IOC feed to JSON or STIX 2.1 format for SIEM / threat intel platform integration.</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <button class="btn btn-primary" onclick="exportJSON()" id="btn-json">📄 Export JSON</button>
-            <button class="btn btn-primary" onclick="exportSTIX()" id="btn-stix" style="background:var(--purple);">🔗 Export STIX 2.1</button>
+            <button class="btn btn-primary" onclick="exportJSON()" id="btn-json">
+              <i data-lucide="file-json" style="width:16px;height:16px;"></i> Export JSON
+            </button>
+            <button class="btn btn-primary" onclick="exportSTIX()" id="btn-stix" style="background:var(--purple);">
+              <i data-lucide="network" style="width:16px;height:16px;"></i> Export STIX 2.1
+            </button>
           </div>
           <p style="font-size:0.8rem;color:var(--text-muted);margin-top:12px;">Data loaded client-side. No server-side processing.</p>
         </div>
@@ -99,20 +119,20 @@
       <div class="grid-2">
         <div class="panel">
           <div class="panel-header">
-            <h3>🔌 Raw URLs</h3>
+            <h3>Raw URLs</h3>
           </div>
           <div class="panel-body">
             <div class="code-block"><code>https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv
 https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-apt.csv
 https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-malware.csv
 https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-ransomware.csv</code></div>
-            <p style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;">⚠️ GitHub rate limit: 60 req/hr per IP. For high-volume access, clone the repo.</p>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;">GitHub rate limit: 60 req/hr per IP. For high-volume access, clone the repo.</p>
           </div>
         </div>
 
         <div class="panel">
           <div class="panel-header">
-            <h3>📖 CSV Schema</h3>
+            <h3>CSV Schema</h3>
           </div>
           <div class="panel-body">
             <table class="fusion-table" style="margin:0;">
@@ -134,7 +154,7 @@ https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-ransom
       <!-- License -->
       <div class="panel">
         <div class="panel-header">
-          <h3>📜 License & Attribution</h3>
+          <h3>License &amp; Attribution</h3>
         </div>
         <div class="panel-body">
           <p style="color:var(--text-secondary);font-size:0.9rem;">
@@ -147,12 +167,14 @@ https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-ransom
 
     </div>
     <div class="footer">
-      🛡️ Indra CTI — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0
+      Indra CTI — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0
     </div>
   </div>
 </div>
 
 <script>
+document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+
 async function init() {
   try {
     const r = await fetch('https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv');
@@ -165,7 +187,7 @@ init();
 
 async function exportJSON() {
   const btn = document.getElementById('btn-json');
-  btn.disabled = true; btn.textContent = '⏳ Loading...';
+  btn.disabled = true; btn.textContent = 'Loading...';
   try {
     const r = await fetch('https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv');
     const t = await r.text();
@@ -178,13 +200,14 @@ async function exportJSON() {
     const json = JSON.stringify({ source: 'Indra CTI by Peris.ai', generated: new Date().toISOString(), total: data.length, data }, null, 2);
     const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
     a.download = `indra-cti-${new Date().toISOString().split('T')[0]}.json`; a.click();
-    btn.textContent = '✓ Downloaded!'; setTimeout(() => { btn.textContent = '📄 Export JSON'; btn.disabled = false; }, 2000);
-  } catch(e) { alert('Export failed: ' + e.message); btn.textContent = '📄 Export JSON'; btn.disabled = false; }
+    btn.innerHTML = '<i data-lucide="file-json" style="width:16px;height:16px;"></i> Export JSON'; lucide.createIcons();
+    btn.disabled = false;
+  } catch(e) { alert('Export failed: ' + e.message); btn.disabled = false; }
 }
 
 async function exportSTIX() {
   const btn = document.getElementById('btn-stix');
-  btn.disabled = true; btn.textContent = '⏳ Loading...';
+  btn.disabled = true; btn.textContent = 'Loading...';
   try {
     const r = await fetch('https://raw.githubusercontent.com/perisai-labs/indra-cti/master/feeds/ioc-all.csv');
     const t = await r.text();
@@ -194,23 +217,24 @@ async function exportSTIX() {
       const v = l.split(',');
       return Object.fromEntries(headers.map((h, i) => [h, (v[i] || '').trim()]));
     });
-    
     const typeMap = { 'hash-md5': 'file:hashes.MD5', 'hash-sha256': 'file:hashes.SHA-256', 'ip': 'ipv4-addr:value', 'domain': 'domain-name:value', 'url': 'url:value', 'email': 'email-addr:value', 'filename': 'file:name' };
-    const objects = data.filter(ioc => {
-      const p = typeMap[ioc.ioc_type];
-      return p;
-    }).map(ioc => ({
-      type: 'indicator', id: 'indicator--' + crypto.randomUUID(), created: ioc.first_seen || new Date().toISOString(),
-      modified: ioc.last_seen || new Date().toISOString(), pattern: `[${typeMap[ioc.ioc_type]} = '${ioc.ioc_value}']`,
-      pattern_type: 'stix', labels: ['malicious-activity'], name: ioc.threat_name || 'Unknown',
-      description: ioc.description || '', valid_from: ioc.first_seen || new Date().toISOString()
-    }));
-    
+    const objects = data.filter(ioc => { const p = typeMap[ioc.ioc_type]; return p; })
+      .map(ioc => ({
+        type: 'indicator', id: 'indicator--' + crypto.randomUUID(),
+        created: ioc.first_seen || new Date().toISOString(),
+        modified: ioc.last_seen || new Date().toISOString(),
+        pattern: `[${typeMap[ioc.ioc_type]} = '${ioc.ioc_value}']`,
+        pattern_type: 'stix', labels: ['malicious-activity'],
+        name: ioc.threat_name || 'Unknown',
+        description: ioc.description || '',
+        valid_from: ioc.first_seen || new Date().toISOString()
+      }));
     const stix = JSON.stringify({ type: 'bundle', id: 'bundle--' + crypto.randomUUID(), created: new Date().toISOString(), modified: new Date().toISOString(), objects }, null, 2);
     const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([stix], { type: 'application/json' }));
     a.download = `indra-cti-stix-${new Date().toISOString().split('T')[0]}.json`; a.click();
-    btn.textContent = '✓ Downloaded!'; setTimeout(() => { btn.textContent = '🔗 Export STIX 2.1'; btn.disabled = false; }, 2000);
-  } catch(e) { alert('STIX export failed: ' + e.message); btn.textContent = '🔗 Export STIX 2.1'; btn.disabled = false; }
+    btn.innerHTML = '<i data-lucide="network" style="width:16px;height:16px;"></i> Export STIX 2.1'; lucide.createIcons();
+    btn.disabled = false;
+  } catch(e) { alert('STIX export failed: ' + e.message); btn.disabled = false; }
 }
 </script>
 </body>

@@ -6,6 +6,7 @@
   <title>IOC Feeds — Indra CTI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 <div class="app">
@@ -16,21 +17,23 @@
     </div>
     <nav class="sidebar-nav">
       <div class="sidebar-label">Overview</div>
-      <a href="index.html" class="sidebar-link"><span class="icon">📊</span> Dashboard</a>
+      <a href="index.html" class="sidebar-link"><span class="icon"><i data-lucide="layout-dashboard"></i></span> Dashboard</a>
       <div class="sidebar-label">Threat Intel</div>
       <a href="feeds.html" class="sidebar-link active">
-        <span class="icon">🎯</span> IOC Feeds
+        <span class="icon"><i data-lucide="crosshair"></i></span> IOC Feeds
         <span class="badge-count" id="count-iocs"></span>
       </a>
       <a href="reports.html" class="sidebar-link">
-        <span class="icon">📋</span> Reports
+        <span class="icon"><i data-lucide="clipboard-list"></i></span> Reports
         <span class="badge-count">8</span>
       </a>
       <div class="sidebar-label">Data</div>
-      <a href="download.html" class="sidebar-link"><span class="icon">📥</span> Downloads</a>
+      <a href="download.html" class="sidebar-link"><span class="icon"><i data-lucide="download"></i></span> Downloads</a>
     </nav>
     <div class="sidebar-footer">
-      <a href="https://github.com/perisai-labs/indra-cti" target="_blank">⬡ GitHub Repository</a>
+      <a href="https://github.com/perisai-labs/indra-cti" target="_blank">
+        <i data-lucide="github" style="width:14px;height:14px;"></i> GitHub Repository
+      </a>
     </div>
   </aside>
 
@@ -44,7 +47,7 @@
     <div class="content">
 
       <div class="filters">
-        <input type="text" class="search-input" placeholder="🔍 Search IOC value, threat, tags..." id="search-input" style="width:320px;">
+        <input type="text" class="search-input" placeholder="Search IOC value, threat, tags..." id="search-input" style="width:320px;">
         <select class="filter-select" id="filter-type">
           <option value="">All Types</option>
           <option value="hash-md5">MD5 Hash</option>
@@ -70,25 +73,24 @@
           <option value="ransomware">Ransomware</option>
           <option value="phishing">Phishing</option>
           <option value="exploit">Exploit</option>
-          <option value="cve">CVE</option>
         </select>
       </div>
 
       <div class="panel">
         <div class="panel-header">
-          <h3>📊 <span id="result-count">—</span> Indicators</h3>
+          <h3>Indicators found: <span id="result-count">—</span></h3>
           <div id="page-info" style="font-size:0.82rem;color:var(--text-muted);"></div>
         </div>
         <div class="panel-body no-padding" style="overflow-x:auto;">
           <table class="fusion-table" id="ioc-table">
             <thead>
               <tr>
-                <th onclick="sortTable('ioc_type')">Type ↕</th>
-                <th onclick="sortTable('ioc_value')">IOC Value ↕</th>
-                <th onclick="sortTable('threat_name')">Threat ↕</th>
-                <th onclick="sortTable('threat_type')">Category ↕</th>
-                <th onclick="sortTable('severity')">Severity ↕</th>
-                <th onclick="sortTable('first_seen')">First Seen ↕</th>
+                <th onclick="sortTable('ioc_type')">Type</th>
+                <th onclick="sortTable('ioc_value')">IOC Value</th>
+                <th onclick="sortTable('threat_name')">Threat</th>
+                <th onclick="sortTable('threat_type')">Category</th>
+                <th onclick="sortTable('severity')">Severity</th>
+                <th onclick="sortTable('first_seen')">First Seen</th>
                 <th>MITRE</th>
               </tr>
             </thead>
@@ -105,7 +107,7 @@
 
     </div>
     <div class="footer">
-      🛡️ Indra CTI — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0
+      Indra CTI — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0
     </div>
   </div>
 </div>
@@ -114,7 +116,6 @@
 <script src="js/stats.js"></script>
 <script src="js/feed-browser.js"></script>
 <script>
-// Override to use Fusion design
 document.addEventListener('DOMContentLoaded', async () => {
   await initializeStats();
   if (allIOCs.length === 0) return;
@@ -124,9 +125,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   ['search-input','filter-type','filter-severity','filter-threat-type'].forEach(id => {
     document.getElementById(id).addEventListener(id.startsWith('search') ? 'input' : 'change', applyFilters);
   });
-  renderTable();
-  renderPagination();
-  updateResultCount();
+  renderTable(); renderPagination(); updateResultCount();
 });
 
 function renderTable() {
@@ -139,7 +138,7 @@ function renderTable() {
   tbody.innerHTML = p.items.map(ioc => {
     const sev = (ioc.severity || 'info').toLowerCase();
     const sevClass = 'severity-' + (sev === 'informational' ? 'info' : sev);
-    const mitre = ioc.mitre_attack ? `<span class="tag tag-purple">${ioc.mitre_attack}</span>` : '<span class="text-muted">—</span>';
+    const mitre = ioc.mitre_attack ? `<span class="tag tag-purple">${ioc.mitre_attack}</span>` : '<span style="color:var(--text-muted)">—</span>';
     return `<tr>
       <td><span class="tag tag-blue">${escapeHtml(ioc.ioc_type || 'unknown')}</span></td>
       <td><span class="mono clickable" onclick="copyToClipboard('${escapeHtml(ioc.ioc_value)}', this)">${truncate(escapeHtml(ioc.ioc_value || '-'), 45)}</span></td>
@@ -155,13 +154,13 @@ function renderTable() {
 function renderPagination() {
   const p = paginate(filteredIOCs, currentPage, pageSize);
   let html = '';
-  if (p.hasPrev) html += `<button class="page-btn" onclick="goToPage(${currentPage - 1})">←</button>`;
-  else html += `<button class="page-btn" disabled>←</button>`;
+  if (p.hasPrev) html += `<button class="page-btn" onclick="goToPage(${currentPage - 1})">Prev</button>`;
+  else html += `<button class="page-btn" disabled>Prev</button>`;
   let s = Math.max(1, currentPage - 2), e = Math.min(p.pages, s + 4);
   if (e - s < 4) s = Math.max(1, e - 4);
   for (let i = s; i <= e; i++) html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
-  if (p.hasNext) html += `<button class="page-btn" onclick="goToPage(${currentPage + 1})">→</button>`;
-  else html += `<button class="page-btn" disabled>→</button>`;
+  if (p.hasNext) html += `<button class="page-btn" onclick="goToPage(${currentPage + 1})">Next</button>`;
+  else html += `<button class="page-btn" disabled>Next</button>`;
   document.getElementById('pagination').innerHTML = html;
 }
 
@@ -179,7 +178,7 @@ function goToPage(pg) {
 }
 
 function escapeHtml(t) { const m = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}; return (t||'').replace(/[&<>"']/g, c => m[c]); }
-function truncate(t, l) { return t.length > l ? t.substring(0, l) + '…' : t; }
+function truncate(t, l) { return t.length > l ? t.substring(0, l) + '...' : t; }
 </script>
 </body>
 </html>

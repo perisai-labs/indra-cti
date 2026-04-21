@@ -7,6 +7,10 @@
   <title>Dashboard — Indra CTI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+  .icon { display: inline-flex; align-items: center; justify-content: center; }
+  </style>
 </head>
 <body>
 <div class="app">
@@ -20,24 +24,26 @@
     <nav class="sidebar-nav">
       <div class="sidebar-label">Overview</div>
       <a href="index.html" class="sidebar-link active">
-        <span class="icon">📊</span> Dashboard
+        <span class="icon"><i data-lucide="layout-dashboard"></i></span> Dashboard
       </a>
       <div class="sidebar-label">Threat Intel</div>
       <a href="feeds.html" class="sidebar-link">
-        <span class="icon">🎯</span> IOC Feeds
+        <span class="icon"><i data-lucide="crosshair"></i></span> IOC Feeds
         <span class="badge-count" id="count-iocs"></span>
       </a>
       <a href="reports.html" class="sidebar-link">
-        <span class="icon">📋</span> Reports
+        <span class="icon"><i data-lucide="clipboard-list"></i></span> Reports
         <span class="badge-count">8</span>
       </a>
       <div class="sidebar-label">Data</div>
       <a href="download.html" class="sidebar-link">
-        <span class="icon">📥</span> Downloads
+        <span class="icon"><i data-lucide="download"></i></span> Downloads
       </a>
     </nav>
     <div class="sidebar-footer">
-      <a href="https://github.com/perisai-labs/indra-cti" target="_blank">⬡ GitHub Repository</a>
+      <a href="https://github.com/perisai-labs/indra-cti" target="_blank">
+        <i data-lucide="github" style="width:14px;height:14px;"></i> GitHub Repository
+      </a>
     </div>
   </aside>
 
@@ -49,7 +55,7 @@
         <p>Real-time IOC feeds &amp; analysis</p>
       </div>
       <div class="header-actions">
-        <input type="text" class="search-input" placeholder="🔍 Search IOCs..." id="search-input">
+        <input type="text" class="search-input" placeholder="Search IOCs..." id="search-input">
       </div>
     </header>
     <div class="content">
@@ -57,45 +63,45 @@
       <!-- STATS -->
       <div class="stats">
         <div class="stat-card">
-          <div class="stat-icon blue">🛡️</div>
+          <div class="stat-icon blue"><i data-lucide="shield"></i></div>
           <div class="stat-info">
             <div class="label">Total IOCs</div>
             <div class="number" id="stat-total">—</div>
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon red">⚠️</div>
+          <div class="stat-icon red"><i data-lucide="alert-triangle"></i></div>
           <div class="stat-info">
             <div class="label">Threats</div>
             <div class="number" id="stat-threats">—</div>
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon purple">🕵️</div>
+          <div class="stat-icon purple"><i data-lucide="eye"></i></div>
           <div class="stat-info">
             <div class="label">APT Incidents</div>
             <div class="number" id="stat-apt">—</div>
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon amber">🔒</div>
+          <div class="stat-icon amber"><i data-lucide="lock"></i></div>
           <div class="stat-info">
             <div class="label">Ransomware</div>
             <div class="number" id="stat-ransomware">—</div>
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon green">🦠</div>
+          <div class="stat-icon green"><i data-lucide="bug"></i></div>
           <div class="stat-info">
             <div class="label">Malware</div>
             <div class="number" id="stat-malware">—</div>
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon cyan">🏷️</div>
+          <div class="stat-icon cyan"><i data-lucide="tags"></i></div>
           <div class="stat-info">
             <div class="label">Unique Threats</div>
-            <div class="number" id="stat-unique-1">—</div>
+            <div class="number" id="stat-unique-count">—</div>
           </div>
         </div>
       </div>
@@ -104,7 +110,7 @@
       <div class="grid-2">
         <div class="panel">
           <div class="panel-header">
-            <h3>📈 Threat Activity (30 Days)</h3>
+            <h3>Threat Activity (30 Days)</h3>
           </div>
           <div class="panel-body">
             <div class="chart-container">
@@ -117,7 +123,7 @@
             <h3>Latest IOCs</h3>
           </div>
           <div class="panel-body no-padding" id="recent-activity">
-            <div style="padding: 32px; text-align: center; color: var(--text-muted); font-size: 0.85rem;">Loading...</div>
+            <div style="padding:32px;text-align:center;color:var(--text-muted);font-size:0.85rem;">Loading...</div>
           </div>
         </div>
       </div>
@@ -130,34 +136,34 @@
         <div class="panel-body">
           <div class="feature-grid">
             <div class="feature-item">
-              <div class="icon" style="background: rgba(59, 130, 246, 0.15);">📡</div>
+              <div class="icon-box blue"><i data-lucide="signal"></i></div>
               <h4>Real-time IOC Feeds</h4>
               <p>Updated hourly with latest indicators from active threats, APTs, and malware campaigns.</p>
             </div>
             <div class="feature-item">
-              <div class="icon" style="background: rgba(139, 92, 246, 0.15);">🎯</div>
+              <div class="icon-box purple"><i data-lucide="target"></i></div>
               <h4>MITRE ATT&CK Mapping</h4>
               <p>Every indicator mapped to MITRE ATT&CK framework for threat assessment and defense alignment.</p>
             </div>
             <div class="feature-item">
-              <div class="icon" style="background: rgba(245, 158, 11, 0.15);">🔬</div>
+              <div class="icon-box amber"><i data-lucide="microscope"></i></div>
               <h4>Research Reports</h4>
               <p>In-depth malware analysis, reverse engineering reports, and threat actor profiles.</p>
             </div>
             <div class="feature-item">
-              <div class="icon" style="background: rgba(16, 185, 129, 0.15);">⚙️</div>
+              <div class="icon-box green"><i data-lucide="cable"></i></div>
               <h4>Integration Ready</h4>
-              <p>CSV, JSON, STIX 2.1 exports. Simple REST access via GitHub raw URLs for automation.</p>
+              <p>CSV, JSON, STIX 2.1 exports. REST access via GitHub raw URLs for automation.</p>
             </div>
             <div class="feature-item">
-              <div class="icon" style="background: rgba(239, 68, 68, 0.15);">🔐</div>
+              <div class="icon-box red"><i data-lucide="shield-check"></i></div>
               <h4>Open & Transparent</h4>
-              <p>CC BY 4.0 license. Sanitized public data, no tracking, no ads — pure threat intelligence.</p>
+              <p>CC BY 4.0 license. Sanitized public data. No tracking, no ads — pure threat intel.</p>
             </div>
             <div class="feature-item">
-              <div class="icon" style="background: rgba(6, 182, 212, 0.15);">🌏</div>
+              <div class="icon-box cyan"><i data-lucide="globe"></i></div>
               <h4>SEA Focused</h4>
-              <p>Specializing in threats targeting Southeast Asia, APTs and regional malware campaigns.</p>
+              <p>Specializing in threats targeting Southeast Asia. Regional APTs and malware campaigns.</p>
             </div>
           </div>
         </div>
@@ -165,7 +171,7 @@
 
     </div>
     <div class="footer">
-      🛡️ Indra CTI — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0
+      Indra CTI — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0
     </div>
   </div>
 </div>
@@ -175,9 +181,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
+  lucide.createIcons();
   await initializeStats();
 
-  // Update counts
   const apt = allIOCs.filter(i => i.threat_type?.toLowerCase().includes('apt')).length;
   const malware = allIOCs.filter(i => i.threat_type?.toLowerCase().includes('malware')).length;
   const ransomware = allIOCs.filter(i => i.threat_type?.toLowerCase().includes('ransomware')).length;
@@ -185,11 +191,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   document.getElementById('stat-total').textContent = allIOCs.length.toLocaleString();
   document.getElementById('count-iocs').textContent = allIOCs.length.toLocaleString();
-  document.getElementById('stat-threats').textContent = malware + ransomware;
+  document.getElementById('stat-threats').textContent = (malware + ransomware).toLocaleString();
   document.getElementById('stat-apt').textContent = apt.toLocaleString();
   document.getElementById('stat-ransomware').textContent = ransomware.toLocaleString();
   document.getElementById('stat-malware').textContent = malware.toLocaleString();
-  document.getElementById('stat-unique-1').textContent = unique.toLocaleString();
+  document.getElementById('stat-unique-count').textContent = unique.toLocaleString();
 
   // Recent activity
   const ac = document.getElementById('recent-activity');
@@ -202,16 +208,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const sev = (ioc.severity || 'info').toLowerCase();
     const sevClass = 'severity-' + (sev === 'informational' ? 'info' : sev);
     return `<div class="activity-item">
-      <div class="activity-icon" style="background: rgba(59, 130, 246, 0.15);">🔍</div>
+      <div class="activity-icon" style="background:rgba(59,130,246,0.15);color:var(--blue);"><i data-lucide="scan-search" style="width:16px;height:16px;"></i></div>
       <div class="activity-info">
         <div class="title">${ioc.threat_name || 'Unknown'}</div>
-        <div class="desc"><span class="mono" style="color:${i % 2 ? '#06b6d4' : '#3b82f6'};">${ioc.ioc_type}</span> · ${ioc.ioc_value?.substring(0, 40) || ''}</div>
+        <div class="desc"><span class="mono" style="color:${i%2?'#06b6d4':'#3b82f6'};">${ioc.ioc_type}</span> · ${ioc.ioc_value?.substring(0,40)||''}</div>
       </div>
       <div class="activity-meta">
         <span class="${sevClass}">${sev}</span>
       </div>
     </div>`;
   }).join('');
+  lucide.createIcons();
 
   // Chart
   const dateMap = {};
@@ -232,24 +239,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         backgroundColor: 'rgba(59, 130, 246, 0.5)',
         borderColor: 'rgba(59, 130, 246, 1)',
         borderWidth: 1,
-        borderRadius: 4,
-        barPercentage: 0.85
+        borderRadius: 4
       }]
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
+      responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        y: {
-          beginAtZero: true,
-          grid: { color: 'rgba(255,255,255,0.05)' },
-          ticks: { color: '#64748b', font: { size: 11 } }
-        },
-        x: {
-          grid: { display: false },
-          ticks: { color: '#64748b', font: { size: 10 }, maxRotation: 45 }
-        }
+        y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#64748b', font: { size: 11 } } },
+        x: { grid: { display: false }, ticks: { color: '#64748b', font: { size: 10 }, maxRotation: 45 } }
       }
     }
   });

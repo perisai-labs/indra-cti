@@ -6,6 +6,7 @@
   <title>Reports — Indra CTI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 <div class="app">
@@ -16,15 +17,22 @@
     </div>
     <nav class="sidebar-nav">
       <div class="sidebar-label">Overview</div>
-      <a href="index.html" class="sidebar-link"><span class="icon">📊</span> Dashboard</a>
+      <a href="index.html" class="sidebar-link"><span class="icon"><i data-lucide="layout-dashboard"></i></span> Dashboard</a>
       <div class="sidebar-label">Threat Intel</div>
-      <a href="feeds.html" class="sidebar-link"><span class="icon">🎯</span> IOC Feeds<span class="badge-count" id="count-iocs"></span></a>
-      <a href="reports.html" class="sidebar-link active"><span class="icon">📋</span> Reports</a>
+      <a href="feeds.html" class="sidebar-link">
+        <span class="icon"><i data-lucide="crosshair"></i></span> IOC Feeds
+        <span class="badge-count" id="count-iocs"></span>
+      </a>
+      <a href="reports.html" class="sidebar-link active">
+        <span class="icon"><i data-lucide="clipboard-list"></i></span> Reports
+      </a>
       <div class="sidebar-label">Data</div>
-      <a href="download.html" class="sidebar-link"><span class="icon">📥</span> Downloads</a>
+      <a href="download.html" class="sidebar-link"><span class="icon"><i data-lucide="download"></i></span> Downloads</a>
     </nav>
     <div class="sidebar-footer">
-      <a href="https://github.com/perisai-labs/indra-cti" target="_blank">⬡ GitHub Repository</a>
+      <a href="https://github.com/perisai-labs/indra-cti" target="_blank">
+        <i data-lucide="github" style="width:14px;height:14px;"></i> GitHub Repository
+      </a>
     </div>
   </aside>
 
@@ -55,7 +63,7 @@
       <div id="reports-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;"></div>
     </div>
     <div class="footer">
-      🛡️ Indra CTI — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0
+      Indra CTI — Open-Source Threat Intelligence Platform by <a href="https://peris.ai" target="_blank">Peris.ai</a> · <a href="https://github.com/perisai-labs/indra-cti" target="_blank">GitHub</a> · CC BY 4.0
     </div>
   </div>
 </div>
@@ -76,6 +84,7 @@ const reports = [
 let filtered = [...reports];
 
 document.addEventListener('DOMContentLoaded', () => {
+  lucide.createIcons();
   document.getElementById('filter-year').addEventListener('change', applyFilters);
   document.getElementById('filter-type').addEventListener('change', applyFilters);
   renderReports();
