@@ -25,7 +25,7 @@ The Peris.ai Threat Research Team has identified a sophisticated post-exploitati
 
 ### 1. File Information
 
-![File Information](screenshots/file-info.png)
+![File Information](img/2026-03-10-akira-cloudflared/file-info.png)
 
 **Characteristics:**
 - **SHA256:** 74eb23de1b2fdc7862447dddaadaa82fd5b43659b3c41205a40ea194dff373a9
@@ -60,7 +60,7 @@ GOARCH: amd64
 
 ### 3. PE Structure & Sections
 
-![Sections & Entropy](screenshots/sections-entropy.png)
+![Sections & Entropy](img/2026-03-10-akira-cloudflared/sections-entropy.png)
 
 The binary contains **20 sections**, significantly more than typical executables:
 
@@ -80,7 +80,7 @@ The binary contains **20 sections**, significantly more than typical executables
 
 ### 4. Import Analysis
 
-![Imports](screenshots/imports.png)
+![Imports](img/2026-03-10-akira-cloudflared/imports.png)
 
 The binary imports standard Windows APIs:
 
@@ -100,7 +100,7 @@ The binary imports standard Windows APIs:
 
 #### Cloudflare Infrastructure References
 
-![Cloudflare References](screenshots/strings-cloudflare.png)
+![Cloudflare References](img/2026-03-10-akira-cloudflared/strings-cloudflare.png)
 
 The binary contains extensive references to Cloudflare infrastructure:
 
@@ -116,7 +116,7 @@ cftunnel.com
 
 #### Cryptographic Libraries
 
-![Interesting Strings](screenshots/strings-interesting.png)
+![Interesting Strings](img/2026-03-10-akira-cloudflared/strings-interesting.png)
 
 Encryption/decryption strings identified:
 
@@ -139,7 +139,7 @@ CoreDNS (DNS tunneling capability)
 
 ### 6. Disassembly Analysis
 
-![Entry Point Disassembly](screenshots/disassembly-entry.png)
+![Entry Point Disassembly](img/2026-03-10-akira-cloudflared/disassembly-entry.png)
 
 Entry point (`mainCRTStartup` @ 0x004014e0):
 
@@ -292,7 +292,7 @@ rule Akira_Cloudflared_Specific_Build {
 }
 ```
 
-![YARA Detection Test](screenshots/yara-test.png)
+![YARA Detection Test](img/2026-03-10-akira-cloudflared/yara-test.png)
 
 **Test Result:** ✅ Both rules triggered successfully on the sample
 

@@ -30,7 +30,7 @@ Our threat research team identified a Linux-based cryptocurrency miner disguised
 | **Origin** | Australia |
 | **Tags** | CoinMiner, ELF, Linux |
 
-![File Info](screenshots/file-info.png)
+![File Info](img/2026-03-17-coinminer-dconf-backup/file-info.png)
 
 ### Binary Characteristics
 
@@ -46,7 +46,7 @@ The sample is a **Go-compiled binary** with the following security features:
 
 **Analysis:** Weak binary hardening makes this sample easier to analyze. The presence of debug symbols and Go runtime metadata significantly aids reverse engineering.
 
-![Sections & Entropy](screenshots/sections-entropy.png)
+![Sections & Entropy](img/2026-03-17-coinminer-dconf-backup/sections-entropy.png)
 
 ### Network Indicators of Compromise (IoCs)
 
@@ -73,7 +73,7 @@ The malware exfiltrates system information via Telegram Bot API. The bot token i
 
 Used to determine the victim's public IP address before establishing C2 communication.
 
-![IoC Summary](screenshots/ioc-summary.png)
+![IoC Summary](img/2026-03-17-coinminer-dconf-backup/ioc-summary.png)
 
 ### Persistence Mechanism
 
@@ -114,7 +114,7 @@ The malware masquerades as `dconf-backup`, a legitimate component of GNOME's con
 
 Key strings extracted from the binary reveal the malware's capabilities:
 
-![Strings - Interesting](screenshots/strings-interesting.png)
+![Strings - Interesting](img/2026-03-17-coinminer-dconf-backup/strings-interesting.png)
 
 **Notable Findings:**
 - `os/exec.(*Cmd)` — Command execution capabilities
@@ -169,7 +169,7 @@ rule Linux_CoinMiner_DconfBackup_Mar2026 {
 }
 ```
 
-![YARA Test](screenshots/yara-test.png)
+![YARA Test](img/2026-03-17-coinminer-dconf-backup/yara-test.png)
 
 ### Brahma XDR Rules
 

@@ -24,7 +24,7 @@ The Peris.ai Threat Research Team has analyzed a recent Mirai botnet variant dub
 
 ### 1. Sample Overview
 
-![File Information](screenshots/file-info.png)
+![File Information](img/2026-03-05-polar-mirai/file-info.png)
 
 **File Metadata:**
 - **Type:** ELF 32-bit LSB executable, Intel i386
@@ -44,7 +44,7 @@ SHA1:   a384d3ff5f5076d36354544fa41372b9441b4f86
 
 #### 2.1 Binary Structure
 
-![Sections & Entropy](screenshots/sections-entropy.png)
+![Sections & Entropy](img/2026-03-05-polar-mirai/sections-entropy.png)
 
 The malware is a statically-linked binary, meaning all libraries are compiled directly into the executable. This is typical for IoT malware to ensure compatibility across diverse embedded Linux environments.
 
@@ -55,7 +55,7 @@ The malware is a statically-linked binary, meaning all libraries are compiled di
 
 #### 2.2 Embedded Strings Analysis
 
-![Strings Analysis](screenshots/strings.png)
+![Strings Analysis](img/2026-03-05-polar-mirai/strings.png)
 
 The malware contains highly revealing hardcoded strings:
 
@@ -109,7 +109,7 @@ The malware copies itself to these locations, likely using case variation to byp
 
 #### 3.1 Attack Capabilities
 
-![Disassembly - Entry Point](screenshots/disassembly-entry.png)
+![Disassembly - Entry Point](img/2026-03-05-polar-mirai/disassembly-entry.png)
 
 ##### **SSDP Amplification Attack**
 The malware sends M-SEARCH requests to SSDP multicast address (`239.255.255.250:1900`) and broadcast (`255.255.255.255:1900`). Vulnerable UPnP devices respond with large payloads, amplifying the attacker's bandwidth.
@@ -130,7 +130,7 @@ References to `_services._dns-sd._udp.local` indicate mDNS abuse for network rec
 
 #### 3.2 Function Analysis
 
-![Functions List](screenshots/functions-list.png)
+![Functions List](img/2026-03-05-polar-mirai/functions-list.png)
 
 The binary contains **370+ functions**, typical of statically-linked Mirai variants. Key function clusters:
 - **Network I/O:** Socket creation, UDP/TCP flooding routines
@@ -138,7 +138,7 @@ The binary contains **370+ functions**, typical of statically-linked Mirai varia
 - **Attack modules:** SSDP, HTTP, DNS flood implementations
 - **Persistence:** File copy/execution routines
 
-![Disassembly - Main Function](screenshots/disassembly-main.png)
+![Disassembly - Main Function](img/2026-03-05-polar-mirai/disassembly-main.png)
 
 The `main` function (2,516 bytes) orchestrates:
 1. Environment checks (avoid sandboxes/honeypots)
@@ -150,7 +150,7 @@ The `main` function (2,516 bytes) orchestrates:
 
 #### 4.1 YARA Rule
 
-![YARA Detection](screenshots/yara-test.png)
+![YARA Detection](img/2026-03-05-polar-mirai/yara-test.png)
 
 ```yara
 rule Polar_Mirai_CondiBot {

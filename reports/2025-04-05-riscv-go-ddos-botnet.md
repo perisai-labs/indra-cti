@@ -18,7 +18,7 @@ Our threat research team has identified a sophisticated DDoS botnet targeting RI
 
 ### File Characteristics
 
-![File Info](screenshots/file-info.png)
+![File Info](img/2025-04-05-riscv-go-ddos-botnet/file-info.png)
 
 The malware is a 64-bit ELF executable compiled for RISC-V architecture with double-float ABI. Key characteristics include:
 
@@ -30,7 +30,7 @@ The malware is a 64-bit ELF executable compiled for RISC-V architecture with dou
 
 ### Binary Structure
 
-![Sections Entropy](screenshots/sections-entropy.png)
+![Sections Entropy](img/2025-04-05-riscv-go-ddos-botnet/sections-entropy.png)
 
 The binary contains typical Go sections with notable characteristics:
 
@@ -41,7 +41,7 @@ The binary contains typical Go sections with notable characteristics:
 
 ### Network Capabilities
 
-![Network Strings](screenshots/network-strings.png)
+![Network Strings](img/2025-04-05-riscv-go-ddos-botnet/network-strings.png)
 
 String analysis reveals extensive HTTP/HTTPS networking capabilities:
 
@@ -52,7 +52,7 @@ String analysis reveals extensive HTTP/HTTPS networking capabilities:
 
 ### Command & Control
 
-![C2 Indicators](screenshots/c2-indicators.png)
+![C2 Indicators](img/2025-04-05-riscv-go-ddos-botnet/c2-indicators.png)
 
 The malware contains an embedded usage example revealing its DDoS capabilities:
 
@@ -70,7 +70,7 @@ Example: %s httpsproxy https://example.com 15000 15 -pd "key=value" -c "session=
 
 ### Attack Vectors
 
-![Bot Commands](screenshots/bot-commands.png)
+![Bot Commands](img/2025-04-05-riscv-go-ddos-botnet/bot-commands.png)
 
 The malware supports multiple attack types:
 
@@ -81,23 +81,23 @@ The malware supports multiple attack types:
 
 ### Code Analysis
 
-![Functions List](screenshots/functions-list.png)
+![Functions List](img/2025-04-05-riscv-go-ddos-botnet/functions-list.png)
 
 Radare2 analysis identified **3,639 functions**, indicating a complex, feature-rich malware. The stripped binary suggests professional development practices.
 
-![Disassembly Entry](screenshots/disassembly-entry.png)
+![Disassembly Entry](img/2025-04-05-riscv-go-ddos-botnet/disassembly-entry.png)
 
 The entry point shows standard Go runtime initialization, making dynamic analysis challenging due to the complexity of the Go runtime.
 
 ### Entropy Analysis
 
-![Entropy](screenshots/entropy.png)
+![Entropy](img/2025-04-05-riscv-go-ddos-botnet/entropy.png)
 
 Binwalk entropy analysis shows no indicators of packing or encryption, confirming this is a standard Go-compiled binary with embedded resources.
 
 ## YARA Detection Rule
 
-![YARA Test](screenshots/yara-test.png)
+![YARA Test](img/2025-04-05-riscv-go-ddos-botnet/yara-test.png)
 
 We developed and tested a YARA rule for detecting this malware family:
 

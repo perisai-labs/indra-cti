@@ -22,7 +22,7 @@ We analyzed a recent Vidar infostealer sample captured from MalwareBazaar. Vidar
 
 ## Sample Overview
 
-![File Info](screenshots/file-info.png)
+![File Info](img/2026-03-23-vidar-stealer/file-info.png)
 
 | Attribute | Value |
 |-----------|-------|
@@ -47,7 +47,7 @@ We analyzed a recent Vidar infostealer sample captured from MalwareBazaar. Vidar
 
 ### PE Structure
 
-![PE Analysis](screenshots/pe-analysis.png)
+![PE Analysis](img/2026-03-23-vidar-stealer/pe-analysis.png)
 
 The binary contains 7 sections with the following entropy levels:
 - **.text** (196 KB): 6.42 entropy — moderate, contains main executable code
@@ -59,7 +59,7 @@ The binary contains 7 sections with the following entropy levels:
 
 ### Imports Analysis
 
-![Imports](screenshots/imports.png)
+![Imports](img/2026-03-23-vidar-stealer/imports.png)
 
 The sample imports from **3 DLLs**:
 
@@ -82,23 +82,23 @@ Complete HTTP client stack for C2 communication:
 - `WinHttpAddRequestHeaders`, `WinHttpSetOption`
 - `WinHttpCrackUrl`, `WinHttpCloseHandle`
 
-![Interesting APIs](screenshots/apis-interesting.png)
+![Interesting APIs](img/2026-03-23-vidar-stealer/apis-interesting.png)
 
 **Analysis:** The WinHTTP import set is a **definitive indicator** of HTTP-based C2 communication. Vidar uses this to exfiltrate stolen data to remote servers.
 
 ### Disassembly & Functions
 
-![Functions List](screenshots/functions-list.png)
+![Functions List](img/2026-03-23-vidar-stealer/functions-list.png)
 
 **789 functions** detected via radare2 analysis. The entry point:
 
-![Disassembly Entry](screenshots/disassembly-entry.png)
+![Disassembly Entry](img/2026-03-23-vidar-stealer/disassembly-entry.png)
 
 The entry point calls `fcn.1400144bc`, which initializes the runtime environment before jumping to the main payload logic at `0x140013cb8`.
 
 ### Strings Analysis
 
-![Strings](screenshots/strings-rabin2.png)
+![Strings](img/2026-03-23-vidar-stealer/strings-rabin2.png)
 
 Extracted strings reveal:
 - **C++ runtime errors** ("bad allocation", "bad exception")
@@ -155,7 +155,7 @@ Extracted strings reveal:
 
 ### YARA Rule
 
-![YARA Test](screenshots/yara-test.png)
+![YARA Test](img/2026-03-23-vidar-stealer/yara-test.png)
 
 ```yara
 rule Vidar_Infostealer_Mar2026 {
@@ -331,7 +331,7 @@ Vidar remains an active threat in 2026, leveraging robust HTTP-based exfiltratio
 
 ## Appendix: Full Tool Outputs
 
-All raw analysis outputs and styled screenshots are available in the `screenshots/` directory:
+All raw analysis outputs and styled screenshots are available in the `img/2026-03-23-vidar-stealer/` directory:
 
 - `file-info.png` — File type and rabin2 metadata
 - `pe-analysis.png` — PE headers and section entropy

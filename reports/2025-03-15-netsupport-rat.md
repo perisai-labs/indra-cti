@@ -16,7 +16,7 @@ This analysis examines a NetSupport Manager client executable observed in the wi
 
 ## Sample Overview
 
-![File Information](screenshots/file-info.png)
+![File Information](img/2025-03-15-netsupport-rat/file-info.png)
 
 **Key Attributes:**
 - **File Type:** PE32 executable (32-bit Windows)
@@ -33,7 +33,7 @@ The PDB path reveals internal development structure, with "nsm" referring to Net
 
 ### PE Structure
 
-![PE Sections](screenshots/sections-entropy.png)
+![PE Sections](img/2025-03-15-netsupport-rat/sections-entropy.png)
 
 The binary exhibits an unusual section layout:
 
@@ -48,7 +48,7 @@ The extremely small `.text` section (only 512 bytes) indicates this is a minimal
 
 ### Import Analysis
 
-![Imports](screenshots/imports.png)
+![Imports](img/2025-03-15-netsupport-rat/imports.png)
 
 The import table is remarkably sparse:
 
@@ -72,7 +72,7 @@ The critical import is `PCICL32.dll`, the proprietary NetSupport Manager client 
 
 ### Disassembly Analysis
 
-![Main Function](screenshots/disassembly-main.png)
+![Main Function](img/2025-03-15-netsupport-rat/disassembly-main.png)
 
 The `main()` function is trivial:
 
@@ -91,7 +91,7 @@ This design pattern allows the executable to remain small and unmodified while t
 
 ### Code Signing
 
-![Binwalk Scan](screenshots/binwalk-scan.png)
+![Binwalk Scan](img/2025-03-15-netsupport-rat/binwalk-scan.png)
 
 The binary is validly signed by **NetSupport Ltd.** using a GlobalSign EV Code Signing certificate:
 
@@ -134,7 +134,7 @@ While we did not perform dynamic analysis in this study, documented NetSupport R
 
 ### YARA Rule
 
-![YARA Test](screenshots/yara-test.png)
+![YARA Test](img/2025-03-15-netsupport-rat/yara-test.png)
 
 ```yara
 rule NetSupport_RAT_Client_Loader {

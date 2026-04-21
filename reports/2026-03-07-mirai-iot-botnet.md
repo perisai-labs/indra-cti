@@ -22,7 +22,7 @@ This report presents a detailed reverse engineering analysis of a Mirai IoT botn
 
 ## Sample Information
 
-![File Info](screenshots/file-info.png)
+![File Info](img/2026-03-07-mirai-iot-botnet/file-info.png)
 
 The sample is a **statically-linked ELF binary** compiled for MIPS-I architecture, targeting IoT devices such as routers, IP cameras, and DVRs running embedded Linux systems.
 
@@ -38,13 +38,13 @@ The sample is a **statically-linked ELF binary** compiled for MIPS-I architectur
 
 ### Binary Structure & Entropy
 
-![Sections Entropy](screenshots/sections-entropy.png)
+![Sections Entropy](img/2026-03-07-mirai-iot-botnet/sections-entropy.png)
 
 The binary contains standard ELF sections with no packing detected. The `.text` section (code) is 101 KB, and `.rodata` (read-only data) contains hardcoded strings related to DDoS attack methods.
 
 ### Strings Analysis
 
-![Strings Filtered](screenshots/strings-filtered.png)
+![Strings Filtered](img/2026-03-07-mirai-iot-botnet/strings-filtered.png)
 
 **Notable Strings:**
 - **DDoS Attack Types:** `CUDP`, `OVHUDP`, `CTCP`, `HTTP`
@@ -60,7 +60,7 @@ These strings indicate the malware disguises HTTP flood traffic as legitimate An
 
 ### Function Analysis
 
-![Key Functions](screenshots/key-functions.png)
+![Key Functions](img/2026-03-07-mirai-iot-botnet/key-functions.png)
 
 Radare2 identified **269 functions**, including critical attack and infrastructure functions:
 
@@ -80,7 +80,7 @@ Radare2 identified **269 functions**, including critical attack and infrastructu
 
 ### Disassembly: Main Function
 
-![Disassembly Main](screenshots/disassembly-main.png)
+![Disassembly Main](img/2026-03-07-mirai-iot-botnet/disassembly-main.png)
 
 The `main` function performs the following operations:
 
@@ -93,7 +93,7 @@ The `main` function performs the following operations:
 
 ### Disassembly: UDP Flood Function
 
-![Disassembly UDP Flood](screenshots/disassembly-udpfl00d.png)
+![Disassembly UDP Flood](img/2026-03-07-mirai-iot-botnet/disassembly-udpfl00d.png)
 
 The `udpfl00d` function implements high-volume UDP flooding:
 
@@ -153,7 +153,7 @@ The `udpfl00d` function implements high-volume UDP flooding:
 
 ### YARA Rule
 
-![YARA Test](screenshots/yara-test.png)
+![YARA Test](img/2026-03-07-mirai-iot-botnet/yara-test.png)
 
 ```yara
 rule Mirai_IoT_Botnet_MIPS {
