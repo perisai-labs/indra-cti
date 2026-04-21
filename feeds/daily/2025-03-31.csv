@@ -1,0 +1,4 @@
+date,indicator,type,malware_family,description,classification,severity,indicator_type
+2025-03-31,f2207ba54c7c0025a9a75ad69a26404424283866ad57addc7a4346f551a7379e,sha256,ACRStealer,Golang InfoStealer PE32+,malware,high,file
+2025-03-31,Go-http-client,user-agent,ACRStealer,Golang HTTP client user-agent,network,medium,network
+2025-03-31,CryptUnprotectData,api-call,ACRStealer,DPAPI credential decryption,behavior,high,behavior

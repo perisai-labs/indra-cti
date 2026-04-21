@@ -1,0 +1,4 @@
+date,indicator,type,description,severity,reference
+2025-03-19,88.214.20.14,ipv4,Mirai IoT Botnet C2 Server,critical,6050b4c3def76eddfe712c0333f181c499848a187580bb845b1c4a0dca93ee30
+2025-03-19,6050b4c3def76eddfe712c0333f181c499848a187580bb845b1c4a0dca93ee30,sha256,Mirai IoT Botnet ARM ELF,critical,MalwareBazaar
+2025-03-19,23,port,Mirai Telnet Scanning,high,Telnet brute-force

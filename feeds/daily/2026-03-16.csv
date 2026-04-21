@@ -1,0 +1,5 @@
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+hash-sha256,204108aa3133bc549454fccbc2aa081b0e1f4d5964ad3a6d5c32a7c25c255af3,ACRStealer,malware,high,high,2026-03-16,2026-03-16,T1555|T1005|T1083|T1547.001|T1027,acrstealer;credential-stealer;dll;obfuscation,MalwareBazaar,ACRStealer credential stealing DLL with heavy obfuscation
+hash-sha1,dce9d84c5992876b3ee4c4a6bd0520b2c4ada79f,ACRStealer,malware,high,high,2026-03-16,2026-03-16,T1555,acrstealer;credential-stealer,MalwareBazaar,ACRStealer SHA1
+hash-md5,22aef6813b51489b1161e18c30cb8930,ACRStealer,malware,high,high,2026-03-16,2026-03-16,T1555,acrstealer;credential-stealer,MalwareBazaar,ACRStealer MD5
+filename,syssecond2.dll,ACRStealer,malware,high,medium,2026-03-16,2026-03-16,T1027,acrstealer;dll;obfuscation,MalwareBazaar,ACRStealer filename

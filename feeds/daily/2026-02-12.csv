@@ -1,0 +1,6 @@
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+sha256,d70d9f3c8cfdaa59728178f0b44b9664a956421ecaa4d17a5cb94d1e1118cd4d,Mirai HTTP Flood Variant,malware,high,90,2026-02-12,2026-02-12,"T1059.004,T1037,T1027,T1036,T1071.001,T1498.001","mirai,botnet,ddos,httpflood",MalwareBazaar,Mirai variant with HTTP/2 flood and Cloudflare bypass
+md5,aeba465111d4d02ea141e7a90bed21c0,Mirai HTTP Flood Variant,malware,high,90,2026-02-12,2026-02-12,"T1059.004,T1027","mirai,botnet",MalwareBazaar,Mirai variant sample MD5
+ipv4,158.94.210.195,Mirai HTTP Flood Variant,c2,high,85,2026-02-12,2026-02-12,"T1071.001","mirai,c2,botnet",Static Analysis,Hardcoded C2 server IP
+filepath,/tmp/.atk,Mirai HTTP Flood Variant,indicator,medium,80,2026-02-12,2026-02-12,"T1037","mirai,marker",Static Analysis,Attack instance marker file
+uri,/cdn-cgi/,Mirai HTTP Flood Variant,indicator,medium,70,2026-02-12,2026-02-12,"T1498.001,T1036","mirai,cloudflare,bypass",Static Analysis,Cloudflare CDN bypass target path

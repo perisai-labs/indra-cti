@@ -1,0 +1,6 @@
+ioc_type,ioc_value,threat_name,threat_type,severity,confidence,first_seen,last_seen,mitre_attack,tags,source,description
+hash-sha256,a61cfdb1585ebd47d4046b62ed7ad8a756234f54b24ee0755385c39fb12dbd40,CoinMiner-dconf-backup,malware,high,high,2026-03-17,2026-03-17,T1543.002|T1036.005|T1105|T1041,coinminer;linux;masquerading;systemd;telegram-c2,MalwareBazaar,Linux coinminer masquerading as dconf-backup with systemd persistence
+domain,github.com,CoinMiner-dconf-backup,malware,medium,medium,2026-03-17,2026-03-17,T1105,coinminer;c2;github-abuse,Analysis,GitHub used for payload hosting (catherine935/dbus repo)
+domain,api.ipify.org,CoinMiner-dconf-backup,malware,low,high,2026-03-17,2026-03-17,T1016,coinminer;reconnaissance;ip-lookup,Analysis,IP recon via ipify API
+filename,dconf-backup,CoinMiner-dconf-backup,malware,high,high,2026-03-17,2026-03-17,T1036.005,coinminer;masquerading;linux,Analysis,Fake dconf-backup binary name
+filename,dbus-helper.service,CoinMiner-dconf-backup,malware,high,high,2026-03-17,2026-03-17,T1543.002,coinminer;persistence;systemd,Analysis,Malicious systemd service for persistence

@@ -1,0 +1,4 @@
+date,indicator,type,malware_family,category,severity,source
+2025-03-18,b08da7db6d928857eed0a404b54a8b74e876c3d75378fb001b3ce50bb47ac138,sha256,RustyStealer,info-stealer,high,MalwareBazaar
+2025-03-18,test2.pdb,pdb_path,RustyStealer,info-stealer,high,static_analysis
+2025-03-18,SYSTEM\CurrentControlSet\Services\Disk\Enum,registry_key,RustyStealer,info-stealer,medium,behavior_analysis
