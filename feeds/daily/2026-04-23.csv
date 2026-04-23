@@ -1,0 +1,2 @@
+sha256,md5,imphash,type,family,c2_ip,c2_url,description
+2d79d41c3054d58aef97fef83e0bd11a002b71bf57e2899abff49a454fd392d6,bfa094cf4a3cd3d5d6e2f64e2c28f2c9,608505ff1e7e27ff4a42ea9c4e9f4192,exe,Sandworm-ArguePatch,91.92.241.242,http://91.92.241.242/service,Sandworm APT ArguePatch loader for CaddyWiper
