@@ -1,0 +1,7 @@
+date,type,indicator,context,severity,family
+2026-04-26,hash,2157d5e624b87bdf43d26bbf90a87b1e8b33c8a75b7f37bc7c0da20efcf4c873,AgentTesla PS1 Downloader,HIGH,AgentTesla
+2026-04-26,domain,ftp.duct-master.com,FTP C2 Server,HIGH,AgentTesla
+2026-04-26,email,ftpmojomanager@duct-master.com,FTP Username,HIGH,AgentTesla
+2026-04-26,encryption-key,DVSecretKey567,XOR Decryption Key,HIGH,AgentTesla
+2026-04-26,hash,32f9100f37a01c28b6599d02d0c40f0611d88fcb,AgentTesla PS1 Downloader SHA1,HIGH,AgentTesla
+2026-04-26,hash,824ac7050058b244436f9277617a348f,AgentTesla PS1 Downloader MD5,HIGH,AgentTesla

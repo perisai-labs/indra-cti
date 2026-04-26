@@ -3507,3 +3507,10 @@ registry-key,HKCU\Software\Microsoft\Windows\CurrentVersion\Run</registry_path>,
 file-path,C:\ProgramData\Microsoft\Windows\Tasks\update.exe,Amaranth-Dragon - Southeast Asia Government & Law Enforcement Espionage Campaign,apt,medium,medium,2026-03-13,2026-03-13,T1005|T1041|T1053|T1071.001|T1082|T1102|T1113|T1135|T1190|T1204.002|T1497|T1547.001|T1555|T1566.001|T1574.002|T1588.005|T1591.003,amaranth-dragon---southeast-asia-government-&-law-enforcement-espionage-campaign,Amaranth-Dragon-Southeast-Asia-Espionage,
 cve,cve-2026-25108,Skills Index,unknown,medium,medium,2026-03-13,2026-03-13,T1195.001|T1588.001,skills-index,INDEX,
 2d79d41c3054d58aef97fef83e0bd11a002b71bf57e2899abff49a454fd392d6,bfa094cf4a3cd3d5d6e2f64e2c28f2c9,608505ff1e7e27ff4a42ea9c4e9f4192,exe,Sandworm-ArguePatch,91.92.241.242,http://91.92.241.242/service,2026-04-23,Sandworm APT ArguePatch loader for CaddyWiper
+2026-04-26,hash,2157d5e624b87bdf43d26bbf90a87b1e8b33c8a75b7f37bc7c0da20efcf4c873,AgentTesla PS1 Downloader SHA256,HIGH,AgentTesla
+2026-04-26,domain,ftp.duct-master.com,FTP C2 Server,HIGH,AgentTesla
+2026-04-26,email,ftpmojomanager@duct-master.com,FTP Username,HIGH,AgentTesla
+2026-04-26,encryption-key,Rbmc3bcEZXiwCi527me+gDp4S0sR5ZvpnRYj614yxRk=,AES-256 Key (B64),HIGH,AgentTesla
+2026-04-26,encryption-key,4ii20zkJt18V5r21jp+GDA==,AES-256 IV (B64),HIGH,AgentTesla
+2026-04-26,encryption-key,DVSecretKey567,XOR Decryption Key,HIGH,AgentTesla
+2026-04-26,process,aspnet_compiler.exe,Hijacked Process Target,HIGH,AgentTesla
