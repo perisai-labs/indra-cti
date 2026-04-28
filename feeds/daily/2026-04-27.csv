@@ -1,0 +1,18 @@
+date,type,indicator,context,severity,family
+2026-04-27,file_path,/usr/bin/lina_cs,FIRESTARTER malicious binary (Cisco Firepower/Secure Firewall),CRITICAL,FIRESTARTER
+2026-04-27,file_path,/opt/cisco/platform/logs/var/log/svc_samcore.log,FIRESTARTER staged binary persistence,CRITICAL,FIRESTARTER
+2026-04-27,process,lina_cs,FIRESTARTER process name in kernel process list,CRITICAL,FIRESTARTER
+2026-04-27,yara,CISA_261290_01,FIRESTARTER Backdoor YARA rule (CISA),CRITICAL,FIRESTARTER
+2026-04-27,yara,CISA_261290_02,FIRESTARTER Shellcode YARA rule (CISA),CRITICAL,FIRESTARTER
+2026-04-27,snort,62949,FIRESTARTER network detection Snort SID,HIGH,FIRESTARTER
+2026-04-27,snort,65340,CVE-2025-20333 WebVPN RCE exploitation,HIGH,FireSTARTER
+2026-04-27,snort,46897,CVE-2025-20362 WebVPN Unauthorized Access,HIGH,FIRESTARTER
+2026-04-27,cve,CVE-2025-20333,Cisco ASA/FTD WebVPN RCE exploited for initial access,CRITICAL,FIRESTARTER
+2026-04-27,cve,CVE-2025-20362,Cisco ASA/FTD WebVPN Auth Bypass,CRITICAL,FIRESTARTER
+2026-04-27,cve,CVE-2026-39987,Marimo Python notebook pre-auth RCE (CVSS 9.3),CRITICAL,Marimo
+2026-04-27,cve,CVE-2026-20128,Cisco SD-WAN Manager DCA credential exposure (CVSS 8.1),HIGH,SDWAN-Manager
+2026-04-27,cve,CVE-2026-33825,Microsoft Nightmare Eclipse - actively exploited by UNC6692 (CVSS 9.8),CRITICAL,UNC6692
+2026-04-27,technique,T1546.004,Posix signal trapping for persistence (6 signals registered),CRITICAL,FIRESTARTER
+2026-04-27,technique,T1542.002,Component firmware persistence via CSP_MOUNT_LIST,CRITICAL,FIRESTARTER
+2026-04-27,technique,T1055,Process injection into libstdc++.so shared object,HIGH,FIRESTARTER
+2026-04-27,technique,T1219,Remote access via WebVPN C2 channel,CRITICAL,FIRESTARTER
